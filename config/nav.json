@@ -1,0 +1,52 @@
+[
+    {
+        "group": "Personal",
+        "links": [
+            {
+                "title": "About Me",
+                "url": "about",
+                "img": "about_w.svg"
+            },
+            {
+                "title": "Cars",
+                "url": "automotive",
+                "img": "automotive_w.svg"
+            },
+            {
+                "title": "Music",
+                "url": "music",
+                "img": "music_w.svg"
+            },
+            {
+                "title": "Photography",
+                "url": "photography",
+                "img": "photography_w.svg"
+            }
+        ]
+    },
+    {
+        "group": "Professional",
+        "links": [
+            {
+                "title": "Résumé",
+                "url": "resume",
+                "img": "resume_w.svg"
+            },
+            {
+                "title": "GitHub",
+                "url": "github",
+                "img": "github_w.svg"
+            },
+            {
+                "title": "Portfolio",
+                "url": "portfolio",
+                "img": "portfolio_w.svg"
+            },
+            {
+                "title": "Contact",
+                "url": "contact",
+                "img": "contact_w.svg"
+            }
+        ]
+    }
+]

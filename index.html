@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
+		
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="./js/bhangular.js"></script>
+    </head>
+    <body ng-app="bhang-app" ng-controller="bhang-ctrl">
+        <nav class="collapsed">
+            <section ng-repeat="navGroup in navData" class="collapsed">
+                <h4>{{ navGroup.group | uppercase }}</h4>
+                <a ng-repeat="navLink in navGroup.links" href="{{ navLink.url }}">
+                    <img src="./img/icons/{{ navLink.img }}"/>
+                    <span>{{ navLink.title }}</span>
+                </a>
+            </section>
+        </nav>
+    </body>
+</html>
