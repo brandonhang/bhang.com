@@ -7,19 +7,37 @@
         <meta name="author" content="Brandon S. Hang"/>
         <title>Brandon S. Hang</title>
         <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
-		
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300">
+        <link type="text/css" rel="stylesheet" href="./css/main.css"/>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script type="text/javascript" src="./js/bhangular.js"></script>
     </head>
     <body ng-app="bhang-app" ng-controller="bhang-ctrl">
-        <nav class="collapsed">
-            <section ng-repeat="navGroup in navData" class="collapsed">
-                <h4>{{ navGroup.group | uppercase }}</h4>
-                <a ng-repeat="navLink in navGroup.links" href="{{ navLink.url }}">
-                    <img src="./img/icons/{{ navLink.img }}"/>
-                    <span>{{ navLink.title }}</span>
-                </a>
-            </section>
+        <a id="main-menu" class="nav-links" href="#" ng-click="openMainMenu($event)" ng-class="{'nav-menu-open': navMenu.main}">MENU</a>
+        <nav class="nav-menu" ng-class="{'nav-menu-open': navMenu.main}">
+            <ul>
+                <a class="nav-links" href="/">HOME</a>
+            </ul>
+            <ul ng-class="{'nav-group-open': navMenu.Personal}">
+                <a class="nav-links" href="#" ng-click="openSubMenu($event, 'Personal')">PERSONAL</a>
+                <li ng-repeat="link in navData.personal.links">
+                    <a class="nav-links" href="{{ link.url }}.html" style="background-image: url('./img/icons/{{ link.img }}');">{{ link.title }}</a>
+                </li>
+            </ul>
+            <ul ng-class="{'nav-group-open': navMenu.Professional}">
+                <a class="nav-links" href="#" ng-click="openSubMenu($event, 'Professional')">PROFESSIONAL</a>
+                <li ng-repeat="link in navData.professional.links">
+                    <a class="nav-links" href="{{ link.url }}.html" style="background-image: url('./img/icons/{{ link.img }}');">{{ link.title }}</a>
+                </li>
+            </ul>
+            <ul ng-repeat="navGroup in navData.miscellaneous" ng-class="{'nav-group-open': navMenu[navGroup.group] == true}">
+                <a class="nav-links" href="#" ng-click="openSubMenu($event, navGroup.group)">{{ navGroup.group | uppercase }}</a>
+                <li ng-repeat="link in navGroup.links">
+                    <a class="nav-links" href="{{ link.url }}.html" style="background-image: url('./img/icons/{{ link.img }}');">{{ link.title }}</a>
+                </li>
+            </ul>
         </nav>
+
+        <div class="content" ng-click="closeMenu()"></div>
     </body>
 </html>

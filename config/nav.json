@@ -1,6 +1,5 @@
-[
-    {
-        "group": "Personal",
+{
+    "personal": {
         "links": [
             {
                 "title": "About Me",
@@ -24,8 +23,7 @@
             }
         ]
     },
-    {
-        "group": "Professional",
+    "professional": {
         "links": [
             {
                 "title": "Résumé",
@@ -48,5 +46,32 @@
                 "img": "contact_w.svg"
             }
         ]
-    }
-]
+    },
+    "miscellaneous": [
+        {
+            "group": "Applications",
+            "links": [
+                {
+                    "title": "Movies",
+                    "url": "movies",
+                    "img": "film_w.svg"
+                },
+                {
+                    "title": "Triple Triad",
+                    "url": "triad-x3",
+                    "img": "triad_x3_w.svg"
+                },
+                {
+                    "title": "Solitaire",
+                    "url": "solitaire",
+                    "img": "solitaire_w.svg"
+                },
+                {
+                    "title": "Blue Screen",
+                    "url": "bsod",
+                    "img": "bsod_w.svg"
+                }
+            ]
+        }
+    ]
+}
