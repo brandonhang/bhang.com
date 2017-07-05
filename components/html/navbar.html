@@ -1,0 +1,22 @@
+<section>
+    <div>
+        <a href="#" ng-click="changeSplash($event, 'main'); changeView($event, 'splash'); closeMenu($event)">Brandon S. Hang</a>
+    </div>
+    <div>
+        <a ng-repeat="(navName, navGroup) in navData" href="#" ng-class="{'selected-group': activeSubMenuName == navName}"ng-click="openSubMenu($event, navName)" style="background-image: url('./img/icons/{{ navGroup.icon }}');">{{ navName | uppercase }}</a>
+    </div>
+</section>
+<section ng-class="{'open-menu': activeSubMenuName != ''}">
+    <div class="submenu-button-container" ng-class="{'open-menu': activeSubMenuName != ''}">
+        <a id="submenu-button" href="#" ng-click="closeMenu($event)">&nbsp;</a>
+    </div>
+
+    <ul ng-repeat="(navName, navGroup) in navData" ng-class="{'open-submenu': activeSubMenuName == navName, 'apps-submenu': navName == 'applications'}"><!--
+    ---><li ng-repeat="link in navGroup.links"><!--
+        ---><a href="#" ng-click="changeView($event, activeSubMenuName); navigate($event, link.url); closeMenu($event)" style="background: url('./img/bkgrds/{{ link.bkgrd }}') center/cover no-repeat;"><!--
+            ---><div class="fog"></div><!--
+            ---><span>{{ link.title }}</span><!--
+        ---></a><!--
+    ---></li><!--
+---></ul>
+</section>

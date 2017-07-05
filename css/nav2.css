@@ -1,0 +1,59 @@
+nav {
+  font-family: "Open Sans Condensed", "Arial Narrow", sans-serif;
+  font-size: 2em;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2em; }
+  nav > div {
+    height: inherit;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 1%;
+    background-color: #102684; }
+    nav > div a {
+      text-decoration: none;
+      background-position: left center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-left: 1.5em;
+      padding-right: 0.5em;
+      color: white;
+      transition: background-color 0.25s ease-in-out;
+      -webkit-transition: background-color 0.25s ease-in-out;
+      -moz-transition: background-color 0.25s ease-in-out;
+      -o-transition: background-color 0.25s ease-in-out; }
+      nav > div a:hover {
+        background-color: #0736f8; }
+    nav > div > a {
+      padding-left: 1.5em;
+      padding-right: 0.5em; }
+      nav > div > a:first-of-type {
+        padding-left: 1.65em; }
+    nav > div ul {
+      margin: 0;
+      padding: 0;
+      visibility: visible;
+      opacity: 1;
+      max-height: 30em;
+      position: absolute;
+      top: 2em;
+      width: 100%;
+      background-color: #102684;
+      transition: all 0.25s ease-in-out;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      -o-transition: all 0.25s ease-in-out; }
+      nav > div ul.collapsed {
+        visibility: hidden;
+        opacity: 0;
+        max-height: 0; }
+      nav > div ul li {
+        list-style-type: none;
+        display: inline; }
+        nav > div ul li a {
+          font-size: 0.85em; }
+
+/*# sourceMappingURL=nav2.css.map */

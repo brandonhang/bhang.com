@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="./css/nav3.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/splash2.css"/>
+        <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script type="text/javascript" src="./js/bhang.js"></script>
+    </head>
+    <body ng-app="bhang-app" ng-controller="bhang-ctrl">
+        <nav ng-include="'./components/html/navbar.html'" ng-class="{'active-view': activeView == 'personal' || activeView == 'professional'}"></nav>
+        <div id="splash-main" class="group splash-view" ng-class="{'active-view': activeView == 'splash-main'}">
+            <div class="splash"><a href="#">Personal</a><div class="fog" ng-click="changeView($event, 'splash-personal')"></div></div><!--
+         --><div class="splash"><a href="#">Professional</a><div class="fog" ng-click="changeView($event, 'splash-professional')"></div></div>
+            <div class="profile-pic"></div>
+        </div>
+        <div id="splash-personal" class="group splash-view" ng-class="{'active-view': activeView == 'splash-personal'}">
+            <div class="splish-splash" ng-repeat="link in navData.personal.links" style="background-image: url('./img/bkgrds/{{ link.bkgrd }}');"><a href="#">{{ link.title }}</a><div class="fog" ng-click="changeView($event, 'personal'); navigate($event, link.url)"></div></div>
+        </div>
+        <div id="splash-professional" class="group splash-view" ng-class="{'active-view': activeView == 'splash-professional'}">
+            <div class="splish-splash" ng-repeat="link in navData.professional.links" style="background-image: url('./img/bkgrds/{{ link.bkgrd }}');"><a href="#">{{ link.title }}</a><div class="fog" ng-click="changeView($event, 'professional'); navigate($event, link.url)"></div></div>
+        </div>
+        <div id="personal" class="group content" ng-class="{'active-view': activeView == 'personal'}">
+            <!-- <div class="section" ng-repeat="link in navData.personal.links" id="{{ link.url }}" ng-include="'./components/html/{{ link.url }}.html'"></div> -->
+            <div class="section" ng-repeat="link in navData.personal.links" id="{{ link.url }}">
+                <h2 class="section-title">{{ link.title }}</h2>
+            </div>
+        </div>
+        <div id="professional" class="group content" ng-class="{'active-view': activeView == 'professional'}">
+            <!-- <div class="section" ng-repeat="link in navData.professional.links" id="{{ link.url }}" ng-include="'./components/html/{{ link.url }}.html'"></div> -->
+            <div class="section" ng-repeat="link in navData.professional.links" id="{{ link.url }}">
+                <h2 class="section-title">{{ link.title }}</h2>
+            </div>
+        </div>
+    </body>
+</html>

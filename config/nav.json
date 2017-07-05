@@ -1,77 +1,91 @@
 {
     "personal": {
+        "icon": "personal_w.svg",
+        "bkgrd": "personal.jpg",
         "links": [
             {
                 "title": "About Me",
                 "url": "about",
-                "img": "about_w.svg"
+                "icon": "about_w.svg",
+                "bkgrd": "about.jpg"
             },
             {
                 "title": "Cars",
                 "url": "automotive",
-                "img": "automotive_w.svg"
+                "icon": "automotive_w.svg",
+                "bkgrd": "automotive.jpg"
             },
             {
                 "title": "Music",
                 "url": "music",
-                "img": "music_w.svg"
+                "icon": "music_w.svg",
+                "bkgrd": "music.jpg"
             },
             {
                 "title": "Photography",
                 "url": "photography",
-                "img": "photography_w.svg"
+                "icon": "photography_w.svg",
+                "bkgrd": "photography.jpg"
             }
         ]
     },
     "professional": {
+        "icon": "memory_w.svg",
+        "bkgrd": "professional.jpg",
         "links": [
+            {
+                "title": "Portfolio",
+                "url": "portfolio",
+                "icon": "portfolio_w.svg",
+                "bkgrd": "portfolio.jpg"
+            },
             {
                 "title": "Résumé",
                 "url": "resume",
-                "img": "resume_w.svg"
+                "icon": "resume_w.svg",
+                "bkgrd": "resume.jpg"
             },
             {
                 "title": "GitHub",
                 "url": "github",
-                "img": "github_w.svg"
+                "icon": "github_w.svg",
+                "bkgrd": "github.jpg"
             },
             {
-                "title": "Portfolio",
-                "url": "portfolio",
-                "img": "portfolio_w.svg"
-            },
-            {
-                "title": "Contact",
+                "title": "Contact Me",
                 "url": "contact",
-                "img": "contact_w.svg"
+                "icon": "contact_w.svg",
+                "bkgrd": "contact.jpg"
             }
         ]
     },
-    "miscellaneous": [
-        {
-            "group": "Applications",
-            "links": [
-                {
-                    "title": "Movies",
-                    "url": "movies",
-                    "img": "film_w.svg"
-                },
-                {
-                    "title": "Triple Triad",
-                    "url": "triad-x3",
-                    "img": "triad_x3_w.svg"
-                },
-                {
-                    "title": "Solitaire",
-                    "url": "solitaire",
-                    "img": "solitaire_w.svg"
-                },
-                {
-                    "title": "Blue Screen",
-                    "url": "bsod",
-                    "img": "bsod_w.svg"
-                }
-            ]
-        }
-    ]
+    "applications": {
+        "icon": "apps_w.svg",
+        "links": [
+            {
+                "title": "Movies DB",
+                "url": "movies",
+                "icon": "film_w.svg",
+                "bkgrd": "movies.jpg"
+            },
+            {
+                "title": "Triple Triad",
+                "url": "triad-x3",
+                "icon": "triad_x3_w.svg",
+                "bkgrd": "triad_x3.jpg"
+            },
+            {
+                "title": "Solitaire",
+                "url": "solitaire",
+                "icon": "solitaire_w.svg",
+                "bkgrd": "solitaire.jpg"
+            },
+            {
+                "title": "Blue Screen",
+                "url": "bsod",
+                "icon": "bsod_w.svg",
+                "bkgrd": "bsod.jpg"
+            }
+        ]
+    }
 }

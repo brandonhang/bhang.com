@@ -1,0 +1,20 @@
+html, body {
+  height: 100%; }
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: gray;
+  font-family: "Open Sans", "Verdana", sans-serif;
+  font-size: 12px; }
+
+.content {
+  height: 100%; }
+  .content .section {
+    min-height: 100%;
+    padding-top: 3em; }
+    .content .section h3 {
+      text-align: center;
+      margin: 0 auto; }
+
+/*# sourceMappingURL=main-common.css.map */

@@ -1,0 +1,67 @@
+@import 'partials/_variables';
+@import 'partials/_mixins';
+
+//////////////// Splash Page ////////////////
+.splash {
+    height: 100%;
+    min-height: 500px;
+    // background-color: #001a0f;
+    background-image: url('../img/bkgrds/me2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+
+    .splash-wrapper {
+        height: calc(100% - 3.5em);
+        width: 40%;
+        position: absolute;
+        top: 3.5em;
+        right: 3.5em;
+        color: white;
+
+        .splash-wrapper-inner {
+            position: relative;
+            top: calc(50% - 3.5em);
+            padding: 3em;
+            background-color: rgba(53, 53, 53, 0.6);
+            @include border-radius(0.4em);
+            @include translateY-calc(-50%, 1.75em);
+
+            .introduction {
+                .caption {
+                    font-size: 2.5em;
+                    margin-top: 0;
+                }
+
+                .abridged-bio {
+                    font-size: 1.5em;
+                    margin-bottom: 2.5em;
+                }
+            }
+
+            .view-selector {
+                width: 100%;
+                display: block;
+                text-align: center;
+
+                .button {
+                    display: inline-block;
+                    background-color: $brick-red;
+                    color: white;
+
+                    &:first-of-type {
+                        margin: auto 1em auto auto;
+                    }
+
+                    &:last-of-type {
+                        margin: auto auto auto 1em;
+                    }
+
+                    &:hover, &:active {
+                        background-color: $brick-red-fade;
+                    }
+                }
+            }
+        }
+    }
+}

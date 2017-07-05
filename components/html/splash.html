@@ -1,0 +1,12 @@
+<div class="splash-wrapper">
+    <div class="splash-wrapper-inner">
+        <div class="introduction">
+            <h1 class="title caption">{{ splashData.caption | escape }}</h1>
+            <p class="abridged-bio">{{ splashData.abridgedBio | escape }}</p>
+        </div>
+        <div class="view-selector">
+            <button class="button" ng-click="changeView($event, 'personal')">Learn About Me</button><!--
+        ---><button class="button" ng-click="changeView($event, 'professional')">View My Work</button>
+        </div>
+    </div>
+</div>

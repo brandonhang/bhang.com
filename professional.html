@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300">
+        <link type="text/css" rel="stylesheet" href="./css/nav.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/main-common.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/professional.css"/>
+        <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script type="text/javascript" src="./js/bhangular.js"></script>
+    </head>
+    <body ng-app="bhang-app" ng-controller="bhang-ctrl">
+        <div ng-include="'./components/html/nav-menu.html'"></div>
+        <div class="content">
+            <div id="portfolio" class="section">
+                <h3>Portfolio</h3>
+            </div>
+            <div id="resume" class="section">
+                <h3>Résumé</h3>
+            </div>
+            <div id="github" class="section">
+                <h3>GitHub</h3>
+            </div>
+            <div id="contact" class="section">
+                <h3>Contact</h3>
+            </div>
+        </div>
+    </body>
+</html>

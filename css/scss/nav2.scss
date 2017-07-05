@@ -1,0 +1,74 @@
+@import 'partials/variables';
+@import 'partials/mixins';
+
+//////////////// Navigation Bar ////////////////
+nav {
+    font-family: $open-sans-condensed;
+    font-size: 2em;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2em;
+
+    > div {
+        height: inherit;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        width: 1%;
+        background-color: $galaxy-blue;
+
+        a {
+            text-decoration: none;
+            background-position: left center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding-left: 1.5em;
+            padding-right: 0.5em;
+            color: white;
+            @include transition(background-color, 0.25s, ease-in-out);
+
+            &:hover {
+                background-color: $world-rally-blue;
+            }
+        }
+
+        > a {
+            padding-left: 1.5em;
+            padding-right: 0.5em;
+
+            &:first-of-type {
+                padding-left: 1.65em;
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            visibility: visible;
+            opacity: 1;
+            max-height: 30em;
+            position: absolute;
+            top: 2em;
+            width: 100%;
+            background-color: $galaxy-blue;
+            @include transition(all, 0.25s, ease-in-out);
+
+            &.collapsed {
+                visibility: hidden;
+                opacity: 0;
+                max-height: 0;
+            }
+
+            li {
+                list-style-type: none;
+                display: inline;
+
+                a {
+                    font-size: 0.85em;
+                }
+            }
+        }
+    }
+}
