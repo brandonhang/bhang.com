@@ -1,71 +1,82 @@
 (function() {
     var app = angular.module('bhang-app', []);
-    var navMasterGroupList = ['personal', 'professional'];
-    var navMasterUrlList = [];
 
     app.controller('bhang-ctrl', function($scope, $http, $location, $anchorScroll) {
         $http.get('./config/nav.json').then(function(navData) {
             $scope.navData = navData.data;
-
-            angular.forEach(navData.data.personal.links, function(link, index) {
-                navMasterUrlList.push(link.url);
-            });
-            angular.forEach(navData.data.professional.links, function(link, index) {
-                navMasterUrlList.push(link.url);
-            });
-            angular.forEach(navData.data.miscellaneous, function(navGroup, index1) {
-                navMasterGroupList.push(navGroup.group.toLowerCase());
-
-                angular.forEach(navGroup.links, function(link, index2) {
-                    navMasterUrlList.push(link.url);
-                });
-            });
-
-            $scope.navMasterGroupList = navMasterGroupList;
-            $scope.navMasterUrlList = navMasterUrlList;
         });
 
+        $http.get('./config/splash.txt').then(function(splashData) {
+            var splashLines = splashData.data.split('\n');
+
+            $scope.splashData = {};
+            $scope.splashData.caption = splashLines[0];
+            $scope.splashData.abridgedBio = splashLines[1];
+        });
+
+        $scope.activeSubMenuName = '';
+        $scope.activeView = 'splash';
+        $scope.splashView = 'main';
+
         //////////////// Events ////////////////
-        //////// Menu Events ////////
-        $scope.navMenu = {};
-        $scope.openMainMenu = function($event) {
-            if (!('main' in $scope.navMenu)) {
-                $scope.navMenu.main = false;
-            }
-
-            $scope.navMenu.main = !$scope.navMenu.main;
-
-            if (!$scope.navMenu.main) {
-                angular.forEach($scope.navMenu, function(group, groupName) {
-                    $scope.navMenu[groupName] = false;
-                });
-            }
-
-            $event.preventDefault();
-        }
         $scope.openSubMenu = function($event, group) {
-            if (!(group in $scope.navMenu)) {
-                $scope.navMenu[group] = false;
+            if (group == $scope.activeSubMenuName) {
+                $scope.activeSubMenuName = '';
+            }
+            else {
+                $scope.activeSubMenuName = group;
+                $scope.subMenuLinks = $scope.navData[group].links;
             }
 
-            $scope.navMenu[group] = !$scope.navMenu[group];
             $event.preventDefault();
         }
-        $scope.closeMenu = function() {
-            angular.forEach($scope.navMenu, function(group, groupName) {
-                $scope.navMenu[groupName] = false;
-            });
+
+        $scope.closeMenu = function($event) {
+            $scope.activeSubMenuName = '';
+            $event.preventDefault();
         }
 
-        //////// Splash Screen Events ////////
-        $scope.splashCurrent = 'main';
-        $scope.changeSplash = function($event, view) {
-            $scope.splashCurrent = view;
+        $scope.navigate = function($event, target) {
+            console.log('Location: ' + $location.path());
+            console.log('Target: ' + target);
+            console.log('Do something, damnit');
+            if ($location.path() == target) {
+                console.log('You\'re already home!');
+            }
+            else {
+                var url = $location.path();
+                var base = url.split('#');
+                var navTo = target.split('#');
+
+                if (base[0] == navTo[0]) {
+                    // Smooth scroll here
+                }
+                else {
+                    window.location.href = target;
+                }
+                console.log(target);
+            }
+
             $event.preventDefault();
         }
     });
 
+    //////////////// Filters ////////////////
+    app.filter('capitalize', function() {
+        return function(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+    });
+
+    app.filter('escape', function($sce) {
+        return function(str) {
+            return $sce.trustAsHtml(str);
+        }
+    });
+
+    //////////////// Beautify URLs ////////////////
     app.config(['$locationProvider', function($locationProvider) {
         $locationProvider.hashPrefix('');
+        $locationProvider.html5Mode(true);
     }]);
 })();

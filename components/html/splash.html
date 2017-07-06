@@ -5,8 +5,8 @@
             <p class="abridged-bio">{{ splashData.abridgedBio | escape }}</p>
         </div>
         <div class="view-selector">
-            <button class="button" ng-click="changeView($event, 'personal')">Learn About Me</button><!--
-        ---><button class="button" ng-click="changeView($event, 'professional')">View My Work</button>
+            <a href="personal" ng-click="navigate($event, 'personal')"><button class="button">Learn About Me</button></a><!--
+        ---><a href="personal" ng-click="navigate($event, 'professional')"><button class="button">View My Work</button></a>
         </div>
     </div>
 </div>

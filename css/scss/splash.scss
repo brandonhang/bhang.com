@@ -1,37 +1,69 @@
-@import 'partials/variables';
-@import 'partials/mixins';
+@import 'partials/_variables';
+@import 'partials/_mixins';
 
-body {
-    padding: 0;
-    margin: 0;
-    background-color: gray;
-    font-family: $open-sans;
-    font-size: 15px;
-    overflow-x: hidden;
-}
+//////////////// Splash Page ////////////////
+.splash {
+    height: 100%;
+    min-height: 500px;
+    background-color: #001a0f;
+    background-image: url('../img/bkgrds/me2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
 
-.splash-container {
-    min-height: 100%;
-    width: 100%;
-    margin: 4em 1em 2em 1em;
-    position: relative;
-
-    > div {
-        &.splash-view {
-            visibility: visible;
-            opacity: 1;
-        }
-
+    .splash-wrapper {
+        height: calc(100% - 3.5em);
+        width: 40%;
         position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 100;
+        top: 3.5em;
+        right: 3.5em;
+        color: white;
 
-        @include transition(all, 0.25s, ease-in-out);
+        .splash-wrapper-inner {
+            position: relative;
+            top: calc(50% - 3.5em);
+            padding: 3em;
+            background-color: rgba(53, 53, 53, 0.6);
+            @include border-radius(0.4em);
+            @include translateY-calc(-50%, 1.75em);
 
-        &:not(.splash-view) {
-            visibility: hidden;
-            opacity: 0;
+            .introduction {
+                .caption {
+                    font-size: 2.5em;
+                    margin-top: 0;
+                }
+
+                .abridged-bio {
+                    font-size: 1.5em;
+                    margin-bottom: 2.5em;
+                }
+            }
+
+            .view-selector {
+                width: 100%;
+                display: block;
+                text-align: center;
+
+                a {
+                    &:first-of-type {
+                        margin: auto 1em auto auto;
+                    }
+
+                    &:last-of-type {
+                        margin: auto auto auto 1em;
+                    }
+
+                    .button {
+                        display: inline-block;
+                        background-color: $brick-red;
+                        color: white;
+
+                        &:hover, &:active {
+                            background-color: $brick-red-fade;
+                        }
+                    }
+                }
+            }
         }
     }
 }

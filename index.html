@@ -8,25 +8,15 @@
         <title>Brandon S. Hang</title>
         <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
-        <link type="text/css" rel="stylesheet" href="./css/nav5.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/nav.css"/>
         <link type="text/css" rel="stylesheet" href="./css/shared.css"/>
-        <link type="text/css" rel="stylesheet" href="./css/splash3.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/splash.css"/>
         <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-        <script type="text/javascript" src="./js/bhang.js"></script>
+        <script type="text/javascript" src="./js/bhangular.js"></script>
     </head>
     <body ng-app="bhang-app" ng-controller="bhang-ctrl">
-        <nav ng-include="'./components/html/navbar2.html'" ng-class="{'with-splash': activeView == 'splash'}"></nav>
-        <section class="group splash" ng-include="'./components/html/splash.html'" ng-class="{'active-view': activeView == 'splash'}"></section>
-        <section class="group personal" ng-class="{'active-view': activeView == 'personal'}">
-            <div class="section" ng-repeat="link in navData.personal.links" id="{{ link.url }}">
-                <h2 class="section-title">{{ link.title }}</h2>
-            </div>
-        </section>
-        <section class="group professional" ng-class="{'active-view': activeView == 'professional'}">
-            <div class="section" ng-repeat="link in navData.professional.links" id="{{ link.url }}">
-                <h2 class="section-title">{{ link.title }}</h2>
-            </div>
-        </section>
+        <nav ng-include="'./components/html/navbar.html'" class="with-splash"></nav>
+        <section class="group splash" ng-include="'./components/html/splash.html'"></section>
     </body>
 </html>

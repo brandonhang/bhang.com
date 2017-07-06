@@ -7,30 +7,19 @@
         <base href="/">
         <title>Brandon S. Hang</title>
         <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
         <link type="text/css" rel="stylesheet" href="./css/nav.css"/>
-        <link type="text/css" rel="stylesheet" href="./css/main-common.css"/>
-        <link type="text/css" rel="stylesheet" href="./css/personal.css"/>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="./js/nav.js"></script>
+        <link type="text/css" rel="stylesheet" href="./css/shared.css"/>
+        <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script type="text/javascript" src="./js/bhangular.js"></script>
     </head>
     <body ng-app="bhang-app" ng-controller="bhang-ctrl">
-        <div id="nav-menu"></div>
-        <div class="content">
-            <div id="about" class="section">
-                <h3>About Me</h3>
+        <nav ng-include="'./components/html/navbar.html'"></nav>
+        <section class="group personal">
+            <div class="section" ng-repeat="link in navData.personal.links" id="{{ link.abbr }}">
+                <h1 class="title">{{ link.title }}</h1>
             </div>
-            <div id="automotive" class="section">
-                <h3>Automotive</h3>
-            </div>
-            <div id="music" class="section">
-                <h3>Music</h3>
-            </div>
-            <div id="photography" class="section">
-                <h3>Photography</h3>
-            </div>
-        </div>
-
-        <script type="text/javascript" src="./js/bhang-jq.js"></script>
+        </section>
     </body>
 </html>

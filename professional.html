@@ -7,29 +7,19 @@
         <base href="/">
         <title>Brandon S. Hang</title>
         <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
         <link type="text/css" rel="stylesheet" href="./css/nav.css"/>
-        <link type="text/css" rel="stylesheet" href="./css/main-common.css"/>
-        <link type="text/css" rel="stylesheet" href="./css/professional.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/shared.css"/>
         <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
         <script type="text/javascript" src="./js/bhangular.js"></script>
     </head>
     <body ng-app="bhang-app" ng-controller="bhang-ctrl">
-        <div ng-include="'./components/html/nav-menu.html'"></div>
-        <div class="content">
-            <div id="portfolio" class="section">
-                <h3>Portfolio</h3>
+        <nav ng-include="'./components/html/navbar.html'"></nav>
+        <section class="group professional">
+            <div class="section" ng-repeat="link in navData.professional.links" id="{{ link.abbr }}">
+                <h1 class="title">{{ link.title }}</h1>
             </div>
-            <div id="resume" class="section">
-                <h3>Résumé</h3>
-            </div>
-            <div id="github" class="section">
-                <h3>GitHub</h3>
-            </div>
-            <div id="contact" class="section">
-                <h3>Contact</h3>
-            </div>
-        </div>
+        </section>
     </body>
 </html>
