@@ -1,19 +1,20 @@
-<section>
-    <div class="home-button">
-        <a href="/" ng-click="navigate($event, '/'); closeMenu($event)">Brandon S. Hang</a>
-    </div>
-    <div class="submenu-button-container" ng-class="{'open-menu': activeSubMenuName != ''}">
-        <a id="submenu-button" href="#" ng-click="closeMenu($event)">&nbsp;</a>
-    </div>
-    <div class="nav-links">
-        <a ng-repeat-start="(navName, navGroup) in navData" href="#" class="subnav" ng-class="{'selected-group': activeSubMenuName == navName}" ng-click="openSubMenu($event, navName)" style="background-image: url('./img/icons/{{ navGroup.icon }}');">{{ navName | uppercase }}</a><!--
-    ---><ul ng-repeat-end ng-class="{'open-submenu': activeSubMenuName == navName, 'apps-submenu': navName == 'applications'}"><!--
-        ---><li ng-repeat="link in navGroup.links"><!--
-            ---><a href="{{ link.url }}" ng-click="navigate($event, link.url); closeMenu($event)" style="background: url('./img/bkgrds/{{ link.bkgrd }}') center/cover no-repeat;"><!--
-                ---><div class="fog"></div><!--
-                ---><span>{{ link.title }}</span><!--
-            ---></a><!--
-        ---></li><!--
-    ---></ul>
-    </div>
-</section>
+<div class="menu-button">
+    <a class="nav-links nav-menu" href="#" ng-click="openMainMenu($event)">{{mobileMenu ? 'CLOSE' : 'MENU'}}</a>
+</div>
+<div class="nav-subwrapper">
+    <section>
+        <div class="link-group">
+            <a class="nav-links nav-home" href="/">Brandon S. Hang</a>
+        </div>
+    </section>
+    <section>
+        <div class="link-group" ng-repeat="(navGroup, navGroupData) in navData" ng-class="{'nav-group-open': navMenu[navGroup]}">
+            <a class="nav-links" href="#" ng-click="openSubMenu($event, navGroup)" style="background-image: url('/img/icons/{{navGroupData.icon}}');">{{navGroup | uppercase}}</a>
+            <ul>
+                <li ng-repeat="link in navGroupData.links">
+                    <a class="nav-link" href="/{{link.url}}.html">{{link.title}}</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,48 @@
+@import 'partials/_variables';
+@import 'partials/_mixins';
+
+//////////////// Shared Elements ////////////////
+html, body {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #ddd;
+    font-family: $open-sans;
+    font-size: 12px;
+}
+
+.button {
+	border: none;
+	padding: 0.5em 1.25em;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.25em;
+    font-family: $open-sans;
+    font-weight: bold;
+    @include border-radius(0.3em);
+	@include transition(background-color, 0.25s, ease-in-out);
+    @include box-shadow(0.3em, 0.3em, rgba(0, 0, 0, 0.2));
+
+	&:focus {
+		outline: 0;
+	}
+
+    &:active {
+        @include translateY(0.25em);
+        @include box-shadow(none);
+    }
+}
+
+.content {
+    min-height: 100%;
+    width: 100%;
+    display: inline-block;
+
+    @media only screen and (max-height: 700px) {
+        min-height: 700px;
+    }
+}

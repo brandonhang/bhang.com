@@ -39,10 +39,28 @@
     -o-transform: translateY($amt);
 }
 
+@mixin translateX($amt) {
+    transform: translateX($amt);
+    -webkit-transform: translateX($amt);
+    -ms-transform: translateX($amt);
+    -moz-transform: translateX($amt);
+    -o-transform: translateX($amt);
+}
+
 @mixin translateY-calc($calc1, $calc2) {
     transform: translateY($calc1) translateY($calc2);
     -webkit-transform: translateY($calc1) translateY($calc2);
     -ms-transform: translateY($calc1) translateY($calc2);
     -moz-transform: translateY($calc1) translateY($calc2);
     -o-transform: translateY($calc1) translateY($calc2);
+}
+
+@mixin invisible() {
+    visibility: hidden;
+    opacity: 0;
+}
+
+@mixin visible() {
+    visibility: visible;
+    opacity: 1;
 }

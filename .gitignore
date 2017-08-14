@@ -1,5 +1,9 @@
 .git/
-node-modules/
+node_modules/
 css/.sass-cache/
 css/*.map
+css/*.css
 npm-debug.log
+.gitignore.swp
+.sass-cache/
+

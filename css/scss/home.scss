@@ -1,0 +1,132 @@
+@import 'partials/_variables';
+@import 'partials/_mixins';
+
+@media #{$small-screen} and (min-height: 701px) {
+    body {
+        overflow-y: hidden;
+    }
+}
+
+.content {
+    background-color: #001a0f;
+    background-image: url('../img/bkgrds/me2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+    position: relative;
+
+    .panel-outer-wrapper {
+        width: 40%;
+        margin-left: 60%;
+        @include translateY(65%);
+
+        .panel-inner-wrapper {
+            width: 80%;
+            max-width: 450px;
+            background-color: rgba(53, 53, 53, 0.6);
+            @include border-radius(4px);
+            padding: 1.5em;
+
+            .introduction {
+                margin: 1.5em;
+
+                .title {
+                    font-size: 2.5em;
+                    margin: 0.5em 0;
+                    color: white;
+
+                    &::after {
+                        content: '';
+                        width: 2em;
+                        border-bottom: 0.2em solid #888;
+                        display: block;
+                        margin-top: 0.5em;
+                    }
+                }
+
+                .abridged-bio {
+                    font-size: 1.5em;
+                    color: white;
+                }
+            }
+
+            .view-select {
+                margin: 1.5em;
+                text-align: center;
+
+                a {
+                    &:first-of-type {
+                        margin-right: 1em;
+                    }
+
+                    &:last-of-type {
+                        margin-left: 1em;
+                    }
+
+                    .button {
+                        color: white;
+                        background-color: $brick-red;
+
+                        &:hover {
+                            background-color: $brick-red-fade;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media only screen and (max-width: 1200px) {
+            width: 45%;
+            margin-left: 55%;
+            @include translateY(60%);
+        }
+
+        @media only screen and (max-width: 1000px) {
+            width: 50%;
+            margin-left: 50%;
+            @include translateY(55%);
+        }
+
+        @media #{$small-screen} {
+            width: 100%;
+            margin-left: 0;
+            position: absolute;
+            @include translateY(0);
+            bottom: 5em;
+
+            .panel-inner-wrapper {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            bottom: 2em;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .panel-inner-wrapper {
+                .view-select {
+                    a {
+                        &:first-of-type {
+                            margin-right: auto;
+
+                            .button {
+                                margin-bottom: 1em;
+                            }
+                        }
+
+                        &:last-of-type {
+                            margin-left: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media #{$small-screen} {
+        margin-bottom: -1em;
+        background-position: 5% top;
+    }
+}
