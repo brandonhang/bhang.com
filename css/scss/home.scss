@@ -1,15 +1,19 @@
 @import 'partials/_variables';
 @import 'partials/_mixins';
 
-@media #{$small-screen} and (min-height: 701px) {
-    body {
+body {
+    @media #{$small-screen} and (min-height: 701px) {
         overflow-y: hidden;
+    }
+
+    @media only screen and (max-width: 500px) {
+        overflow-y: visible;
     }
 }
 
 .content {
     background-color: #001a0f;
-    background-image: url('../img/bkgrds/me2.jpg');
+    background-image: url('/img/bkgrds/me2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left top;
@@ -111,6 +115,8 @@
         }
 
         @media only screen and (max-width: 500px) {
+            position: relative;
+
             .panel-inner-wrapper {
                 .view-select {
                     a {
@@ -136,5 +142,41 @@
     @media #{$small-screen} {
         margin-bottom: -1em;
         background-position: 5% top;
+    }
+
+    @media only screen and (max-width: 500px) {
+        background-position: 90% center;
+
+        .panel-outer-wrapper {
+            &::before {
+                content: '';
+                width: 17em;
+                height: 17em;
+                margin: 7em auto -1.5em auto;
+                @include border-radius(100%);
+                background-image: url('/img/bkgrds/me_face.jpg');
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                display: block;
+                position: relative;
+                z-index: 2;
+                border: 0.7em solid white;
+            }
+
+            .panel-inner-wrapper {
+                .introduction {
+                    .title {
+                        font-size: 2.25em;
+                    }
+                }
+            }
+        }
+
+        @media only screen and (min-height: 701px) {
+            &::before, &::after {
+
+            }
+        }
     }
 }

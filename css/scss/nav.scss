@@ -141,7 +141,6 @@ nav {
 @media #{$small-screen} {
     nav {
         background-color: $blurple;
-        height: auto;
         min-height: 100%;
         width: auto;
         @include transition(transform, 0.25s, ease-in-out);
@@ -154,7 +153,7 @@ nav {
 
             .nav-menu {
                 background-image: url('/img/icons/menu.svg');
-                background-position: 0.5em center;
+                background-position: center center;
                 background-repeat: no-repeat;
                 background-size: auto 75%;
                 padding: 0 0.5em 0 2.5em;
@@ -173,13 +172,13 @@ nav {
 
         .nav-subwrapper {
             width: 100%;
+            overflow-y: auto;
 
             section {
                 position: relative;
 
                 .link-group {
                     display: block;
-                    // text-align: center;
                     border-bottom: none;
                     box-sizing: content-box;
 
@@ -240,265 +239,3 @@ nav {
         }
     }
 }
-// nav {
-//     width: 100%;
-//     font-family: $montserrat;
-//     font-size: 1.5em;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     z-index: 9001;
-//
-//     section {
-//         background-color: $galaxy-blue;
-//         height: 2.5em;
-//
-//         div {
-//             &.home-button {
-//                 float: left;
-//                 margin-left: 3em;
-//                 position: relative;
-//                 z-index: 9002;
-//
-//                 a {
-//                     background-image: url('../img/icons/logo_w_no_ring.svg');
-//                     background-color: transparent;
-//                     font-family: $open-sans;
-//
-//                     &::after {
-//                         content: '';
-//                         background-image: url('../img/icons/logo_c_no_ring.svg');
-//                         position: absolute;
-//                         left: 0;
-//                         top: 0;
-//                         height: 2.5em;
-//                         width: 1.7em;
-//                         background-size: 1.5em;
-//                         background-position: 0.15em center;
-//                         background-repeat: no-repeat;
-//                         visibility: hidden;
-//                         opacity: 0;
-//                         @include transition(all, 0.25s, ease-in-out);
-//                     }
-//
-//                     &:hover {
-//                         color: $old-gold;
-//
-//                         &::after {
-//                             visibility: visible;
-//                             opacity: 1;
-//                         }
-//                     }
-//                 }
-//             }
-//
-//             &.submenu-button-container {
-//                 position: absolute;
-//                 background-color: #bbb;
-//                 text-align: right;
-//                 width: 100%;
-//                 top: 2.5em;
-//
-//                 a {
-//                     color: white;
-//                     visibility: visible;
-//                     opacity: 1;
-//                     display: inline-block;
-//                     padding: 0.35em;
-//                     width: 1.5em;
-//                     height: 1.5em;
-//                     background-image: url('../img/icons/close.svg');
-//                     background-position: center center;
-//                     background-repeat: no-repeat;
-//                     background-size: 80%;
-//                     background-color: transparent;
-//                     position: absolute;
-//                     right: 0;
-//                     z-index: 9001;
-//                     @include transition(all, 0.25s, ease-in-out);
-//
-//                     &:hover {
-//                         background-color: #ddd;
-//                     }
-//                 }
-//
-//                 &:not(.open-menu) {
-//
-//                     a {
-//                         visibility: hidden;
-//                         opacity: 0;
-//                     }
-//                 }
-//             }
-//
-//             &.nav-links {
-//                 position: absolute;
-//                 width: 100%;
-//                 text-align: right;
-//
-//                 > a {
-//                     border-bottom: 2px solid transparent;
-//                     @include box-sizing(border-box);
-//
-//                     &:hover {
-//                         background-color: $world-rally-blue;
-//                     }
-//
-//                     &:last-of-type {
-//                         margin-right: 3em;
-//                     }
-//                 }
-//
-//                 ul {
-//                     margin: 0;
-//                     padding: 0;
-//                     min-height: 10em;
-//                     padding-top: 3em;
-//                     position: absolute;
-//                     width: 100%;
-//                     background-color: #bbb;
-//                     top: 2.5em;
-//                     text-align: initial;
-//                     @include transition(all, 0.25s, ease-in-out);
-//
-//                     &:not(.open-submenu) {
-//                         visibility: hidden;
-//                         opacity: 0;
-//                     }
-//
-//                     li {
-//                         list-style-type: none;
-//                         display: inline-block;
-//                         width: 25%;
-//                         height: 10em;
-//                         text-align: center;
-//
-//                         a {
-//                             display: inline-block;
-//                             width: 80%;
-//                             height: 80%;
-//                             position: relative;
-//                             background-position: center center;
-//                             background-size: cover;
-//                             background-repeat: no-repeat;
-//                             color: black;
-//                             @include transition(color, 0.25s, ease-in-out);
-//
-//                             span {
-//                                 display: block;
-//                                 position: absolute;
-//                                 bottom: 0;
-//                                 left: 0;
-//                                 right: 0;
-//                             }
-//
-//                             &:hover {
-//                                 color: white;
-//
-//                                 .fog {
-//                                     opacity: 0.15;
-//                                 }
-//                             }
-//                         }
-//                     }
-//
-//                     &.open-submenu {
-//                         visibility: visible;
-//                         opacity: 1;
-//                     }
-//
-//                     &.apps-submenu {
-//                         li {
-//                             width: 10em;
-//
-//                             a {
-//                                 @include border-radius(5%);
-//
-//                                 .fog {
-//                                     @include border-radius(5%);
-//                                 }
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//
-//             > a {
-//                 text-decoration: none;
-//                 background-position: 0.15em center;
-//                 background-size: 1.5em;
-//                 background-repeat: no-repeat;
-//                 padding-left: 1.7em;
-//                 padding-right: 0.35em;
-//                 color: white;
-//                 background-color: transparent;
-//                 display: inline-block;
-//                 height: 2.5em;
-//                 line-height: 2.5em;
-//                 position: relative;
-//                 @include transition(all, 0.25s, ease-in-out);
-//
-//                 &.selected-group {
-//                     background-color: $world-rally-blue;
-//                     border-color: white;
-//                 }
-//             }
-//         }
-//     }
-//
-//     &.with-splash {
-//         section {
-//             background-color: transparent;
-//
-//             div {
-//                 &.home-button {
-//                     background-color: transparent;
-//                     @include transition(all, 0.25s, ease-in-out);
-//                 }
-//
-//                 &.submenu-button-container {
-//                     background-color: $faded-grey;
-//
-//                     a {
-//                         &:hover {
-//                             background-color: rgba(168, 168, 168, 0.75);
-//                         }
-//                     }
-//                 }
-//
-//                 &.nav-links {
-//                     a {
-//                         &:hover {
-//                             background-color: $faded-grey;
-//                         }
-//                     }
-//
-//                     ul {
-//                         background-color: $faded-grey;
-//                     }
-//                 }
-//
-//                 > a {
-//                     background-color: transparent;
-//
-//                     &.selected-group {
-//                         background-color: $faded-grey;
-//                         border-color: rgba(255, 255, 255, 0.75);
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-//
-// .fog {
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//     opacity: 0.7;
-//     background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.4) 100%);
-//     background: -moz-linear-gradient(bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.4) 100%);
-//     background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.4) 100%);
-//     background: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.4) 100%);
-//     @include transition(opacity, 0.25s, ease-in-out);
-// }
