@@ -1,0 +1,37 @@
+@import 'partials/_variables';
+@import 'partials/_mixins';
+
+.content {
+    .content-background {
+        background-image: url('/img/bkgrds/about_banner1.jpg');
+        background-position: center 85%;
+    }
+
+    .content-wrapper {
+        .content-picture {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        article {
+            .title {
+                font-size: 2.5em;
+                margin: 0.5em 0;
+
+                &::after {
+                    content: '';
+                    width: 2em;
+                    border-bottom: 0.2em solid #888;
+                    display: block;
+                    margin-top: 0.5em;
+                }
+            }
+
+            p {
+                font-size: 1.25em;
+            }
+        }
+    }
+}

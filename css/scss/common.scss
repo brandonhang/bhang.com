@@ -45,4 +45,42 @@ body {
     @media only screen and (max-height: 700px) {
         min-height: 700px;
     }
+
+    .content-background {
+        width: 100%;
+        height: 18em;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .content-wrapper {
+        width: 100%;
+
+        .content-picture {
+            width: calc(40% - 3em);
+            height: auto;
+            display: inline-block;
+            float: left;
+            margin: 2em 1em 0 2em;
+
+            img {
+                border: 0.7em solid white;
+                outline: 1px solid $light-gray;
+                @include box-shadow(3px, 3px, 5px, rgba(0, 0, 0, 0.25));
+                box-sizing: border-box;
+                margin-top: calc(0.7em + 1px);
+            }
+
+            + * {
+                width: calc(60% - 3em);
+                display: inline-block;
+                margin: 2em 2em 0 1em;
+
+                > .title {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
 }
