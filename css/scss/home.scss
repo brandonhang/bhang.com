@@ -162,6 +162,7 @@ body {
                 position: relative;
                 z-index: 2;
                 border: 0.7em solid white;
+                @include box-shadow(0 0 1px $light-gray);
             }
 
             .panel-inner-wrapper {

@@ -25,6 +25,14 @@ nav {
         margin: 0 auto;
         position: relative;
 
+        @media only screen and (max-width: 1000px) {
+            width: 91%;
+        }
+
+        @media only screen and (max-width: 900px) {
+            width: 95%;
+        }
+
         section {
             position: absolute;
 
@@ -87,6 +95,22 @@ nav {
                             background-color: $light-blurple;
                         }
                     }
+
+                    &:not(.nav-menu):not(.nav-home) {
+                        padding-right: 1.5em;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            right: 0;
+                            height: 2.5em;
+                            width: 1.5em;
+                            background-image: url('/img/icons/drop_arrow_down_w.svg');
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                        }
+                    }
                 }
 
                 ul {
@@ -128,6 +152,12 @@ nav {
                 &.nav-group-open {
                     border-color: $old-gold;
                     background-color: $light-blurple;
+
+                    .nav-links {
+                        &::after {
+                            @include rotate(180deg);
+                        }
+                    }
 
                     ul {
                         @include visible();
@@ -181,22 +211,6 @@ nav {
                     display: block;
                     border-bottom: none;
                     box-sizing: content-box;
-
-                    .nav-links:not(.nav-menu):not(.nav-home) {
-                        padding-right: 1.5em;
-
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            right: 0;
-                            height: 2.5em;
-                            width: 1.5em;
-                            background-image: url('/img/icons/drop_arrow_down_w.svg');
-                            background-position: center center;
-                            background-repeat: no-repeat;
-                            background-size: contain;
-                        }
-                    }
 
                     ul {
                         position: relative;
