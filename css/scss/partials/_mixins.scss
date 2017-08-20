@@ -47,6 +47,14 @@
     -o-transform: translateX($amt);
 }
 
+@mixin translate($x, $y) {
+    transform: translate($x, $y);
+    -webkit-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+}
+
 @mixin translateY-calc($calc1, $calc2) {
     transform: translateY($calc1) translateY($calc2);
     -webkit-transform: translateY($calc1) translateY($calc2);

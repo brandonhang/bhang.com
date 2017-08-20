@@ -52,17 +52,23 @@ body {
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
+
+        @media #{$small-screen} {
+            height: 15em;
+            @include box-shadow(0.3em, 0.3em, rgba(0, 0, 0, 0.2));
+        }
     }
 
     .content-wrapper {
-        width: 100%;
+        margin: 0 auto;
+        width: 80%;
 
         .content-picture {
-            width: calc(40% - 3em);
+            width: calc(40% - 4em);
             height: auto;
             display: inline-block;
             float: left;
-            margin: 2em 1em 0 2em;
+            margin: 2em 2em 0 2em;
 
             img {
                 border: 0.7em solid white;
@@ -73,14 +79,143 @@ body {
             }
 
             + * {
-                width: calc(60% - 3em);
+                width: calc(60% - 4em);
                 display: inline-block;
-                margin: 2em 2em 0 1em;
+                margin: 2em 2em 0 2em;
 
                 > .title {
                     margin-top: 0;
                 }
             }
         }
+
+        @media only screen and (max-width: 1100px) {
+            width: 85%;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            width: 90%;
+        }
+
+        @media only screen and (max-width: 900px) {
+            width: 100%;
+
+            .content-picture {
+                margin: 2em 1em 0 2em;
+                width: calc(40% - 3em);
+
+                + * {
+                    margin: 2em 2em 0 1em;
+                    width: calc(60% - 3em);
+                }
+            }
+        }
+
+        @media #{$small-screen} {
+            width: 100%;
+
+            .content-picture {
+                float: none;
+                background-repeat: no-repeat;
+                position: absolute;
+                height: 12em;
+                width: 12em;
+                @include border-radius(100%);
+                @include box-shadow(0 0 1px $light-gray);
+                border: 0.7em solid white;
+                margin: 0;
+                top: 5em;
+                right: 4em;
+
+                img {
+                    display: none;
+                }
+
+                + * {
+                    width: calc(100% - 2em);
+                    display: block;
+                    margin: 1em;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .content-picture {
+                right: 3em;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .content-picture {
+                top: 3.5em;
+                right: 1.5em;
+            }
+        }
+    }
+
+    a {
+        color: $world-rally-blue;
+        @include transition(color, 0.25s, ease-in-out);
+
+        &:hover {
+            color: $dark-gold;
+        }
+    }
+}
+
+#lightbox {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15000;
+    @include transition(all, 0.25s, ease-in-out);
+    background-image: url('/img/icons/img_load.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 25em;
+    visibility: hidden;
+    opacity: 0;
+
+    &.light-em-up {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        background-size: 20em;
+    }
+
+    @media #{$small-screen} {
+        background-size: 15em;
+    }
+}
+
+#lightbox-image {
+    width: 75%;
+    height: 75%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+
+    @media only screen and (max-width: 1000px) {
+        width: 80%;
+        height: 80%;
+    }
+
+    @media #{$small-screen} {
+        width: 85%;
+        height: 85%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        width: 90%;
+        height: 90%;
     }
 }
