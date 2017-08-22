@@ -76,6 +76,8 @@ body {
                 @include box-shadow(3px, 3px, 5px, rgba(0, 0, 0, 0.25));
                 box-sizing: border-box;
                 margin-top: calc(0.7em + 1px);
+                width: 100%;
+                height: auto;
             }
 
             + * {
@@ -83,8 +85,22 @@ body {
                 display: inline-block;
                 margin: 2em 2em 0 2em;
 
-                > .title {
-                    margin-top: 0;
+                .title {
+                    margin-top: 0 !important;
+                    font-size: 2.5em;
+                    margin: 0.5em 0;
+
+                    &::after {
+                        content: '';
+                        width: 2em;
+                        border-bottom: 0.2em solid #888;
+                        display: block;
+                        margin-top: 0.5em;
+                    }
+                }
+
+                p {
+                    font-size: 1.25em;
                 }
             }
         }

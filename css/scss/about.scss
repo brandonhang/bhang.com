@@ -9,34 +9,10 @@
 
     .content-wrapper {
         .content-picture {
-            img {
-                width: 100%;
-                height: auto;
-            }
-
             @media #{$small-screen} {
                 background-image: url('/img/content/about_kick.jpg');
                 background-size: 180% auto;
                 background-position: 66% 35%;
-            }
-        }
-
-        article {
-            .title {
-                font-size: 2.5em;
-                margin: 0.5em 0;
-
-                &::after {
-                    content: '';
-                    width: 2em;
-                    border-bottom: 0.2em solid #888;
-                    display: block;
-                    margin-top: 0.5em;
-                }
-            }
-
-            p {
-                font-size: 1.25em;
             }
         }
     }

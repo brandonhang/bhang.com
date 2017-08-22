@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="./css/common.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/nav.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/photos.css"/>
+        <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script type="text/javascript" src="./js/bhangular.js"></script>
+    </head>
+    <body>
+        <nav ng-app="bhang-app" ng-controller="bhang-ctrl" class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
+        <div class="content">
+            <div class="content-background"></div>
+            <div class="content-wrapper">
+                <div class="content-picture">
+                    <img src="/img/content/the_enemy.jpg"/>
+                </div><!--
+                --><div class="content-section">
+                    <h1 class="title">PHOTOGRAPHY</h1>
+                    <p>I dabble in photography when I have free time. To see more of my
+                        pictures,
+                        <a href="https://www.flickr.com/photos/dangitshang" target="_blank">visit my Flickr page</a>!
+                    </p>
+                    <div ng-app="flickr-app" ng-controller="flickr-ctrl" id="flickr-photos">
+                        <h1 class="subtitle">{{currentPhotoView}}</h1>
+                        <div class="return-wrapper">
+                            <a class="button-wrapper" ng-if="!albumView" href="#" ng-click="viewAlbumList($event)">
+                                <button class="button">
+                                    <span>Return to albums</span>
+                                </button>
+                            </a>
+                        </div>
+                        <div ng-if="albumView" ng-repeat="album in flickrAlbumList.photoset" class="flickr-photo" style="background-image: url('https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_n.jpg')">
+                            <a href="#" ng-click="viewAlbumSet($event, album.id)">{{album.title._content}}</a>
+                        </div>
+                        <div ng-if="albumView && flickrAlbumList.total > 6" class="flickr-photo more-photos">
+                            <a href="https://www.flickr.com/photos/dangitshang/albums" target="_blank">{{flickrAlbumList.total - 6}} more album{{flickrAlbumList.total > 7 ? 's' : ''}}</a>
+                        </div>
+                        <div ng-if="!albumView" ng-repeat="photo in flickrPhotoset.photo" class="flickr-photo" style="background-image: url('https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg')">
+                            <a href="https://www.flickr.com/photos/dangitshang/{{album.id}}" target="_blank">{{photo.title}}</a>
+                        </div>
+                        <div ng-if="!albumView && flickrPhotoset.total > 16" class="flickr-photo more-photos">
+                            <a href="https://www.flickr.com/photos/dangitshang/albums/{{flickrPhotoset.id}}" target="_blank">{{flickrPhotoset.total - 16}} more picture{{flickrPhotoset.total > 17 ? 's' : ''}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lightbox" ng-click="closeLightbox()" ng-class="{'light-em-up': lightbox}">
+            <div id="lightbox-image"></div>
+        </div>
+        <script type="text/javascript" src="./js/dangitshang-flickr.js"></script>
+    </body>
+</html>
