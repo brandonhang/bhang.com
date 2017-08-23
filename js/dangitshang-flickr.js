@@ -49,12 +49,12 @@
             if (albumID !== $scope.lastAlbumID) {
                 $http.get(flickrAlbumPhotos).then(
                     function(flickrPhotoset) {
-                        // $scope.currentPhotoset =
                         console.log(flickrPhotoset);
                         $scope.flickrPhotoset = flickrPhotoset.data.photoset;
                         $scope.lastAlbumID = albumID;
                         $scope.albumView = false;
                         $scope.currentPhotoView = flickrPhotoset.data.photoset.title;
+                        $scope.lastAlbumTitle = flickrPhotoset.data.photoset.title;
                     },
                     function(flickrPhotosetErr) {
                         console.log(flickrPhotosetErr);
@@ -63,13 +63,35 @@
             }
             else {
                 $scope.albumView = false;
-                $scope.currentPhotoView = 'Album Title';
+                $scope.currentPhotoView = $scope.lastAlbumTitle;
             }
         }
         $scope.viewAlbumList = function($event) {
             $event.preventDefault();
             $scope.albumView = true;
             $scope.currentPhotoView = 'Recent Albums';
+        }
+        $scope.viewFlickrPhoto = function($event, photoIndex) {
+            $event.preventDefault();
+            var lightbox = document.getElementById('lightbox');
+
+            if (lightbox !== null) {
+                var lightboxImg = document.getElementById('lightbox-image');
+                var photo = $scope.flickrPhotoset.photo[photoIndex];
+                var url = 'https://farm' + photo.farm + '.staticflickr.com/' +
+                    photo.server + '/' + photo.id + '_' + photo.secret + '_b.jpg'
+
+                lightboxImg.style.backgroundImage = "url('" + url + "')";
+                $scope.pictureTitle = photo.title;
+                $scope.photoID = photo.id;
+                $scope.lightbox = true;
+            }
+            else {
+                $scope.lightbox = false;
+            }
+        }
+        $scope.closeLightbox = function() {
+            $scope.lightbox = false;
         }
     }]);
 

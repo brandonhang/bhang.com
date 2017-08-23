@@ -17,6 +17,8 @@
         }
 
         .content-section {
+            margin-bottom: 1.25em;
+
             #flickr-photos {
                 .subtitle {
                     font-size: 2em;
@@ -57,26 +59,41 @@
                 }
 
                 .flickr-photo {
-                    width: 200px;
-                    height: 200px;
+                    width: 25%;
                     background-size: cover;
                     background-position: center center;
                     background-repeat: no-repeat;
                     position: relative;
                     display: inline-block;
-                    margin: 0 1em 1em 0;
+                    float: left;
+                    cursor: pointer;
+                    background-color: $light-gray;
 
-                    a {
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        font-size: 1.75em;
+                    &::before {
+                        content: '';
+                        padding-top: 100%;
+                        display: block;
                         background-color: transparent;
                         @include transition(background-color, 0.25s, ease-in-out);
-                        color: white;
-                        text-shadow: 0 1px 1px black;
-                        text-decoration: none;
-                        text-align: center;
+                    }
+
+                    .link-wrapper {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+
+                        a {
+                            width: 100%;
+                            position: absolute;
+                            font-size: 1.75em;
+                            color: white;
+                            text-shadow: 0 1px 1px black;
+                            text-decoration: none;
+                            text-align: center;
+                            bottom: 1em;
+                            opacity: 0.75;
+                            @include transition(opacity, 0.25s, ease-in-out);
+                        }
                     }
 
                     &.more-photos {
@@ -84,12 +101,53 @@
                     }
 
                     &:hover {
-                        a {
-                            background-color: rgba(0, 0, 0, 0.35);
+                        &::before {
+                            background-color: rgba(0, 0, 0, 0.55);
+                        }
+
+                        .link-wrapper {
+                            a {
+                                opacity: 1;
+                            }
                         }
                     }
                 }
             }
+        }
+    }
+}
+
+#lightbox {
+    #lightbox-image {
+        top: 40%;
+    }
+
+    .lightbox-title {
+        position: absolute;
+        top: 77.5%;
+        left: 12.5%;
+        margin-bottom: 0;
+        font-size: 2.5em;
+        color: white;
+
+        &::after {
+            content: '';
+            width: 2em;
+            border-bottom: 0.2em solid #888;
+            display: block;
+            margin-top: 0.5em;
+        }
+    }
+
+    a {
+        position: absolute;
+        top: 88.5%;
+        left: 12.5%;
+        color: $old-gold;
+        font-size: 1.5em;
+
+        &:hover {
+            color: $lambo-green;
         }
     }
 }
