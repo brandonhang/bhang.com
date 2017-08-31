@@ -9,7 +9,7 @@
         </div>
     </section>
     <section>
-        <div class="link-group" ng-repeat="(navGroup, navGroupData) in navData" ng-class="{'nav-group-open': navMenu[navGroup]}">
+        <div class="link-group" ng-repeat="(navGroup, navGroupData) in navData" ng-class="{'nav-group-open': navMenu[navGroup]}" close-nav-click="closeNavBar()">
             <a class="nav-links" href="#" ng-click="openSubMenu($event, navGroup)" style="background-image: url('/img/icons/{{navGroupData.icon}}');">{{navGroup | uppercase}}</a>
             <ul>
                 <li ng-repeat="link in navGroupData.links">

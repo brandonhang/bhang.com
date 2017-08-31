@@ -72,3 +72,17 @@
     visibility: visible;
     opacity: 1;
 }
+
+@mixin vertical-gradient($top, $bottom) {
+    background: linear-gradient($top, $bottom);
+    background: -webkit-linear-gradient($top, $bottom);
+    background: -moz-linear-gradient($top, $bottom);
+    background: -o-linear-gradient($top, $bottom);
+}
+
+@mixin vertical-triple-gradient($top, $middle, $bottom) {
+    background: linear-gradient($top, $middle, $bottom);
+    background: -webkit-linear-gradient($top, $middle, $bottom);
+    background: -moz-linear-gradient($top, $middle, $bottom);
+    background: -o-linear-gradient($top, $middle, $bottom);
+}

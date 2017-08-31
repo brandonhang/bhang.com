@@ -20,6 +20,8 @@
             margin-bottom: 1.25em;
 
             #flickr-photos {
+                position: relative;
+
                 .subtitle {
                     font-size: 2em;
                 }
@@ -28,86 +30,206 @@
                     display: block;
                     margin-bottom: 2em;
 
-                    .button-wrapper {
-                        .button {
-                            background-color: $light-br-green;
-                            color: white;
+                    .button {
+                        background-color: $light-br-green;
+                        color: white;
 
-                            &:hover {
-                                background-color: $british-racing-green;
-                            }
+                        &:hover {
+                            background-color: $british-racing-green;
+                        }
 
-                            span {
-                                padding-left: 2em;
-                                position: relative;
+                        span {
+                            padding-left: 1.6em;
+                            position: relative;
 
-                                &::before {
-                                    content: '';
-                                    width: 2em;
-                                    height: 2em;
-                                    background-image: url('/img/icons/ic_arrow_back_white_24px.svg');
-                                    background-position: left center;
-                                    background-repeat: no-repeat;
-                                    background-size: contain;
-                                    position: absolute;
-                                    left: 0;
-                                    top: -0.35em;
-                                }
+                            &::before {
+                                content: '';
+                                width: 1.35em;
+                                height: 1.35em;
+                                background-image: url('/img/icons/ic_arrow_back_white_24px.svg');
+                                background-position: left center;
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                position: absolute;
+                                left: 0;
                             }
                         }
                     }
                 }
 
-                .flickr-photo {
-                    width: 25%;
-                    background-size: cover;
-                    background-position: center center;
-                    background-repeat: no-repeat;
-                    position: relative;
-                    display: inline-block;
-                    float: left;
-                    cursor: pointer;
-                    background-color: $light-gray;
+                .album-loader {
+                    position: absolute;
+                    z-index: 5000;
+                    width: 100%;
+                    height: 10em;
 
-                    &::before {
-                        content: '';
-                        padding-top: 100%;
-                        display: block;
-                        background-color: transparent;
-                        @include transition(background-color, 0.25s, ease-in-out);
-                    }
+                    div {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        padding: 0 1em 0 5em;
+                        @include translate(-50%, -50%);
+                        @include border-radius(4px);
+                        background-color: #f2ecbb;
+                        background-position: 1em center;
+                        background-size: 3.5em auto;
+                        background-repeat: no-repeat;
 
-                    .link-wrapper {
-                        width: 100%;
-                        height: 100%;
-                        position: relative;
+                        h3 {
+                            font-size: 1.7em;
+                        }
 
-                        a {
-                            width: 100%;
-                            position: absolute;
-                            font-size: 1.75em;
-                            color: white;
-                            text-shadow: 0 1px 1px black;
-                            text-decoration: none;
-                            text-align: center;
-                            bottom: 1em;
-                            opacity: 0.75;
-                            @include transition(opacity, 0.25s, ease-in-out);
+                        &.album-load-msg {
+                            background-image: url('/img/icons/img_load.svg');
+                        }
+
+                        &.album-err-msg {
+                            background-image: url('/img/icons/error.svg');
                         }
                     }
+                }
 
-                    &.more-photos {
-                        background-color: $dark-gray;
-                    }
+                .thumbnail-wrapper {
+                    .flickr-photo {
+                        width: calc(33.33333333% - 1.33333333em);
+                        padding-top: calc(33.33333333% - 1.33333333em);
+                        margin: 1em;
+                        background-size: cover;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        position: relative;
+                        display: inline-block;
+                        float: left;
+                        cursor: pointer;
+                        background-color: $light-gray;
+                        @include transition(background-color, 0.25s, ease-in-out);
+                        @include box-shadow(3px, 3px, 5px, rgba(0, 0, 0, 0.25));
 
-                    &:hover {
+                        &::before, &::after {
+                            content: '';
+                            height: 1px;
+                            background-color: $dark-gray;
+                            position: absolute;
+                            left: 50%;
+                            @include translateX(-50%);
+                        }
+
                         &::before {
-                            background-color: rgba(0, 0, 0, 0.55);
+                            top: -2px;
+                            width: 92.5%;
+                        }
+
+                        &::after {
+                            top: -4px;
+                            width: 85%;
+                        }
+
+                        &:nth-of-type(3n + 1) {
+                            margin-left: 0;
+                        }
+
+                        &:nth-of-type(3n + 3) {
+                            margin-right: 0;
                         }
 
                         .link-wrapper {
-                            a {
-                                opacity: 1;
+                            width: 100%;
+                            position: relative;
+
+                            a, .target-blank {
+                                width: 100%;
+                                position: absolute;
+                                font-size: 1.5em;
+                                color: white;
+                                text-shadow: 0 1px 1px black;
+                                text-decoration: none;
+                                text-align: center;
+                                bottom: 0;
+                                padding: 2em 0 0.5em 0;
+                                @include transition(opacity, 0.25s, ease-in-out);
+                                @include vertical-triple-gradient(transparent, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+                                opacity: 0.6;
+                            }
+                        }
+
+                        &.more-photos {
+                            background-color: $dark-gray;
+                            background-image: url('/img/icons/collections.svg');
+                            background-position: center center;
+                            background-size: 50% auto;
+                            background-repeat: no-repeat;
+
+                            .link-wrapper {
+                                .target-blank {
+                                    background: transparent;
+
+                                    &::after {
+                                        background-image: url('/img/icons/new_window_w.svg');
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            background-color: #14171a;
+
+                            .link-wrapper {
+                                a, .target-blank {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                        @media only screen and (max-width: 1350px) {
+                            width: calc(33.33333333% - 1em);
+                            padding-top: calc(33.33333333% - 1em);
+                            margin: 0.75em;
+                        }
+
+                        @media only screen and (max-width: 1200px) {
+                            width: calc(33.33333333% - 0.8em);
+                            padding-top: calc(33.33333333% - 0.8em);
+                            margin: 0.6em;
+                        }
+
+                        @media only screen and (max-width: 1100px) {
+                            .link-wrapper {
+                                a, .target-blank {
+                                    font-size: 1.35em;
+                                }
+                            }
+                        }
+
+                        @media #{$small-screen} {
+                            width: calc(33.33333333% - 1.33333333em);
+                            padding-top: calc(33.33333333% - 1.33333333em);
+                            margin: 1em;
+
+                            .link-wrapper {
+                                a, .target-blank {
+                                    font-size: 1.5em;
+                                }
+                            }
+                        }
+
+                        @media only screen and (max-width: 550px) {
+                            width: calc(50% - 1em);
+                            padding-top: calc(50% - 1em);
+
+                            &:nth-of-type(3n + 1) {
+                                margin-left: 1em;
+                            }
+
+                            &:nth-of-type(3n + 3) {
+                                margin-right: 1em;
+                            }
+
+                            &:nth-of-type(odd) {
+                                margin-left: 0 !important;
+                            }
+
+                            &:nth-of-type(even) {
+                                margin-right: 0 !important;
                             }
                         }
                     }
@@ -118,36 +240,60 @@
 }
 
 #lightbox {
+    background-position: center 38%;
+
     #lightbox-image {
         top: 40%;
+        height: 60%;
+        width: 60%;
     }
 
     .lightbox-title {
         position: absolute;
-        top: 77.5%;
-        left: 12.5%;
-        margin-bottom: 0;
+        top: 70%;
+        left: 20%;
+        margin-top: 0.25em;
         font-size: 2.5em;
         color: white;
 
+        &:hover {
+            color: $old-gold;
+        }
+
         &::after {
-            content: '';
-            width: 2em;
-            border-bottom: 0.2em solid #888;
-            display: block;
-            margin-top: 0.5em;
+            background-image: url('/img/icons/new_window_w.svg');
         }
     }
 
-    a {
-        position: absolute;
-        top: 88.5%;
-        left: 12.5%;
-        color: $old-gold;
-        font-size: 1.5em;
+    @media only screen and (max-width: 1000px) {
+        #lightbox-image {
+            height: 70%;
+            width: 70%;
+        }
 
-        &:hover {
-            color: $lambo-green;
+        .lightbox-title {
+            top: 75%;
+            left: 15%;
+        }
+    }
+
+    @media #{$small-screen} {
+        #lightbox-image {
+            width: 80%;
+        }
+
+        .lightbox-title {
+            left: 10%;
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+        #lightbox-image {
+            width: 85%;
+        }
+
+        .lightbox-title {
+            left: 7.5%;
         }
     }
 }

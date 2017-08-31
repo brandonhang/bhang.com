@@ -25,43 +25,51 @@
                 </div><!--
                 --><div class="content-section">
                     <h1 class="title">PHOTOGRAPHY</h1>
-                    <p>I dabble in photography when I have free time. To see more of my
-                        pictures,
+                    <p>I dabble in photography when I have free time. I primarily shoot with a
+                        Nikon D5300, but I occasionally take photos with a Canon PowerShot SX200 IS,
+                        a Canon EOS Rebel T3, and a Samsung Galaxy S7. To see more of my pictures,
                         <a href="https://www.flickr.com/photos/dangitshang" target="_blank">visit my Flickr page</a>!
                     </p>
                     <div ng-app="flickr-app" ng-controller="flickr-ctrl" id="flickr-photos">
                         <h1 class="subtitle">{{currentPhotoView}}</h1>
                         <div class="return-wrapper">
-                            <a class="button-wrapper" ng-if="!albumView" href="#" ng-click="viewAlbumList($event)">
-                                <button class="button">
-                                    <span>Return to albums</span>
-                                </button>
+                            <button class="button" ng-if="!albumView" href="#" ng-click="viewAlbumList($event)">
+                                <span>Return to albums</span>
+                            </button>
+                        </div>
+                        <div ng-if="loadingAlbum && !loadAlbumError" class="album-loader">
+                            <div ng-class="loadAlbumError ? 'album-err-msg' : 'album-load-msg'">
+                                <h3 ng-if="!loadAlbumError">Loading photos...</h3>
+                                <h3 ng-if="loadAlbumError">An error occurred loading Flickr photos.</h3>
+                                <h3 ng-if="loadAlbumError">Try again later.</h3>
+                            </div>
+                        </div>
+                        <div class="thumbnail-wrapper">
+                            <div ng-if="albumView" ng-repeat="album in flickrAlbumList.photoset" ng-click="viewAlbumSet($event, album.id)" class="flickr-photo" style="background-image: url('https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_n.jpg')">
+                                <div class="link-wrapper">
+                                    <a href="#" >{{album.title._content}}</a>
+                                </div>
+                            </div>
+                            <a href="https://www.flickr.com/photos/dangitshang/albums" target="_blank" ng-if="albumView && flickrAlbumList.total > 6" class="flickr-photo more-photos">
+                                <div class="link-wrapper">
+                                    <span class="target-blank">{{flickrAlbumList.total - 6}} more album{{flickrAlbumList.total > 7 ? 's' : ''}}</span>
+                                </div>
                             </a>
-                        </div>
-                        <div ng-if="albumView" ng-repeat="album in flickrAlbumList.photoset" ng-click="viewAlbumSet($event, album.id)" class="flickr-photo" style="background-image: url('https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_n.jpg')">
-                            <div class="link-wrapper">
-                                <a href="#" >{{album.title._content}}</a>
+                            <div ng-if="!albumView" ng-repeat="(index, photo) in flickrPhotoset.photo" ng-click="viewFlickrPhoto($event, index)" class="flickr-photo" style="background-image: url('https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg')">
+                                <div class="link-wrapper">
+                                    <a href="#">{{photo.title}}</a>
+                                </div>
                             </div>
-                        </div>
-                        <div ng-if="albumView && flickrAlbumList.total > 6" class="flickr-photo more-photos">
-                            <div class="link-wrapper">
-                                <a href="https://www.flickr.com/photos/dangitshang/albums" target="_blank">{{flickrAlbumList.total - 6}} more album{{flickrAlbumList.total > 7 ? 's' : ''}}</a>
+                            <a href="https://www.flickr.com/photos/dangitshang/albums/{{flickrPhotoset.id}}" target="_blank" ng-if="!albumView && flickrPhotoset.total > 16" class="flickr-photo more-photos">
+                                <div class="link-wrapper">
+                                    <span class="target-blank">{{flickrPhotoset.total - 16}} more picture{{flickrPhotoset.total > 17 ? 's' : ''}}</span>
+                                </div>
+                            </a>
+                            <div id="lightbox" ng-class="{'light-em-up': lightbox}" escape-key-press="closePicture()">
+                                <div id="lightbox-close" ng-click="closeLightbox()">CLOSE</div>
+                                <div id="lightbox-image"></div>
+                                <a class="lightbox-title" href="https://www.flickr.com/photos/dangitshang/{{photoID}}" title="View on Flickr" target="_blank">{{pictureTitle}}</a>
                             </div>
-                        </div>
-                        <div ng-if="!albumView" ng-repeat="(index, photo) in flickrPhotoset.photo" ng-click="viewFlickrPhoto($event, index)" class="flickr-photo" style="background-image: url('https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg')">
-                            <div class="link-wrapper">
-                                <a href="#">{{photo.title}}</a>
-                            </div>
-                        </div>
-                        <div ng-if="!albumView && flickrPhotoset.total > 16" class="flickr-photo more-photos">
-                            <div class="link-wrapper">
-                                <a href="https://www.flickr.com/photos/dangitshang/albums/{{flickrPhotoset.id}}" target="_blank">{{flickrPhotoset.total - 16}} more picture{{flickrPhotoset.total > 17 ? 's' : ''}}</a>
-                            </div>
-                        </div>
-                        <div id="lightbox" ng-click="closeLightbox()" ng-class="{'light-em-up': lightbox}">
-                            <div id="lightbox-image"></div>
-                            <h2 class="lightbox-title">{{pictureTitle}}</h2>
-                            <a href="https://www.flickr.com/photos/dangitshang/{{photoID}}" target="_blank">View on Flickr</a>
                         </div>
                     </div>
                 </div>

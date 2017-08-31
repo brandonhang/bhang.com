@@ -22,55 +22,70 @@
         $scope.currentPhotoView = 'Recent Albums';
         $scope.albumView = true;
         $scope.lastAlbumID = '';
+        $scope.loadingAlbum = true;
+        $scope.loadAlbumError = false;
 
         $http.get(FLICKR_ALBUM_URL).then(
             function(flickrAlbumList) {
                 $scope.flickrAlbumList = flickrAlbumList.data.photosets;
+                $scope.loadingAlbum = false;
                 console.log(flickrAlbumList);
             },
             function(flickrAlbumListErr) {
+                $scope.loadingAlbum = false;
+                $scope.loadAlbumError = true;
                 console.log(flickrAlbumListErr);
             }
         );
 
+        var erasePicture = function() {
+            $scope.lightbox = false;
+        }
+
         $scope.viewAlbumSet = function($event, albumID) {
             $event.preventDefault();
 
-            var flickrAlbumPhotos = 'https://api.flickr.com/services/rest/' +
-                '?method=flickr.photosets.getPhotos' +
-                '&api_key=4ba1675febe39451e90b210a634230e0' +
-                '&user_id=129886391@N02' +
-                '&photoset_id=' + albumID +
-                '&per_page=16' +
-                '&page=1' +
-                '&format=json' +
-                '&nojsoncallback=1';
+            if (!$scope.loadingAlbum) {
+                $scope.loadAlbumError = false;
 
-            if (albumID !== $scope.lastAlbumID) {
-                $http.get(flickrAlbumPhotos).then(
-                    function(flickrPhotoset) {
-                        console.log(flickrPhotoset);
-                        $scope.flickrPhotoset = flickrPhotoset.data.photoset;
-                        $scope.lastAlbumID = albumID;
-                        $scope.albumView = false;
-                        $scope.currentPhotoView = flickrPhotoset.data.photoset.title;
-                        $scope.lastAlbumTitle = flickrPhotoset.data.photoset.title;
-                    },
-                    function(flickrPhotosetErr) {
-                        console.log(flickrPhotosetErr);
-                    }
-                );
+                if (albumID !== $scope.lastAlbumID) {
+                    var flickrAlbumPhotos = 'https://api.flickr.com/services/rest/' +
+                    '?method=flickr.photosets.getPhotos' +
+                    '&api_key=4ba1675febe39451e90b210a634230e0' +
+                    '&user_id=129886391@N02' +
+                    '&photoset_id=' + albumID +
+                    '&per_page=16' +
+                    '&page=1' +
+                    '&format=json' +
+                    '&nojsoncallback=1';
+
+                    $scope.loadingAlbum = true;
+                    $http.get(flickrAlbumPhotos).then(
+                        function(flickrPhotoset) {
+                            $scope.flickrPhotoset = flickrPhotoset.data.photoset;
+                            $scope.lastAlbumID = albumID;
+                            $scope.currentPhotoView = flickrPhotoset.data.photoset.title;
+                            $scope.lastAlbumTitle = flickrPhotoset.data.photoset.title;
+                            $scope.albumView = false;
+                            $scope.loadingAlbum = false;
+                        },
+                        function(flickrPhotosetErr) {
+                            $scope.loadingAlbum = false;
+                            $scope.loadAlbumError = true;
+                        }
+                    );
+                }
+                else {
+                    $scope.albumView = false;
+                    $scope.currentPhotoView = $scope.lastAlbumTitle;
+                }
             }
-            else {
-                $scope.albumView = false;
-                $scope.currentPhotoView = $scope.lastAlbumTitle;
-            }
-        }
+        };
         $scope.viewAlbumList = function($event) {
             $event.preventDefault();
             $scope.albumView = true;
             $scope.currentPhotoView = 'Recent Albums';
-        }
+        };
         $scope.viewFlickrPhoto = function($event, photoIndex) {
             $event.preventDefault();
             var lightbox = document.getElementById('lightbox');
@@ -89,10 +104,37 @@
             else {
                 $scope.lightbox = false;
             }
-        }
+        };
         $scope.closeLightbox = function() {
             $scope.lightbox = false;
-        }
+        };
+        $scope.closePicture = function() {
+            erasePicture();
+        };
+    }]);
+    flickrApp.directive('escapeKeyPress', ['$document', function($document) {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attribute) {
+                element.on('keyup', function(event) {
+                    event.stopPropagation();
+                });
+
+                var escape = function(event) {
+                    if (event.keyCode === 27) {
+                        scope.$apply(function() {
+                            scope.$eval(attribute.escapeKeyPress);
+                        });
+                    }
+                }
+
+                $document.on('keyup', escape);
+
+                scope.$on('$destroy', function() {
+                    $document.off('keyup', escape);
+                });
+            }
+        };
     }]);
 
     angular.bootstrap(document.getElementById('flickr-photos'), ['flickr-app']);

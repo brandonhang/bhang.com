@@ -97,7 +97,8 @@
                 </article>
             </div>
         </div>
-        <div id="lightbox" ng-click="closeLightbox()" ng-class="{'light-em-up': lightbox}">
+        <div id="lightbox" ng-class="{'light-em-up': lightbox}" escape-key-press="closePicture()">
+            <div id="lightbox-close" ng-click="closeLightbox()">CLOSE</div>
             <div id="lightbox-image"></div>
         </div>
     </body>
