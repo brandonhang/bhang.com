@@ -90,7 +90,6 @@ nav {
                     @include transition(all, 0.25s, ease-in-out);
 
                     &:not(.nav-home) {
-
                         &:hover {
                             background-color: $light-blurple;
                         }
@@ -154,6 +153,8 @@ nav {
                     border-color: $old-gold;
 
                     .nav-links {
+                        background-color: $light-blurple;
+
                         &::after {
                             @include rotate(180deg);
                         }

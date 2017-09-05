@@ -105,27 +105,34 @@
                         @include transition(background-color, 0.25s, ease-in-out);
                         @include box-shadow(3px, 3px, 5px, rgba(0, 0, 0, 0.25));
 
-                        &::before, &::after {
-                            content: '';
-                            height: 1px;
-                            background-color: $dark-gray;
-                            position: absolute;
-                            left: 50%;
-                            @include translateX(-50%);
+                        &.flickr-album {
+                            &::before, &::after {
+                                content: '';
+                                height: 1px;
+                                background-color: $dark-gray;
+                                position: absolute;
+                                left: 50%;
+                                @include translateX(-50%);
+                            }
+
+                            &::before {
+                                top: -2px;
+                                width: 92.5%;
+                            }
+
+                            &::after {
+                                top: -4px;
+                                width: 85%;
+                            }
                         }
 
-                        &::before {
-                            top: -2px;
-                            width: 92.5%;
-                        }
-
-                        &::after {
-                            top: -4px;
-                            width: 85%;
-                        }
 
                         &:nth-of-type(3n + 1) {
                             margin-left: 0;
+
+                            + .more-photos {
+                                margin-left: 1em;
+                            }
                         }
 
                         &:nth-of-type(3n + 3) {
@@ -168,6 +175,12 @@
                                     }
                                 }
                             }
+
+                            &:not(.flickr-album) {
+                                &::after {
+                                    content: none !important;
+                                }
+                            }
                         }
 
                         &:hover {
@@ -184,12 +197,24 @@
                             width: calc(33.33333333% - 1em);
                             padding-top: calc(33.33333333% - 1em);
                             margin: 0.75em;
+
+                            &:nth-of-type(3n + 1) {
+                                + .more-photos {
+                                    margin-left: 0.75em;
+                                }
+                            }
                         }
 
                         @media only screen and (max-width: 1200px) {
                             width: calc(33.33333333% - 0.8em);
                             padding-top: calc(33.33333333% - 0.8em);
                             margin: 0.6em;
+
+                            &:nth-of-type(3n + 1) {
+                                + .more-photos {
+                                    margin-left: 0.6em;
+                                }
+                            }
                         }
 
                         @media only screen and (max-width: 1100px) {
@@ -208,6 +233,12 @@
                             .link-wrapper {
                                 a, .target-blank {
                                     font-size: 1.5em;
+                                }
+                            }
+
+                            &:nth-of-type(3n + 1) {
+                                + .more-photos {
+                                    margin-left: 1em;
                                 }
                             }
                         }

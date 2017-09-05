@@ -1,0 +1,29 @@
+@import 'partials/_variables';
+@import 'partials/_mixins';
+
+.content {
+    .content-background {
+        // background-image: url('/img/bkgrds/music1.jpg');
+        // background-position: center 70%;
+        // background-image: url('/img/bkgrds/music2.jpg');
+        // background-position: center bottom;
+        background-image: url('/img/bkgrds/music3.jpg');
+        background-position: center 75%;
+    }
+
+    .content-wrapper {
+        .content-picture {
+            @media #{$small-screen} {
+                background-image: url('/img/content/tboned.jpg');
+                background-size: 200% auto;
+                background-position: 5% 9%;
+            }
+        }
+
+        .content-section {
+            .music-notes {
+                text-align: center;
+            }
+        }
+    }
+}

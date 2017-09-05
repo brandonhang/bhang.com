@@ -8,12 +8,11 @@
         <title>Brandon S. Hang</title>
         <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
-        <link type="text/css" rel="stylesheet" href="./css/common.css"/>
-        <link type="text/css" rel="stylesheet" href="./css/nav.css"/>
-        <link type="text/css" rel="stylesheet" href="./css/photos.css"/>
-        <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-        <script type="text/javascript" src="./js/bhangular.js"></script>
+        <link type="text/css" rel="stylesheet" href="/css/common.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/nav.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/photos.css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="/js/bhangular.js"></script>
     </head>
     <body>
         <nav ng-app="bhang-app" ng-controller="bhang-ctrl" class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
@@ -45,17 +44,17 @@
                             </div>
                         </div>
                         <div class="thumbnail-wrapper">
-                            <div ng-if="albumView" ng-repeat="album in flickrAlbumList.photoset" ng-click="viewAlbumSet($event, album.id)" class="flickr-photo" style="background-image: url('https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_n.jpg')">
+                            <div ng-if="albumView" ng-repeat="album in flickrAlbumList.photoset" ng-click="viewAlbumSet($event, album.id)" class="flickr-photo flickr-album photo-div" style="background-image: url('https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_n.jpg')">
                                 <div class="link-wrapper">
                                     <a href="#" >{{album.title._content}}</a>
                                 </div>
                             </div>
-                            <a href="https://www.flickr.com/photos/dangitshang/albums" target="_blank" ng-if="albumView && flickrAlbumList.total > 6" class="flickr-photo more-photos">
+                            <a href="https://www.flickr.com/photos/dangitshang/albums" target="_blank" ng-if="albumView && flickrAlbumList.total > 6" class="flickr-photo flickr-album more-photos">
                                 <div class="link-wrapper">
                                     <span class="target-blank">{{flickrAlbumList.total - 6}} more album{{flickrAlbumList.total > 7 ? 's' : ''}}</span>
                                 </div>
                             </a>
-                            <div ng-if="!albumView" ng-repeat="(index, photo) in flickrPhotoset.photo" ng-click="viewFlickrPhoto($event, index)" class="flickr-photo" style="background-image: url('https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg')">
+                            <div ng-if="!albumView" ng-repeat="(index, photo) in flickrPhotoset.photo" ng-click="viewFlickrPhoto($event, index)" class="flickr-photo photo-div" style="background-image: url('https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg')">
                                 <div class="link-wrapper">
                                     <a href="#">{{photo.title}}</a>
                                 </div>

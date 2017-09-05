@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="./css/common.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/nav.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/music.css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="./js/bhangular.js"></script>
+    </head>
+    <body ng-app="bhang-app" ng-controller="bhang-ctrl">
+        <nav class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
+        <div class="content">
+            <div class="content-background"></div>
+            <div class="content-wrapper">
+                <div class="content-picture">
+                    <img src="/img/content/tboned.jpg"/>
+                </div><!--
+                --><div class="content-section">
+                    <h1 class="title">MUSIC</h1>
+                    <p>
+                        Whether it's performing in pit orchestras for school musicals, jamming with others
+                        at open mic nights, or playing the piano without an audience, music has always
+                        been a major part of my life. It all started in the 4th grade when my grade school
+                        music teacher said I should give the trombone a shot, most likely due to the
+                        drought of trombonists at my school at the time. Well, it turned out that I had a
+                        knack for the
+                        <a href="#" ng-click="showPicture($event, 'tbone.jpg')">brass monster</a>.
+                    </p>
+                    <div id="j-j-johnson" class="music-notes"></div>
+                    <p>
+                        I didn't stop at the trombone though. I picked up the
+                        <a href="#" ng-click="showPicture($event, 'sax.jpg')">alto saxophone in 6th grade</a>
+                        and started piano in the 7th. And while I never did much with the saxophone, I
+                        flourished when seated behind the black and white keys. My big breakthrough on piano
+                        came in the 8th grade when I was allowed to play in the pit orchestra for
+                        <i>You're a Good Man, Charlie Brown</i>, despite my inexperience on piano. I
+                        practiced for hours on end well past a typical middle-schooler's bedtime, much to
+                        the chagrin of my parents' sleep schedules. I ran through the music so many times
+                        that I ended up committing the entire score to memory! Later that year, our school's
+                        production made a trip up to New York City for a musical festival where I was
+                        fortunate enough to perform on a
+                        <a href="#" ng-click="showPicture($event, 'steinway-young.jpg')">9-foot Steinway &amp; Sons concert grand piano</a>!
+                        I wouldn't play on another such example for
+                        <a href="#" ng-click="showPicture($event, 'steinway-old.jpg')">another 12 years</a>.
+                    </p>
+                    <div id="paul-desmond" class="music-notes"></div>
+                    <p>
+                        The summer before 10th grade marked a major change for my musical appetite; I was put
+                        into a 3-day jazz camp (lol jazz camp) where I worked with professional musicians to
+                        learn the ins and outs, or the basics in my case, of jazz improvisation. I had always
+                        had an interest in jazz from a young age ever since being introduced to Miles Davis's
+                        <i>Kind of Blue</i> and Dave Brubeck's <i>Time Out</i> by my father, but this camp
+                        elevated that interest to another level. After that camp, I became enamored with
+                        playing jazz&mdash;I ended up forming
+                        <a href="#" ng-click="showPicture($event, '4DF.jpg')">my own jazz combo</a>,
+                        auditioning (and placing) into a
+                        <a href="#" ng-click="showPicture($event, 'st_jazz.jpg')">state jazz ensemble</a>,
+                        and arranging and
+                        <a href="http://cocatalog.loc.gov/cgi-bin/Pwebrecon.cgi?Search_Arg=PAu003124843+&Search_Code=REGS&PID=wRzf0NNMj-Fwn_7YZabNCrzRrdq1&SEQ=20170904234012&CNT=25&HIST=1" target="_blank">
+                        composing big band music</a> for my high school to play.
+                    </p>
+                    <div id="billy-joel" class="music-notes"></div>
+                    <p>
+                        This musical hobby of mine has done wonderful things for me. From
+                        <a href="http://www.news.pitt.edu/news/freshman-trombonist-wins-2008-pitt-bny-mellon-jazz-scholarship" target="_blank">earning
+                        a scholarship at Pitt</a>, traveling to Jamaica,
+                        <a href="#" ng-click="showPicture($event, 'cornerstone.jpg')">performing for church services</a>,
+                        and even singing (badly) at weddings, playing music has given a color to my life that I
+                        would never have had otherwise.
+                    </p>
+                    <p>
+                        Click on the thumbnails below to take a trip through my musical voyage!
+                    </p>
+                    <div ng-app="music-app" ng-controller="music-ctrl" id="music-gallery">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lightbox" ng-class="{'light-em-up': lightbox}" escape-key-press="closePicture()">
+            <div id="lightbox-close" ng-click="closeLightbox()">CLOSE</div>
+            <div id="lightbox-image"></div>
+        </div>
+        <script type="text/javascript" src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
+        <script type="text/javascript" src="/js/Bb7b9.js"></script>
+    </body>
+</html>
