@@ -11,18 +11,20 @@
         <link type="text/css" rel="stylesheet" href="./css/common.css"/>
         <link type="text/css" rel="stylesheet" href="./css/nav.css"/>
         <link type="text/css" rel="stylesheet" href="./css/music.css"/>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-        <script type="text/javascript" src="./js/bhangular.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="/js/bhangular.js"></script>
     </head>
-    <body ng-app="bhang-app" ng-controller="bhang-ctrl">
+    <body>
         <nav class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
+        <nav ng-app="bhang-app" ng-controller="bhang-ctrl" class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
         <div class="content">
             <div class="content-background"></div>
             <div class="content-wrapper">
                 <div class="content-picture">
                     <img src="/img/content/tboned.jpg"/>
                 </div><!--
-                --><div class="content-section">
+                --><div class="content-section" ng-app="music-app" ng-controller="music-ctrl" id="music-gallery">
                     <h1 class="title">MUSIC</h1>
                     <p>
                         Whether it's performing in pit orchestras for school musicals, jamming with others
@@ -78,17 +80,36 @@
                     <p>
                         Click on the thumbnails below to take a trip through my musical voyage!
                     </p>
-                    <div ng-app="music-app" ng-controller="music-ctrl" id="music-gallery">
-                        
+                    <div class="lightbox-wrapper">
+                        <div class="thumbnail-wrapper">
+                            <div ng-click="viewMusicPhoto($event, 'drummer_boy2.jpg', 'Making my drumming debut during my high school graduation\'s class song')" class="music-photo" style="background-image: url('/img/content/drummer_boy2.jpg')"></div>
+                            <div ng-click="viewMusicPhoto($event, 'b&amp;b_pit.jpg', 'Dress rehearsal for a production of <i>Beauty and the Beast</i>')" class="music-photo" style="background-image: url('/img/content/b&amp;b_pit.jpg')"></div>
+                            <div ng-click="viewMusicPhoto($event, 'brownbag.jpg', 'Brown bag lunch jam session at the University of Pittsburgh')" class="music-photo" style="background-image: url('/img/content/brownbag.jpg')"></div>
+                            <div ng-click="viewMusicPhoto($event, 'symphony_brass_band.jpg', 'A holiday brass quintet as part of the Harrisburg Youth Symphony')" class="music-photo" style="background-image: url('/img/content/symphony_brass_band.jpg')"></div>
+                            <div ng-click="viewMusicPhoto($event, 'pitt_jazz.jpg', 'Playing a solo with the University of Pittsburgh Jazz Ensemble')" class="music-photo" style="background-image: url('/img/content/pitt_jazz.jpg')"></div>
+                            <div ng-click="viewMusicPhoto($event, 'jazz_camp.jpg', 'The jazz camp (lol) that started it all')" class="music-photo" style="background-image: url('/img/content/jazz_camp.jpg')"></div>
+                            <div ng-click="viewMusicPhoto($event, 'little_drummer_boy.jpg', 'You just never grow out of some things!')" class="music-photo" style="background-image: url('/img/content/little_drummer_boy.jpg')"></div>
+                            <div ng-click="viewMusicPhoto($event, 'jazz_circus.jpg', 'We didn\'t have a name, but I sometimes referred to us as the Jazz Circus')" class="music-photo" style="background-image: url('/img/content/jazz_circus.jpg')"></div>
+                            <div ng-click="viewMusicPhoto($event, 'symphony_xmas.jpg', 'In a festive mood during a Harrisburg Youth Symphony performance at Strawberry Square, Harrisburg, PA')" class="music-photo" style="background-image: url('/img/content/symphony_xmas.jpg')"></div>
+                            <div ng-click="viewMusicPhoto($event, 'tickling_ivories.jpg', 'Even toy stores carrying rubber pianos in airport terminals need attention!')" class="music-photo" style="background-image: url('/img/content/tickling_ivories.jpg')"></div>
+                            <div ng-click="viewMusicPhoto($event, 'piano_man.jpg', '&#9834;&#9835; It\'s ' + getClockTime() + ', the regular crowd shuffles in &#9834;&#9835;')" class="music-photo" style="background-image: url('/img/content/piano_man.jpg')"></div>
+                            <div ng-click="viewMusicPhoto($event, 'tbn_demo.jpg', 'Giving a demo of the trombone for Jamaican students&mdash;this may or may not have involved imitating car sounds')" class="music-photo" style="background-image: url('/img/content/tbn_demo.jpg')"></div>
+                            <div id="lightbox-no-caption" ng-class="{'light-em-up': lightboxNc}" escape-key-press="closePicture()">
+                                <div id="lightbox-nc-close" ng-click="closeLightbox()">CLOSE</div>
+                                <div id="lightbox-nc-image"></div>
+                            </div>
+                            <div id="lightbox" ng-class="{'light-em-up': lightbox}" escape-key-press="closePicture()">
+                                <div id="lightbox-close" ng-click="closeLightbox()">CLOSE</div>
+                                <div id="lightbox-image"></div>
+                                <h3 class="lightbox-caption" ng-bind-html="htmlCaption(caption)"></h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="lightbox" ng-class="{'light-em-up': lightbox}" escape-key-press="closePicture()">
-            <div id="lightbox-close" ng-click="closeLightbox()">CLOSE</div>
-            <div id="lightbox-image"></div>
-        </div>
         <script type="text/javascript" src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
+        <script type="text/javascript" src="/js/Em7b5.js"></script>
         <script type="text/javascript" src="/js/Bb7b9.js"></script>
     </body>
 </html>
