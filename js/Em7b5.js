@@ -3,21 +3,29 @@
 
     musicApp.controller('music-ctrl', ['$scope', '$sce', function($scope, $sce) {
         var erasePicture = function() {
-            $scope.lightboxNc = false;
             $scope.lightbox = false;
+
+            try {
+                $scope.youtube.stopVideo();
+                $scope.youtube.destroy();
+            }
+            catch (e) {
+                console.log(e);
+            }
         }
 
         $scope.showPicture = function($event, picture) {
             $event.preventDefault();
-            var lightbox = document.getElementById('lightbox-no-caption');
+            var lightbox = document.getElementById('lightbox');
 
             if (lightbox !== null) {
-                var lightboxImg = document.getElementById('lightbox-nc-image');
+                var lightboxImg = document.getElementById('lightbox-image');
                 lightboxImg.style.backgroundImage = "url('/img/content/" + picture + "')";
-                $scope.lightboxNc = true;
+                $scope.lightbox = true;
+                $scope.captionEnabled = false;
             }
             else {
-                $scope.lightboxNc = false;
+                $scope.lightbox = false;
             }
         };
         $scope.viewMusicPhoto = function($event, image, caption) {
@@ -29,18 +37,71 @@
 
                 lightboxImg.style.backgroundImage = "url('/img/content/" + image + "')";
                 $scope.lightbox = true;
+                $scope.captionEnabled = true;
                 $scope.caption = caption;
             }
             else {
                 $scope.lightbox = false;
             }
         };
+        $scope.playYouTube = function($event, videoId, start) {
+            $event.preventDefault();
+
+            try {
+                $scope.youtube.stopVideo();
+                $scope.youtube.destroy();
+            }
+            catch (e) {
+                console.log(e);
+            }
+
+            var lightboxImg = document.getElementById('lightbox-image');
+            var lightboxWidth = lightboxImg.offsetWidth;
+            var lightboxHeight = lightboxImg.offsetHeight;
+            var height = lightboxWidth * 0.5625;
+            var width = lightboxHeight / 0.5625;
+
+            if (height > lightboxHeight) {
+                height = lightboxHeight;
+            }
+            else {
+                width = lightboxWidth;
+            }
+
+            lightboxImg.style.backgroundImage = 'none';
+            $scope.captionEnabled = false;
+            $scope.lightbox = true;
+
+            if (start > 0) {
+                $scope.youtube = new YT.Player('lightbox-image', {
+                    width: width,
+                    height: height,
+                    videoId: videoId,
+                    playerVars: {
+                        start: start
+                    }
+                });
+                // $scope.youtube.seekTo(30, true);
+            }
+            else {
+                $scope.youtube = new YT.Player('lightbox-image', {
+                    width: lightboxWidth,
+                    height: lightboxHeight,
+                    videoId: videoId
+                });
+            }
+        }
         $scope.htmlCaption = function(title) {
             return $sce.trustAsHtml(title);
         };
         $scope.closeLightbox = function() {
-            $scope.lightboxNc = false;
             $scope.lightbox = false;
+
+            try {
+                $scope.youtube.stopVideo();
+                $scope.youtube.destroy();
+            }
+            catch (e) {}
         };
         $scope.closePicture = function() {
             erasePicture();
@@ -78,19 +139,19 @@
             })();
             var day = (function() {
                 switch(date.getDay()) {
-                    case 0:
-                        return 'Monday';
                     case 1:
-                        return 'Tuesday';
+                        return 'Monday';
                     case 2:
-                        return 'Wednesday';
+                        return 'Tuesday';
                     case 3:
-                        return 'Thursday';
+                        return 'Wednesday';
                     case 4:
-                        return 'Friday';
+                        return 'Thursday';
                     case 5:
-                        return 'Saturday';
+                        return 'Friday';
                     case 6:
+                        return 'Saturday';
+                    case 0:
                     default:
                         return 'Sunday';
                 }
@@ -98,6 +159,23 @@
 
             return clock + ' o\'clock on a ' + day;
         }
+
+        window.addEventListener('resize', function() {
+            var lightboxImg = document.getElementById('lightbox-image');
+            var lightboxWidth = lightboxImg.offsetWidth;
+            var lightboxHeight = lightboxImg.offsetHeight;
+            var height = lightboxWidth * 0.5625;
+            var width = lightboxHeight / 0.5625;
+
+            if (height > lightboxHeight) {
+                height = lightboxHeight;
+            }
+            else {
+                width = lightboxWidth;
+            }
+
+            player.setSize(width, height);
+        });
     }]);
     musicApp.directive('escapeKeyPress', ['$document', function($document) {
         return {

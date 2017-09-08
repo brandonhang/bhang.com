@@ -64,9 +64,9 @@
                         <a href="#" ng-click="showPicture($event, '4DF.jpg')">my own jazz combo</a>,
                         auditioning (and placing) into a
                         <a href="#" ng-click="showPicture($event, 'st_jazz.jpg')">state jazz ensemble</a>,
-                        and arranging and
-                        <a href="http://cocatalog.loc.gov/cgi-bin/Pwebrecon.cgi?Search_Arg=PAu003124843+&Search_Code=REGS&PID=wRzf0NNMj-Fwn_7YZabNCrzRrdq1&SEQ=20170904234012&CNT=25&HIST=1" target="_blank">
-                        composing big band music</a> for my high school to play.
+                        and arranging and composing big band music for my high school to play.
+                        <!-- <a href="http://cocatalog.loc.gov/cgi-bin/Pwebrecon.cgi?Search_Arg=PAu003124843+&Search_Code=REGS&PID=wRzf0NNMj-Fwn_7YZabNCrzRrdq1&SEQ=20170904234012&CNT=25&HIST=1" target="_blank">
+                        composing big band music</a> for my high school to play. -->
                     </p>
                     <div id="billy-joel" class="music-notes"></div>
                     <p>
@@ -94,13 +94,13 @@
                             <div ng-click="viewMusicPhoto($event, 'tickling_ivories.jpg', 'Even toy stores carrying rubber pianos in airport terminals need attention!')" class="music-photo" style="background-image: url('/img/content/tickling_ivories.jpg')"></div>
                             <div ng-click="viewMusicPhoto($event, 'piano_man.jpg', '&#9834;&#9835; It\'s ' + getClockTime() + ', the regular crowd shuffles in &#9834;&#9835;')" class="music-photo" style="background-image: url('/img/content/piano_man.jpg')"></div>
                             <div ng-click="viewMusicPhoto($event, 'tbn_demo.jpg', 'Giving a demo of the trombone for Jamaican students&mdash;this may or may not have involved imitating car sounds')" class="music-photo" style="background-image: url('/img/content/tbn_demo.jpg')"></div>
-                            <div id="lightbox-no-caption" ng-class="{'light-em-up': lightboxNc}" escape-key-press="closePicture()">
-                                <div id="lightbox-nc-close" ng-click="closeLightbox()">CLOSE</div>
-                                <div id="lightbox-nc-image"></div>
-                            </div>
-                            <div id="lightbox" ng-class="{'light-em-up': lightbox}" escape-key-press="closePicture()">
+                            <div ng-click="playYouTube($event, 'RghEpXedHNk', 31)" class="music-photo music-video" style="background-image: url('http://i3.ytimg.com/vi/RghEpXedHNk/hqdefault.jpg')"><img src="/img/icons/youtube.svg"/></div>
+                            <div ng-click="playYouTube($event, 'vlTfUbAPPEQ', 0)" class="music-photo music-video" style="background-image: url('http://i3.ytimg.com/vi/vlTfUbAPPEQ/hqdefault.jpg')"><img src="/img/icons/youtube.svg"/></div>
+                            <div ng-click="playYouTube($event, '6zfCDla6QXQ', 0)" class="music-photo music-video" style="background-image: url('http://i3.ytimg.com/vi/6zfCDla6QXQ/hqdefault.jpg')"><img src="/img/icons/youtube.svg"/></div>
+                            <div id="lightbox" ng-class="{'light-em-up': lightbox, 'with-caption': captionEnabled}" escape-key-press="closePicture()">
                                 <div id="lightbox-close" ng-click="closeLightbox()">CLOSE</div>
                                 <div id="lightbox-image"></div>
+                                <div id="lightbox-video"></div>
                                 <h3 class="lightbox-caption" ng-bind-html="htmlCaption(caption)"></h3>
                             </div>
                         </div>
@@ -109,6 +109,7 @@
             </div>
         </div>
         <script type="text/javascript" src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
+        <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
         <script type="text/javascript" src="/js/Em7b5.js"></script>
         <script type="text/javascript" src="/js/Bb7b9.js"></script>
     </body>
