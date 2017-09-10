@@ -278,3 +278,59 @@ a[target="_blank"], .target-blank {
         height: 90%;
     }
 }
+
+.img-nav {
+    height: 8em;
+    width: 3em;
+    background-color: transparent;
+    @include transition(background-color, 0.25s, ease-in-out);
+    cursor: pointer;
+    text-align: center;
+    top: 50%;
+    @include translateY(-50%);
+    position: fixed;
+
+    &:hover {
+        background-color: rgba(80, 80, 80, 0.75);
+    }
+
+    img {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        @include translateY(-50%);
+        left: 0;
+    }
+}
+
+#prev-image {
+    left: calc(12.5% - 3em);
+
+    @media only screen and (max-width: 1000px) {
+        left: calc(10% - 3em);
+    }
+
+    @media #{$small-screen} {
+        left: calc(7.5% - 3em);
+    }
+
+    @media only screen and (max-width: 600px) {
+        left: calc(5% - 3em);
+    }
+}
+
+#next-image {
+    right: calc(12.5% - 3em);
+
+    @media only screen and (max-width: 1000px) {
+        right: calc(10% - 3em);
+    }
+
+    @media #{$small-screen} {
+        right: calc(7.5% - 3em);
+    }
+
+    @media only screen and (max-width: 600px) {
+        right: calc(5% - 3em);
+    }
+}

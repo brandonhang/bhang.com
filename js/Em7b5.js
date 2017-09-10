@@ -1,7 +1,16 @@
 (function() {
     var musicApp = angular.module('music-app', ['ngSanitize']);
 
-    musicApp.controller('music-ctrl', ['$scope', '$sce', function($scope, $sce) {
+    musicApp.controller('music-ctrl', ['$http', '$scope', '$sce', function($http, $scope, $sce) {
+        $http.get('/config/music.json').then(
+            function(musicConfig) {
+                $scope.musicGallery = musicConfig.data;
+            },
+            function(musicErr) {
+                console.log(musicErr);
+            }
+        );
+
         var erasePicture = function() {
             $scope.lightbox = false;
 
@@ -9,14 +18,13 @@
                 $scope.youtube.stopVideo();
                 $scope.youtube.destroy();
             }
-            catch (e) {
-                console.log(e);
-            }
+            catch (e) {}
         }
 
         $scope.showPicture = function($event, picture) {
             $event.preventDefault();
             var lightbox = document.getElementById('lightbox');
+            $scope.galleryBrowse = false;
 
             if (lightbox !== null) {
                 var lightboxImg = document.getElementById('lightbox-image');
@@ -29,7 +37,10 @@
             }
         };
         $scope.viewMusicPhoto = function($event, image, caption) {
-            $event.preventDefault();
+            if ($event !== null) {
+                $event.preventDefault();
+            }
+
             var lightbox = document.getElementById('lightbox');
 
             if (lightbox !== null) {
@@ -38,22 +49,35 @@
                 lightboxImg.style.backgroundImage = "url('/img/content/" + image + "')";
                 $scope.lightbox = true;
                 $scope.captionEnabled = true;
-                $scope.caption = caption;
+
+                if (/^FXN/.test(caption)) {
+                    var fxn = caption.split('---')[1];
+
+                    if (fxn === 'PIANO') {
+                        $scope.caption = '&#9834;&#9835; It\'s ' + $scope.getClockTime() + ', the regular crowd shuffles in &#9834;&#9835;'
+                    }
+                    else {
+                        $scope.caption = caption;
+                    }
+                }
+                else {
+                    $scope.caption = caption;
+                }
             }
             else {
                 $scope.lightbox = false;
             }
         };
         $scope.playYouTube = function($event, videoId, start) {
-            $event.preventDefault();
+            if ($event !== null) {
+                $event.preventDefault();
+            }
 
             try {
                 $scope.youtube.stopVideo();
                 $scope.youtube.destroy();
             }
-            catch (e) {
-                console.log(e);
-            }
+            catch (e) {}
 
             var lightboxImg = document.getElementById('lightbox-image');
             var lightboxWidth = lightboxImg.offsetWidth;
@@ -72,7 +96,7 @@
             $scope.captionEnabled = false;
             $scope.lightbox = true;
 
-            if (start > 0) {
+            if (start != undefined) {
                 $scope.youtube = new YT.Player('lightbox-image', {
                     width: width,
                     height: height,
@@ -105,6 +129,47 @@
         };
         $scope.closePicture = function() {
             erasePicture();
+        };
+        $scope.getMedia = function($event, index) {
+            if (index < 0) {
+                index = $scope.musicGallery.length - 1;
+            }
+            else if (index >= $scope.musicGallery.length) {
+                index = 0;
+            }
+
+            $scope.galleryBrowse = true;
+            $scope.galleryIndex = index;
+
+            if ($scope.musicGallery[index].type === 'img') {
+                try {
+                    $scope.youtube.stopVideo();
+                    $scope.youtube.destroy();
+                }
+                catch (e) {}
+                finally {
+                    $scope.viewMusicPhoto($event, $scope.musicGallery[index].src, $scope.musicGallery[index].cap);
+                }
+            }
+            else {
+                $scope.playYouTube($event, $scope.musicGallery[index].src, $scope.musicGallery[index].st);
+            }
+        };
+        $scope.next = function($event) {
+            $scope.getMedia($event, $scope.galleryIndex + 1);
+        };
+        $scope.prev = function($event) {
+            $scope.getMedia($event, $scope.galleryIndex - 1);
+        };
+        $scope.nextPic = function() {
+            if ($scope.galleryBrowse) {
+                $scope.getMedia(null, $scope.galleryIndex + 1);
+            }
+        };
+        $scope.prevPic = function() {
+            if ($scope.galleryBrowse) {
+                $scope.getMedia(null, $scope.galleryIndex - 1);
+            }
         };
         $scope.getClockTime = function() {
             var date = new Date;
@@ -189,6 +254,54 @@
                     if (event.keyCode === 27) {
                         scope.$apply(function() {
                             scope.$eval(attribute.escapeKeyPress);
+                        });
+                    }
+                }
+
+                $document.on('keyup', escape);
+
+                scope.$on('$destroy', function() {
+                    $document.off('keyup', escape);
+                });
+            }
+        };
+    }]);
+    musicApp.directive('nextPicture', ['$document', function($document) {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attribute) {
+                element.on('keyup', function(event) {
+                    event.stopPropagation();
+                });
+
+                var escape = function(event) {
+                    if (event.keyCode === 39) {
+                        scope.$apply(function() {
+                            scope.$eval(attribute.nextPicture);
+                        });
+                    }
+                }
+
+                $document.on('keyup', escape);
+
+                scope.$on('$destroy', function() {
+                    $document.off('keyup', escape);
+                });
+            }
+        };
+    }]);
+    musicApp.directive('prevPicture', ['$document', function($document) {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attribute) {
+                element.on('keyup', function(event) {
+                    event.stopPropagation();
+                });
+
+                var escape = function(event) {
+                    if (event.keyCode === 37) {
+                        scope.$apply(function() {
+                            scope.$eval(attribute.prevPicture);
                         });
                     }
                 }

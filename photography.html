@@ -64,8 +64,10 @@
                                     <span class="target-blank">{{flickrPhotoset.total - 16}} more picture{{flickrPhotoset.total > 17 ? 's' : ''}}</span>
                                 </div>
                             </a>
-                            <div id="lightbox" ng-class="{'light-em-up': lightbox}" escape-key-press="closePicture()">
+                            <div id="lightbox" ng-class="{'light-em-up': lightbox}" escape-key-press="closePicture()" next-picture="nextPic()" prev-picture="prevPic()">
                                 <div id="lightbox-close" ng-click="closeLightbox()">CLOSE</div>
+                                <div id="prev-image" class="img-nav" ng-click="prev($event)"><img src="/img/icons/ic_arrow_back_white_24px.svg"/></div>
+                                <div id="next-image" class="img-nav" ng-click="next($event)"><img src="/img/icons/ic_arrow_forward_white_24px.svg"/></div>
                                 <div id="lightbox-image"></div>
                                 <a class="lightbox-title" href="https://www.flickr.com/photos/dangitshang/{{photoID}}" title="View on Flickr" target="_blank">{{pictureTitle}}</a>
                             </div>

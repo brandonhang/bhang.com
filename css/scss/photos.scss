@@ -140,7 +140,11 @@
 
                         .link-wrapper {
                             width: 100%;
-                            position: relative;
+                            position: absolute;
+                            top: 0;
+                            padding-top: 100%;
+                            background-color: transparent;
+                            @include transition(background-color, 0.25s, ease-in-out);
 
                             a, .target-blank {
                                 width: 100%;
@@ -153,7 +157,6 @@
                                 bottom: 0;
                                 padding: 2em 0 0.5em 0;
                                 @include transition(opacity, 0.25s, ease-in-out);
-                                @include vertical-triple-gradient(transparent, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
                                 opacity: 0.6;
                             }
                         }
@@ -183,9 +186,9 @@
                         }
 
                         &:hover {
-                            background-color: #14171a;
-
                             .link-wrapper {
+                                background-color: rgba(0, 0, 0, 0.55);
+
                                 a, .target-blank {
                                     opacity: 1;
                                 }
@@ -278,13 +281,27 @@
         width: 60%;
     }
 
+    .img-nav {
+        top: 40%;
+    }
+
+    #prev-image {
+        left: calc(20% - 3em);
+    }
+
+    #next-image {
+        right: calc(20% - 3em);
+    }
+
     .lightbox-title {
         position: absolute;
-        top: 70%;
-        left: 20%;
-        margin-top: 0.25em;
-        font-size: 2.5em;
         color: white;
+
+        top: 71%;
+        width: 60%;
+        margin-left: 20%;
+        text-align: center;
+        font-size: 2.25em;
 
         &:hover {
             color: $old-gold;
@@ -302,8 +319,17 @@
         }
 
         .lightbox-title {
-            top: 75%;
-            left: 15%;
+            top: 76%;
+            width: 70%;
+            margin-left: 15%;
+        }
+
+        #prev-image {
+            left: calc(15% - 3em);
+        }
+
+        #next-image {
+            right: calc(15% - 3em);
         }
     }
 
@@ -313,7 +339,16 @@
         }
 
         .lightbox-title {
-            left: 10%;
+            width: 80%;
+            margin-left: 10%;
+        }
+
+        #prev-image {
+            left: calc(10% - 3em);
+        }
+
+        #next-image {
+            right: calc(10% - 3em);
         }
     }
 
@@ -323,7 +358,16 @@
         }
 
         .lightbox-title {
-            left: 7.5%;
+            width: 85%;
+            margin-left: 7.5%;
+        }
+
+        #prev-image {
+            left: calc(7.5% - 3em);
+        }
+
+        #next-image {
+            right: calc(7.5% - 3em);
         }
     }
 }
