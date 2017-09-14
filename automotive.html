@@ -29,7 +29,51 @@
                     <p>
                         I have always liked cars since I was a little kid, having owned all sorts
                         of Hot Wheels, Matchbox cars, and various diecast models. And while I still
-                        have a lot of those small model cars, 
+                        have a lot of those small model cars, it's the big ones that interest me
+                        now. I don't know exactly when the automotive bug bit me, it seemed like it
+                        happened overnight&mdash;I'm a real petrolhead now. Most people when they
+                        look at a car, all they see is a 2-ton hunk of steel, plastic, rubber, and
+                        glass that takes you from point A to point B, nothing more. For me,
+                        automobiles carry personalities that are often conveyed in their drivers.
+                        Some are loud and boisterous whatever the situation, always shouting at the
+                        tops of their (mechanical) lungs. Others are elegant and civilized, well
+                        dressed for any occasion. From the classic pony cars of yesteryear, to
+                        the ludicrously-priced and ludicrously powerful European exotics, and even
+                        the Japanese street legends of humble origins, I'm a fan of it all.
+                    </p>
+                    <p>
+                        Nowadays, my hobbies in photography and cars go nearly hand in hand; most
+                        of the subjects in front of my lens end up being some sort of automobile.
+                        While you can check out my most of my automotive photography on my
+                        <a href="https://www.flickr.com/photos/dangitshang" target="_blank">Flickr page</a>,
+                        below is a car companion viewer for a select number of my photos.
+                    </p>
+                    <div id="car-companion" ng-class="{'fullscreen': fullscreen}" next-car="nextCar()" prev-car="prevCar()" escape-key-press="exitFullscreen()">
+                        <div class="car-image-wrapper">
+                            <div class="car-wrapper-prev car-nav-button" ng-click="prevCar()"><img src="/img/icons/ic_arrow_back_white_24px.svg"/></div><!--
+                            --><div class="car-image" ng-style="getCar()" ng-click="goFullscreen()"></div><!--
+                            --><div class="car-wrapper-next car-nav-button" ng-click="nextCar()"><img src="/img/icons/ic_arrow_forward_white_24px.svg"/></div>
+                        </div>
+                        <div class="title-bar">
+                            <h2 class="car-name"><a href="{{getPhotoLink()}}" target="_blank">{{getCarName()}}</a></h2>
+                            <div class="gallery-button"></div>
+                            <!-- <div class="fullscreen-button"></div> -->
+                        </div>
+                        <div class="car-info">
+                            <div class="info car-engine" title="{{getEngineLabel()}}" ng-style="getEngine()"><span>{{getCylinders()}}</span></div><!--
+                            --><div class="info car-induction" title="{{getInductionLabel()}}" ng-style="getInduction()"><span>{{getSpecificInd()}}</span></div><!--
+                            --><div class="info car-drive" title="{{getDrivetrainLabel()}}" ng-style="getDrivetrain()"></div><!--
+                            --><div ng-if="getHybrid()" title="Hybrid" class="small-info" ng-class="{'car-hybrid': getHybrid()}"></div><!--
+                            --><div ng-if="!getHybrid()" class="small-info" ng-class="{'car-hybrid': getHybrid()}"></div>
+                        </div>
+                        <ul>
+                            <li ng-if="getDisplacement() > 0">{{getDisplacement()}} cc</li>
+                            <li ng-if="getHorsepower() > 0">{{getHorsepower()}} hp</li>
+                            <li ng-if="getTorque() > 0">{{getTorque()}} lb-ft</li>
+                            <li ng-if="getAccel() > 0">{{getAccel()}} sec.</li>
+                            <li ng-if="getVMax() > 0">{{getVMax()}} MPH</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

@@ -23,3 +23,192 @@
         }
     }
 }
+
+#car-companion {
+    width: 100%;
+    @include transition(all, 0.25s, ease-in-out);
+
+    .car-image-wrapper {
+        width: 100%;
+        position: relative;
+        background-image: url('/img/icons/img_load.svg');
+        background-repeat: no-repeat;
+        background-size: 12%;
+        background-position: center 50%;
+
+        .car-nav-button {
+            width: 3em;
+            height: 8em;
+            position: absolute;
+            top: 50%;
+            @include translateY(-50%);
+            background-color: rgba(80, 80, 80, 0.25);
+            @include transition(background-color, 0.25s, ease-in-out);
+            cursor: pointer;
+
+            &.car-wrapper-prev {
+                left: 0;
+            }
+
+            &.car-wrapper-next {
+                right: 0;
+            }
+
+            &:hover {
+                background-color: rgba(80, 80, 80, 0.5);
+            }
+
+            img {
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                @include translateY(-50%);
+            }
+        }
+
+        .car-image {
+            width: calc(100% - 6em);
+            padding-top: calc(100% * (2 / 3));
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+    }
+
+    .title-bar {
+        width: 100%;
+        height: 3em;
+        position: relative;
+
+        .car-name {
+            // font-size: 2em;
+            margin: 0;
+            display: inline;
+            // height: 3em;
+            // line-height: 3em;
+        }
+
+        // .fullscreen-button {
+        //     position: absolute;
+        //     width: 3em;
+        //     height: 3em;
+        //     background-image: url('/img/icons/ic_fullscreen_white_24px.svg');
+        //     background-position: center center;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;
+        //     background-color: rgba(80, 80, 80, 0.25);
+        //     @include transition(background-color, 0.25s, ease-in-out);
+        //     top: 0;
+        //     right: 0;
+        //     cursor: pointer;
+        //
+        //     &:hover {
+        //         background-color: rgba(80, 80, 80, 0.5);
+        //     }
+        // }
+    }
+
+    .car-info {
+        width: 100%;
+
+        .info {
+            width: 25%;
+            padding-top: 25%;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: inline-flex;
+            position: relative;
+            margin: 0 calc(10% / 6);
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &.car-engine, &.car-induction {
+                span {
+                    position: absolute;
+                    font-size: 2.5em;
+                    font-weight: bold;
+                    bottom: 1em;
+                    right: 1em;
+                }
+            }
+        }
+
+        .small-info {
+            width: 15%;
+            padding-top: 25%;
+            margin-left: calc(10% / 6);
+            background-image: url('/img/icons/hybrid.svg');
+            background-size: 70% auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: inline-flex;
+            opacity: 0.05;
+
+            &.car-hybrid {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.fullscreen {
+        position: fixed;
+        height: 100%;
+        top: 0;
+        left: 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.75);
+        z-index: 12000;
+
+        .car-image-wrapper {
+            width: 50%;
+            margin: 0 25%;
+            position: absolute;
+            top: 5%;
+
+            .car-image {
+                cursor: auto;
+            }
+
+            .car-nav-button {
+                background-color: rgba(188, 188, 188, 0.25);
+
+                &:hover {
+                    background-color: rgba(188, 188, 188, 0.5);
+                }
+            }
+        }
+
+        .car-info {
+            position: absolute;
+            width: 10%;
+            width: 10%;
+            height: calc((100% - 6em) * (2 / 3));
+            top: 5%;
+            left: 15%;
+            background-color: rgba(188, 188, 188, 0.5);
+
+            .info {
+                width: 100%;
+                height: 25%;
+                margin: 0;
+                padding: 0;
+
+                span {
+                    font-size: 1.75em;
+                }
+            }
+
+            .small-info {
+                @extend .info;
+                @include rotate(90deg);
+                background-size: auto 80%;
+            }
+        }
+    }
+}

@@ -95,12 +95,9 @@
             var lightbox = document.getElementById('lightbox');
 
             if (lightbox !== null) {
-                if (photoIndex < 0) {
-                    photoIndex = $scope.flickrPhotoset.photo.length - 1;
-                }
-                else if (photoIndex >= $scope.flickrPhotoset.photo.length) {
-                    photoIndex = 0;
-                }
+                var photosetLength = $scope.flickrPhotoset.photo.length;
+
+                photoIndex = ((photoIndex % photosetLength) + photosetLength) % photosetLength;
 
                 var lightboxImg = document.getElementById('lightbox-image');
                 var photo = $scope.flickrPhotoset.photo[photoIndex];

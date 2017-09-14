@@ -6,4 +6,5 @@ css/*.css
 npm-debug.log
 .gitignore.swp
 .sass-cache/
+engine_icons.tar.gz
 

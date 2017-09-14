@@ -131,12 +131,9 @@
             erasePicture();
         };
         $scope.getMedia = function($event, index) {
-            if (index < 0) {
-                index = $scope.musicGallery.length - 1;
-            }
-            else if (index >= $scope.musicGallery.length) {
-                index = 0;
-            }
+            var galleryLength = $scope.musicGallery.length;
+
+            index = ((index % galleryLength) + galleryLength) % galleryLength;
 
             $scope.galleryBrowse = true;
             $scope.galleryIndex = index;
