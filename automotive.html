@@ -50,14 +50,17 @@
                     </p>
                     <div id="car-companion" ng-class="{'fullscreen': fullscreen}" next-car="nextCar()" prev-car="prevCar()" escape-key-press="exitFullscreen()">
                         <div class="car-image-wrapper">
-                            <div class="car-wrapper-prev car-nav-button" ng-click="prevCar()"><img src="/img/icons/ic_arrow_back_white_24px.svg"/></div><!--
-                            --><div class="car-image" ng-style="getCar()" ng-click="goFullscreen()"></div><!--
-                            --><div class="car-wrapper-next car-nav-button" ng-click="nextCar()"><img src="/img/icons/ic_arrow_forward_white_24px.svg"/></div>
-                        </div>
-                        <div class="title-bar">
-                            <h2 class="car-name"><a href="{{getPhotoLink()}}" target="_blank">{{getCarName()}}</a></h2>
-                            <div class="gallery-button"></div>
-                            <!-- <div class="fullscreen-button"></div> -->
+                            <div class="car-wrapper-prev car-nav-button" ng-click="prevCar()"><img src="/img/icons/arrow_back.svg"/></div><!--
+                            --><div class="car-image" ng-style="getCar()">
+                                <h2 class="car-name">{{getCarName()}}</h2>
+                            </div><!--
+                            --><div class="car-wrapper-next car-nav-button" ng-click="nextCar()"><img src="/img/icons/arrow_forward.svg"/></div>
+                            <div class="image-options">
+                                <div ng-if="getPhotoLink() === ''" class="image-button external-button disabled"></div>
+                                <a ng-if="getPhotoLink() !== ''" href="{{getPhotoLink()}}" target="_blank" class="image-button external-button"></a>
+                                <div class="image-button gallery-button"></div>
+                                <div class="image-button fullscreen-button" ng-click="goFullscreen()"></div>
+                            </div>
                         </div>
                         <div class="car-info">
                             <div class="info car-engine" title="{{getEngineLabel()}}" ng-style="getEngine()"><span>{{getCylinders()}}</span></div><!--
@@ -66,6 +69,16 @@
                             --><div ng-if="getHybrid()" title="Hybrid" class="small-info" ng-class="{'car-hybrid': getHybrid()}"></div><!--
                             --><div ng-if="!getHybrid()" class="small-info" ng-class="{'car-hybrid': getHybrid()}"></div>
                         </div>
+                        <div class="car-specs">
+                            <div id="spec-displacement" class="car-spec"></div><!--
+                            --><div id="spec-power" class="car-spec"></div><!--
+                            --><div id="spec-acceleration" class="car-spec"></div><!--
+                            --><div id="spec-vmax" class="car-spec"></div>
+                        </div>
+                        <!-- <div class="title-bar">
+                            <h2 class="car-name"><a href="{{getPhotoLink()}}" target="_blank">{{getCarName()}}</a></h2>
+                            <div class="gallery-button"></div>
+                        </div> -->
                         <ul>
                             <li ng-if="getDisplacement() > 0">{{getDisplacement()}} cc</li>
                             <li ng-if="getHorsepower() > 0">{{getHorsepower()}} hp</li>

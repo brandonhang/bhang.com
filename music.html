@@ -88,8 +88,8 @@
                             <div ng-repeat-end ng-if="gallery.type === 'vid'" ng-click="playYouTube($event, gallery.src, gallery.st)" class="music-photo music-video" style="background-image: url('http://i3.ytimg.com/vi/{{gallery.src}}/hqdefault.jpg')"><img src="/img/icons/youtube.svg"/></div> -->
                             <div id="lightbox" ng-class="{'light-em-up': lightbox, 'with-caption': captionEnabled}" escape-key-press="closePicture()" next-picture="nextPic()" prev-picture="prevPic()">
                                 <div id="lightbox-close" ng-click="closeLightbox()">CLOSE</div>
-                                <div ng-if="galleryBrowse" id="prev-image" class="img-nav" ng-click="prev($event)"><img src="/img/icons/ic_arrow_back_white_24px.svg"/></div>
-                                <div ng-if="galleryBrowse" id="next-image" class="img-nav" ng-click="next($event)"><img src="/img/icons/ic_arrow_forward_white_24px.svg"/></div>
+                                <div ng-if="galleryBrowse" id="prev-image" class="img-nav" ng-click="prev($event)"><img src="/img/icons/arrow_back.svg"/></div>
+                                <div ng-if="galleryBrowse" id="next-image" class="img-nav" ng-click="next($event)"><img src="/img/icons/arrow_forward.svg"/></div>
                                 <div id="lightbox-image"></div>
                                 <h3 class="lightbox-caption" ng-bind-html="htmlCaption(caption)"></h3>
                             </div>
