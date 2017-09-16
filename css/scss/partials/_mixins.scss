@@ -94,3 +94,24 @@
     -ms-transform-origin: $pos;
     -o-transform-origin: $pos;
 }
+
+@mixin transition-duration($time) {
+    transition-duration: $time;
+    -webkit-transition-duration: $time;
+    -moz-transition-duration: $time;
+    -o-transition-duration: $time;
+}
+
+@mixin transition-property($property...) {
+    transition-property: $property;
+    -webkit-transition-property: $property;
+    -moz-transition-property: $property;
+    -o-transition-property: $property;
+}
+
+@mixin transition-timing-function($fxn) {
+    transition-timing-function: $fxn;
+    -webkit-transition-timing-function: $fxn;
+    -moz-transition-timing-function: $fxn;
+    -o-transition-timing-function: $fxn;
+}

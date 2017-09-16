@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1000"
+   height="1000"
+   version="1.1"
+   id="svg8517"
+   sodipodi:docname="speedometer-hand.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata8523">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8521" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     id="namedview8519"
+     showgrid="false"
+     inkscape:zoom="0.858"
+     inkscape:cx="500"
+     inkscape:cy="500"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8517" />
+  <path
+     d="M 481.084883,536.592722 C 481.084883,536.592722 254.987478,745.012462 254.987478,745.012462 C 254.987478,745.012462 463.407218,518.915057 463.407218,518.915057 C 463.407218,518.915057 543.555260,438.767016 548.436761,433.885515 C 553.318322,429.003954 561.232924,429.003954 566.114426,433.885515 C 570.995986,438.767016 570.995986,446.681619 566.114426,451.563179 C 561.232924,456.444681 481.084883,536.592722 481.084883,536.592722 Z M 469.594359,530.405581 C 452.801824,513.613045 452.801824,486.386895 469.594359,469.594359 C 486.386895,452.801824 513.613045,452.801824 530.405581,469.594359 C 547.198117,486.386895 547.198117,513.613045 530.405581,530.405581 C 513.613045,547.198117 486.386895,547.198117 469.594359,530.405581 Z"
+     fill-rule="nonzero"
+     style="stroke: none; fill: rgb(242, 211, 0)"
+     inkscape:label="Shape 8"
+     id="Shape 8" />
+</svg>

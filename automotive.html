@@ -55,15 +55,18 @@
                             --><div class="car-image" ng-swipe-left="nextCar()" ng-swipe-right="prevCar()" ng-style="getCar()">
                                 <h2 class="car-name">{{getCarName()}}</h2>
                             </div><!--
+                            --><div class="car-gallery" ng-style="getGalleryHeight()" ng-class="{'gallery-view': galleryView}">
+                                <div ng-repeat="car in carConfig" ng-click="changeCarView($index)" class="car-thumb" style="background-image: url('{{car.thmb}}')"></div>
+                            </div><!--
                             --><div class="car-wrapper-next car-nav-button" ng-click="nextCar()"><img src="/img/icons/arrow_forward.svg"/></div>
                             <div class="image-options">
                                 <div ng-if="getPhotoLink() === ''" class="image-button external-button disabled"></div>
                                 <a ng-if="getPhotoLink() !== ''" title="Flickr Link" href="{{getPhotoLink()}}" target="_blank" class="image-button external-button"></a>
-                                <div class="image-button gallery-button" title="Show/Hide Gallery"></div>
+                                <div class="image-button gallery-button" title="Show/Hide Gallery" ng-click="enterGallery()"></div>
                                 <div class="image-button fullscreen-button" title="Fullscreen" ng-click="goFullscreen()"></div>
                             </div>
-                        </div>
-                        <div class="car-info">
+                        </div><!--
+                        --><div class="car-info">
                             <div class="info car-engine" title="{{getEngineLabel()}}" ng-style="getEngine()">
                                 <span>{{getCylinders()}}</span>
                             </div><!--
@@ -72,13 +75,13 @@
                             </div><!--
                             --><div class="info car-drive" title="{{getDrivetrainLabel()}}" ng-style="getDrivetrain()"></div><!--
                             --><div title="{{getHybrid() ? 'Hybrid' : ''}}" class="small-info" ng-class="{'car-hybrid': getHybrid()}"></div>
-                        </div>
-                        <div class="car-specs">
+                        </div><!--
+                        --><div class="car-specs">
                             <div class="car-spec" title="{{convertDisplacement() < 0 ? '' : (convertDisplacement() | number: 0) + ' in&sup3;'}}">
                                 <div class="displ-gauge" style="width: {{width * 9 / 10}}px; height: {{width * 9 / 20}}px">
                                     <div class="displ-meter" ng-style="getDisplacementAmount()"></div>
                                 </div>
-                                <div class="displ-text">
+                                <div class="text-container">
                                     <span>{{getDisplacement() < 0 ? '???' : (getDisplacement() | number) + ' cm&sup3;'}}</span>
                                 </div>
                             </div><!--
@@ -86,26 +89,25 @@
                                 <div class="pow-wrapper">
                                     <div class="hp-bar" ng-style="getHorsepowerAmount()"></div>
                                     <div class="tq-bar" ng-style="getTorqueAmount()"></div>
-                                    <div class="pow-text">
-                                        <span>{{getHorsepower() < 0 ? 'Unknown' : (getHorsepower() | number) + ' hp'}}</span><br/>
-                                        <span>{{getTorque() < 0 ? 'power' : (getTorque() | number) + ' lb-ft'}}</span>
+                                    <div class="text-container pow-text" ng-class="{'unknown-pow': getTorque() < 0}">
+                                        <span>{{getHorsepower() < 0 ? '' : (getHorsepower() | number) + ' hp'}}</span><br/>
+                                        <span>{{getTorque() < 0 ? '???' : (getTorque() | number) + ' lb-ft'}}</span>
                                     </div>
                                 </div>
                             </div><!--
-                            --><div class="car-spec">
-                                <div id="spec-acceleration"></div>
+                            --><div class="car-spec" title="{{getAccel() >= 0 ? '0&ndash;60 MPH' : ''}}">
+                                <div class="spec-accel">
+                                    <div class="stopwatch-hand" ng-style="getAccelTime()"></div>
+                                </div>
+                                <span class="text-container">{{getAccel() < 0 ? '???' : (getAccel() | number: 1) + ' sec.'}}</span>
                             </div><!--
-                            --><div class="car-spec">
-                                <div id="spec-vmax"></div>
+                            --><div class="car-spec" title="{{getVMax() >= 0 ? (convertVMax() | number: 1) + ' km/h' : ''}}">
+                                <div class="spec-vmax">
+                                    <div class="speedo-hand" ng-style="getVMaxTime()"></div>
+                                </div>
+                                <span class="text-container">{{getVMax() < 0 ? '???' : (getVMax() | number) + ' MPH'}}</span>
                             </div>
                         </div>
-                        <ul>
-                            <li ng-if="getDisplacement() > 0">{{getDisplacement()}} cc</li>
-                            <li ng-if="getHorsepower() > 0">{{getHorsepower()}} hp</li>
-                            <li ng-if="getTorque() > 0">{{getTorque()}} lb-ft</li>
-                            <li ng-if="getAccel() > 0">{{getAccel()}} sec.</li>
-                            <li ng-if="getVMax() > 0">{{getVMax()}} MPH</li>
-                        </ul>
                     </div>
                 </div>
             </div>

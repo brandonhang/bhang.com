@@ -5,7 +5,7 @@
         $http.get('/config/cars.json').then(
             function(carConfig) {
                 $scope.carConfig = carConfig.data;
-                $scope.carIndex = 0;
+                $scope.carIndex = Math.floor(Math.random() * carConfig.data.length);
                 $scope.displMax = 0;
                 $scope.maxPow = 0;
                 $scope.vmax = 0;
@@ -27,8 +27,9 @@
 
                 $scope.displMax = Math.ceil($scope.displMax / 1000) * 1000;
                 $scope.maxPow = Math.ceil($scope.maxPow / 100) * 100;
-                $scope.vmax = Math.ceil($scope.maxPow / 20) * 20;
+                $scope.vmax = Math.ceil($scope.vmax / 20) * 20;
 
+                $scope.calculateGalleryHeight();
                 $scope.buildGraphs();
             },
             function(carErr) {
@@ -374,6 +375,79 @@
 
             return (hpLabel && tqLabel ? (hpLabel + ', ' + tqLabel) : '');
         };
+        $scope.getAccelTime = function() {
+            var accel = $scope.getAccel();
+
+            if (accel >= 0) {
+                var degrees = (accel * 6) % 360 + 'deg';
+
+                return {
+                    'transform': 'rotate(' + degrees + ')',
+                    '-webkit-transform': 'rotate(' + degrees + ')',
+                    '-moz-transform': 'rotate(' + degrees + ')',
+                    '-o-transform': 'rotate(' + degrees + ')'
+                };
+            }
+            else {
+                return {
+                    'transform': 'rotate(0)',
+                    '-webkit-transform': 'rotate(0)',
+                    '-moz-transform': 'rotate(0)',
+                    '-o-transform': 'rotate(0)'
+                };
+            }
+        };
+        $scope.getVMaxTime = function() {
+            var vmax = $scope.getVMax();
+
+            if (vmax >= 0) {
+                var degrees = (vmax / $scope.vmax * 270) + 'deg';
+
+                return {
+                    'transform': 'rotate(' + degrees + ')',
+                    '-webkit-transform': 'rotate(' + degrees + ')',
+                    '-moz-transform': 'rotate(' + degrees + ')',
+                    '-o-transform': 'rotate(' + degrees + ')'
+                };
+            }
+            else {
+                return {
+                    'transform': 'rotate(0)',
+                    '-webkit-transform': 'rotate(0)',
+                    '-moz-transform': 'rotate(0)',
+                    '-o-transform': 'rotate(0)'
+                };
+            }
+        };
+        $scope.convertVMax = function() {
+            return $scope.getVMax() * 1.609344;
+        };
+        $scope.getGalleryHeight = function() {
+            var carImage = document.getElementsByClassName('car-image')[0];
+
+            return {
+                'height': carImage.offsetHeight + 'px'
+            }
+        };
+        $scope.calculateGalleryHeight = function() {
+            var carImage = document.getElementsByClassName('car-image')[0];
+            var carGallery = document.getElementsByClassName('car-gallery')[0];
+            carGallery.style.height = carImage.offsetHeight + 'px';
+        };
+        $scope.enterGallery = function() {
+            $scope.galleryView = true;
+        };
+        $scope.exitGallery = function() {
+            $scope.galleryView = false;
+        };
+        $scope.changeCarView = function(newIndex) {
+            if (newIndex < 0 || newIndex > $scope.carConfig.length) {
+                newIndex = 0;
+            }
+
+            $scope.carIndex = newIndex;
+            $scope.galleryView = false;
+        }
 
         window.addEventListener('resize', function() {
             $scope.width = $scope.carSpecElement.offsetWidth - 1;
@@ -382,6 +456,8 @@
             var displGauge = document.getElementsByClassName('displ-gauge')[0]
             displGauge.style.width = $scope.width * 9 / 10 + 'px';
             displGauge.style.height = $scope.width * 9 / 20 + 'px';
+
+            $scope.calculateGalleryHeight();
         });
     }]);
     carApp.directive('escapeKeyPress', ['$document', function($document) {
