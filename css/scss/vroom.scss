@@ -32,10 +32,6 @@
     .car-image-wrapper {
         width: 100%;
         position: relative;
-        // background-image: url('/img/icons/img_load.svg');
-        // background-repeat: no-repeat;
-        // background-size: 12%;
-        // background-position: center 50%;
 
         .car-nav-button {
             width: 3em;
@@ -133,10 +129,11 @@
 
                     &.disabled {
                         cursor: auto;
+                        opacity: 0.25;
 
                         &:hover {
                             background-color: $dark-gray;
-                            opacity: 0.5;
+                            opacity: 0.25;
                         }
                     }
                 }
@@ -184,8 +181,8 @@
                     position: absolute;
                     font-size: 2.5em;
                     font-weight: bold;
-                    bottom: 0.5em;
-                    right: 0.5em;
+                    bottom: 5%;
+                    right: 5%;
                 }
             }
         }
@@ -214,69 +211,104 @@
         color: $light-gray;
 
         .car-spec {
-            width: 23.75%;
-            margin: 0 0.5%;
+            width: 22.5%;
+            margin: 0 1%;
             display: inline-flex;
             padding-top: 20%;
+            position: relative;
 
-            &:first-of-type, &:last-of-type {
-                margin-left: 1%;
-            }
-        }
-    }
-
-    &.fullscreen {
-        position: fixed;
-        height: 100%;
-        top: 0;
-        left: 0;
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0.75);
-        z-index: 12000;
-
-        .car-image-wrapper {
-            width: 50%;
-            margin: 0 25%;
-            position: absolute;
-            top: 5%;
-
-            .car-image {
-                cursor: auto;
+            &:first-of-type {
+                margin-left: 2%;
             }
 
-            .car-nav-button {
-                background-color: rgba(188, 188, 188, 0.25);
+            &:last-of-type {
+                margin-right: 2%;
+            }
 
-                &:hover {
-                    background-color: rgba(188, 188, 188, 0.5);
+            .displ-gauge {
+                display: inline-block;
+                position: absolute;
+                overflow: hidden;
+                top: 33.333%;
+                left: 50%;
+                @include translate(-50%, -50%);
+
+                &::before {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    @include border-radius(12em 12em 0 0);
+                    background: $light-gray;
+                }
+
+                .displ-meter {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    top: 100%;
+                    @include transition(all, 0.25s, ease-in-out);
+                    @include transform-origin(center top);
+                    @include border-radius(0 0 12em 12em);
+                    background: $world-rally-blue;
+                }
+
+                &::after {
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    bottom: 0;
+                    left: 50%;
+                    @include translateX(-50%);
+                    width: 60%;
+                    height: 60%;
+                    background: #151515;
+                    @include border-radius(12em 12em 0 0);
                 }
             }
-        }
 
-        .car-info {
-            position: absolute;
-            width: 10%;
-            width: 10%;
-            height: calc((100% - 6em) * (2 / 3));
-            top: 5%;
-            left: 15%;
-            background-color: rgba(188, 188, 188, 0.5);
-
-            .info {
+            .displ-text {
+                position: absolute;
                 width: 100%;
-                height: 25%;
-                margin: 0;
-                padding: 0;
-
-                span {
-                    font-size: 1.75em;
-                }
+                text-align: center;
+                bottom: 5%;
+                font-size: 2em;
             }
 
-            .small-info {
-                @extend .info;
-                @include rotate(90deg);
-                background-size: auto 80%;
+            .pow-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                .hp-bar, .tq-bar {
+                    position: relative;
+                    // width: 90%;
+                    height: 20%;
+                    left: 5%;
+                    @include transition(width, 0.25s, ease-in-out);
+                }
+
+                .hp-bar {
+                    margin-top: 15%;
+                    background-color: $martini-sky-blue;
+                }
+
+                .tq-bar {
+                    background-color: $martini-red;
+                }
+
+                .pow-text {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 5%;
+                    text-align: center;
+                    font-size: 1.5em;
+                }
             }
         }
     }

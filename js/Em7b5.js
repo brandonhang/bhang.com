@@ -1,5 +1,5 @@
 (function() {
-    var musicApp = angular.module('music-app', ['ngSanitize']);
+    var musicApp = angular.module('music-app', ['ngSanitize', 'ngTouch']);
 
     musicApp.controller('music-ctrl', ['$http', '$scope', '$sce', function($http, $scope, $sce) {
         $http.get('/config/music.json').then(

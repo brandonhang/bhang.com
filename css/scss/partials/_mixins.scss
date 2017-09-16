@@ -86,3 +86,11 @@
     background: -moz-linear-gradient($top, $middle, $bottom);
     background: -o-linear-gradient($top, $middle, $bottom);
 }
+
+@mixin transform-origin($pos) {
+    transform-origin: $pos;
+    -webkit-transform-origin: $pos;
+    -moz-transform-origin: $pos;
+    -ms-transform-origin: $pos;
+    -o-transform-origin: $pos;
+}

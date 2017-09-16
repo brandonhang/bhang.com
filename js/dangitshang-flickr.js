@@ -16,7 +16,7 @@
         '&format=json' +
         '&nojsoncallback=1';
 
-    var flickrApp = angular.module('flickr-app', []);
+    var flickrApp = angular.module('flickr-app', ['ngTouch']);
 
     flickrApp.controller('flickr-ctrl', ['$scope', '$http', function($scope, $http) {
         $scope.currentPhotoView = 'Recent Albums';

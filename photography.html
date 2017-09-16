@@ -12,6 +12,7 @@
         <link type="text/css" rel="stylesheet" href="/css/nav.css"/>
         <link type="text/css" rel="stylesheet" href="/css/photos.css"/>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.min.js"></script>
         <script type="text/javascript" src="/js/bhangular.js"></script>
     </head>
     <body>
@@ -68,7 +69,7 @@
                                 <div id="lightbox-close" ng-click="closeLightbox()">CLOSE</div>
                                 <div id="prev-image" class="img-nav" ng-click="prev($event)"><img src="/img/icons/arrow_back.svg"/></div>
                                 <div id="next-image" class="img-nav" ng-click="next($event)"><img src="/img/icons/arrow_forward.svg"/></div>
-                                <div id="lightbox-image"></div>
+                                <div id="lightbox-image" ng-swipe-left="nextPic()" ng-swipe-right="prevPic()"></div>
                                 <a class="lightbox-title" href="https://www.flickr.com/photos/dangitshang/{{photoID}}" title="View on Flickr" target="_blank">{{pictureTitle}}</a>
                             </div>
                         </div>
