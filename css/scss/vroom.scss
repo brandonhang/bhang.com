@@ -230,6 +230,30 @@
                     font-weight: bold;
                     bottom: 5%;
                     right: 5%;
+
+                    @media only screen and (max-width: 1300px) {
+                        font-size: 2em;
+                    }
+
+                    @media only screen and (max-width: 1150px) {
+                        font-size: 1.5em;
+                    }
+
+                    @media #{$small-screen} {
+                        font-size: 2.5em;
+                    }
+
+                    @media only screen and (max-width: 600px) {
+                        font-size: 2em;
+                    }
+
+                    @media only screen and (max-width: 500px) {
+                        font-size: 1.5em;
+                    }
+
+                    @media only screen and (max-width: 450px) {
+                        font-size: 1.25em;
+                    }
                 }
             }
         }
@@ -274,17 +298,80 @@
 
             .text-container {
                 bottom: 5%;
-                font-size: 2em;
+                font-size: 1.75em;
                 width: 100%;
                 text-align: center;
                 position: absolute;
 
                 &.pow-text {
-                    font-size: 1.5em;
+                    font-size: 1.25em;
+
+                    span {
+                        display: block;
+                    }
 
                     &.unknown-pow {
-                        font-size: 1.35em;
-                        font-size: 2em;
+                        font-size: 1.75em;
+                    }
+                }
+
+                @media only screen and (max-width: 1400px) {
+                    font-size: 1.5em;
+
+                    &.pow-text {
+                        font-size: 1em;
+
+                        &.unknown-pow {
+                            font-size: 1.5em;
+                        }
+                    }
+                }
+
+                @media only screen and (max-width: 1200px) {
+                    font-size: 1em;
+
+                    &.pow-text {
+                        font-size: 0.75em;
+
+                        &.unknown-pow {
+                            font-size: 1em;
+                        }
+                    }
+                }
+
+                @media #{$small-screen} {
+                    font-size: 1.75em;
+
+                    &.pow-text {
+                        font-size: 1.25em;
+
+                        &.unknown-pow {
+                            font-size: 1.75em;
+                        }
+                    }
+                }
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 1em;
+
+                    &.pow-text {
+                        font-size: 0.65em;
+
+                        &.unknown-pow {
+                            font-size: 1em;
+                        }
+                    }
+                }
+
+                @media only screen and (max-width: 500px) {
+                    font-size: 0.75em;
+
+                    &.pow-text {
+                        font-size: 0.55em;
+
+                        &.unknown-pow {
+                            font-size: 0.75em;
+                        }
                     }
                 }
             }

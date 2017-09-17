@@ -90,7 +90,7 @@
                                     <div class="hp-bar" ng-style="getHorsepowerAmount()"></div>
                                     <div class="tq-bar" ng-style="getTorqueAmount()"></div>
                                     <div class="text-container pow-text" ng-class="{'unknown-pow': getTorque() < 0}">
-                                        <span>{{getHorsepower() < 0 ? '' : (getHorsepower() | number) + ' hp'}}</span><br/>
+                                        <span>{{getHorsepower() < 0 ? '' : (getHorsepower() | number) + ' hp'}}</span>
                                         <span>{{getTorque() < 0 ? '???' : (getTorque() | number) + ' lb-ft'}}</span>
                                     </div>
                                 </div>
