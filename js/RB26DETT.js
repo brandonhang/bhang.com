@@ -295,10 +295,14 @@
             }
         };
         $scope.nextCar = function() {
-            $scope.setIndex($scope.carIndex + 1);
+            if (!$scope.galleryView) {
+                $scope.setIndex($scope.carIndex + 1);
+            }
         };
         $scope.prevCar = function() {
-            $scope.setIndex($scope.carIndex - 1);
+            if (!$scope.galleryView) {
+                $scope.setIndex($scope.carIndex - 1);
+            }
         };
         $scope.setIndex = function(index) {
             var carLength = $scope.carConfig.length;
@@ -308,9 +312,18 @@
         };
         $scope.goFullscreen = function() {
             $scope.fullscreen = true;
+
+            var height = document.documentElement.clientWidth * 0.65 * 0.5625;
+            document.getElementsByClassName('car-info')[0].style.height = height + 'px';
+            document.getElementsByClassName('car-specs')[0].style.height = height + 'px';
+            $scope.resizeGraphs();
         };
         $scope.exitFullscreen = function() {
             $scope.fullscreen = false;
+
+            document.getElementsByClassName('car-info')[0].style.height = 'auto';
+            document.getElementsByClassName('car-specs')[0].style.height = 'auto';
+            $scope.resizeGraphs();
         };
 
         $scope.buildGraphs = function() {
@@ -449,15 +462,34 @@
             $scope.galleryView = false;
         }
 
+        $scope.resizeGraphs = function() {
+            var displGauge = document.getElementsByClassName('displ-gauge')[0];
+
+            setTimeout(function() {
+                $scope.calculateGalleryHeight();
+                $scope.width = $scope.carSpecElement.offsetWidth;
+                $scope.height = $scope.carSpecElement.offsetHeight;
+
+                if ($scope.fullscreen) {
+                    if ($scope.width > $scope.height) {
+                        displGauge.style.width = $scope.height * 9 / 10 + 'px';
+                        displGauge.style.height = $scope.height * 9 / 20 + 'px';
+                    }
+                    else {
+                        displGauge.style.width = $scope.width * 9 / 10 + 'px';
+                        displGauge.style.height = $scope.width * 9 / 20 + 'px';
+                    }
+                }
+                else {
+                    displGauge.style.width = $scope.width * 9 / 10 + 'px';
+                    displGauge.style.height = $scope.width * 9 / 20 + 'px';
+                }
+            }, 50);
+        };
+
         window.addEventListener('resize', function() {
-            $scope.width = $scope.carSpecElement.offsetWidth - 1;
-            $scope.height = $scope.carSpecElement.offsetHeight - 1;
 
-            var displGauge = document.getElementsByClassName('displ-gauge')[0]
-            displGauge.style.width = $scope.width * 9 / 10 + 'px';
-            displGauge.style.height = $scope.width * 9 / 20 + 'px';
-
-            $scope.calculateGalleryHeight();
+            $scope.resizeGraphs();
         });
     }]);
     carApp.directive('escapeKeyPress', ['$document', function($document) {

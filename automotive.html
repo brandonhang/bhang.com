@@ -51,19 +51,24 @@
                     </p>
                     <div id="car-companion" ng-class="{'fullscreen': fullscreen}" next-car="nextCar()" prev-car="prevCar()" escape-key-press="exitFullscreen()">
                         <div class="car-image-wrapper">
+                            <div class="fullscreen-close" ng-click="exitFullscreen()">CLOSE</div>
                             <div class="car-wrapper-prev car-nav-button" ng-click="prevCar()"><img src="/img/icons/arrow_back.svg"/></div><!--
                             --><div class="car-image" ng-swipe-left="nextCar()" ng-swipe-right="prevCar()" ng-style="getCar()">
                                 <h2 class="car-name">{{getCarName()}}</h2>
                             </div><!--
                             --><div class="car-gallery" ng-style="getGalleryHeight()" ng-class="{'gallery-view': galleryView}">
+                                <div class="gallery-close-wrapper">
+                                    <div class="gallery-close" ng-click="exitGallery()">CLOSE</div>
+                                </div>
                                 <div ng-repeat="car in carConfig" ng-click="changeCarView($index)" class="car-thumb" style="background-image: url('{{car.thmb}}')"></div>
                             </div><!--
                             --><div class="car-wrapper-next car-nav-button" ng-click="nextCar()"><img src="/img/icons/arrow_forward.svg"/></div>
                             <div class="image-options">
                                 <div ng-if="getPhotoLink() === ''" class="image-button external-button disabled"></div>
                                 <a ng-if="getPhotoLink() !== ''" title="Flickr Link" href="{{getPhotoLink()}}" target="_blank" class="image-button external-button"></a>
-                                <div class="image-button gallery-button" title="Show/Hide Gallery" ng-click="enterGallery()"></div>
-                                <div class="image-button fullscreen-button" title="Fullscreen" ng-click="goFullscreen()"></div>
+                                <div class="image-button gallery-button" title="Show Gallery" ng-click="enterGallery()"></div>
+                                <div ng-if="!fullscreen" class="image-button fullscreen-button" title="Fullscreen" ng-click="goFullscreen()"></div>
+                                <div ng-if="fullscreen" class="image-button fullscreen-button fullscreen-exit" title="Exit Fullscreen" ng-click="exitFullscreen()"></div>
                             </div>
                         </div><!--
                         --><div class="car-info">

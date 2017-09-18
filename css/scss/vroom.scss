@@ -27,11 +27,35 @@
 #car-companion {
     width: 100%;
     position: relative;
-    // @include transition(all, 0.25s, ease-in-out);
 
     .car-image-wrapper {
         width: 100%;
         position: relative;
+
+        .fullscreen-close {
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            right: 0;
+            color: white;
+            font-size: 1.75em;
+            height: 1.5em;
+            line-height: 1.5em;
+            padding: 0.25em 0.5em 0.25em 1.6em;
+            background-image: url('/img/icons/close.svg');
+            background-position: 0.1em center;
+            background-repeat: no-repeat;
+            background-size: 1.5em;
+            cursor: pointer;
+            background-color: transparent;
+            @include transition(background-color, 0.25s, ease-in-out);
+            visibility: hidden;
+            opacity: 0;
+
+            &:hover {
+                background-color: rgba(80, 80, 80, 0.75);
+            }
+        }
 
         .car-nav-button {
             width: 3em;
@@ -110,6 +134,33 @@
             @include transition-timing-function(ease-in-out);
             background-color: rgba(0, 0, 0, 0.75);
             overflow-y: scroll;
+            z-index: 9001;
+
+            .gallery-close-wrapper {
+                width: 100%;
+                text-align: right;
+
+                .gallery-close {
+                    display: inline;
+                    font-size: 1.5em;
+                    line-height: 1.5em;
+                    padding-right: 1.5em;
+                    padding-left: 0.25em;
+                    color: white;
+                    cursor: pointer;
+                    background-image: url('/img/icons/close.svg');
+                    background-position: right center;
+                    background-repeat: no-repeat;
+                    background-size: 1.5em;
+                    background-color: transparent;
+                    // margin-bottom: 0.75em;
+                    @include transition(background-color, 0.25s, ease-in-out);
+
+                    &:hover {
+                        background-color: rgba(80, 80, 80, 0.75);
+                    }
+                }
+            }
 
             .car-thumb {
                 display: inline-block;
@@ -122,19 +173,23 @@
                 position: relative;
                 cursor: pointer;
                 background-color: $light-gray;
-                @include transition(background-color, 0.25s, ease-in-out);
+                @include transition(opacity, 0.25s, ease-in-out);
                 @include box-shadow(3px, 3px, 5px, rgba(0, 0, 0, 0.25));
 
                 &:first-of-type {
                     margin-top: 1em;
                 }
 
-                &:nth-of-type(5n + 1) {
+                &:nth-of-type(5n + 2) {
                     margin-left: 1em;
                 }
 
-                &:nth-of-type(5n + 5) {
+                &:nth-of-type(5n + 1) {
                     margin-right: 1em;
+                }
+
+                &:hover {
+                    opacity: 0.65;
                 }
             }
 
@@ -192,7 +247,11 @@
                 &.fullscreen-button {
                     margin-right: 0.5em;
                     background-size: cover;
-                    background-image: url('/img/icons/fullscreen.svg')
+                    background-image: url('/img/icons/fullscreen.svg');
+
+                    &.fullscreen-exit {
+                        background-image: url('/img/icons/fullscreen_exit.svg');
+                    }
                 }
 
                 &:hover {
@@ -493,6 +552,68 @@
                     background-size: contain;
                     @include transition(all, 0.25s, ease-in-out);
                 }
+            }
+        }
+    }
+
+    &.fullscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        z-index: 10000;
+
+        .car-image-wrapper {
+            top: 4em;
+            left: 2em;
+            width: 65%;
+
+            .fullscreen-close {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .car-nav-button {
+                background-color: transparent;
+
+                &:hover {
+                    background-color: rgba(80, 80, 80, 0.75);
+                }
+            }
+        }
+
+
+        .car-info {
+            position: fixed;
+            top: 4em;
+            width: calc(17.5% - 2.5em);
+            left: calc(65% + 3em);
+            margin: 0;
+
+            .info, .small-info {
+                display: block;
+                margin: 0 0.5em 0 1em;
+                padding-top: 0;
+                height: 25%;
+                width: calc(100% - 1.5em);
+            }
+        }
+
+        .car-specs {
+            position: fixed;
+            top: 4em;
+            width: calc(17.5% - 2.5em);
+            right: 2em;
+            margin: 0;
+
+            .car-spec {
+                display: block;
+                margin: 0 1em 0 0.5em;
+                padding-top: 0;
+                height: 25%;
+                width: calc(100% - 1.5em);
             }
         }
     }
