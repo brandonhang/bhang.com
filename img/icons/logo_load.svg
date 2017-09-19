@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 100 100"
+   preserveAspectRatio="xMidYMid"
+   class="lds-rolling"
+   version="1.1"
+   id="svg8728"
+   sodipodi:docname="logo_load.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata8734">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8732">
+    <mask
+       id="_1">
+      <g
+         id="g14">
+        <path
+           inkscape:connector-curvature="0"
+           d="M 0,0 H 1600 V 1600 H 0 Z"
+           style="fill:#ffffff;stroke:none"
+           id="path10" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 358.49991,1037.9999 c 0,0 22.24998,0 32.74984,0 10.50005,0 30.50013,-1.7501 39.00023,-9.2501 8.49981,-7.4998 14.74991,-18.75 13.24997,-36.24988 -1.50013,-17.50002 -9.00002,-28.75003 -23.25001,-33.00008 -14.24999,-4.24996 -28.25003,-3.49989 -32.00016,-3.49989 -3.74994,0 -29.74987,0 -29.74987,0 0,0 0,81.99995 0,81.99995 z m 0,105.2501 c 0,0 31.74991,0.2499 41.74995,0.2499 10.00004,0 25.74997,-1.7499 35.75001,-7.75 10.00004,-5.9999 17.49992,-16.75 17.49992,-29.75 0,-13.0001 -1.99995,-27 -13.00001,-34.7499 -10.99996,-7.7501 -26.00002,-10.0002 -34.99985,-10.0002 -9.00001,0 -47.00002,0 -47.00002,0 0,0 0,82.0002 0,82.0002 z"
+           style="fill:#000000;fill-rule:nonzero;stroke:none"
+           id="path12" />
+      </g>
+    </mask>
+    <mask
+       id="_2">
+      <g
+         id="g24">
+        <path
+           inkscape:connector-curvature="0"
+           d="M 0,0 H 1600 V 1600 H 0 Z"
+           style="fill:#ffffff;stroke:none"
+           id="path20" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 800.49992,84.999943 c 394.74538,0 714.74998,320.004557 714.74998,714.749907 0,394.74545 -320.0046,714.75005 -714.74998,714.75005 -394.74555,0 -714.750198,-320.0046 -714.750198,-714.75005 0,-394.74535 320.004648,-714.749907 714.750198,-714.749907 z"
+           style="fill:#000000;fill-rule:nonzero;stroke:none"
+           id="path22" />
+      </g>
+    </mask>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     id="namedview8730"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="2.36"
+     inkscape:cx="-2.3305085"
+     inkscape:cy="50"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8728" />
+  <g
+     transform="matrix(0.06623716,0,0,0.06623716,-3.0228353,-2.9731616)"
+     id="g8794">
+    <path
+       inkscape:connector-curvature="0"
+       id="B"
+       inkscape:label="B"
+       style="fill:#ff0000;fill-rule:nonzero;stroke:none"
+       mask="url(#_1)"
+       d="m 331.81315,935.0625 c 0,0 42.9367,0 59.93661,0 17.00011,0 45.50009,-2.0627 62.25004,17.18731 16.75015,19.25001 16.17404,47.398 13.74999,62.75019 -2.99998,18.9999 -21.24987,31.4999 -21.24987,31.4999 0,0 11.75003,4 19.99988,14.7499 8.25005,10.7501 13.38835,22.5002 13.38835,40.7501 0,18.2499 -3.63836,28.4999 -13.13839,40.7501 -9.49983,12.2499 -17.99993,14.9998 -27.49996,18.25 -9.50003,3.2499 -27.49996,4.9374 -41.24994,4.9374 -13.74998,0 -66.18671,0 -66.18671,0 0,0 0,-230.8749 0,-230.8749 z" />
+    <path
+       inkscape:connector-curvature="0"
+       id="H"
+       inkscape:label="H"
+       style="fill:#6b6b6b;fill-rule:nonzero;stroke:none"
+       d="m 1121.5005,433.78115 c 0,0 26.6869,0 26.6869,0 0,0 0,230.93757 0,230.93757 0,0 -26.6869,0 -26.6869,0 0,0 0,-230.93757 0,-230.93757 z m 121.0001,0 c 0,0 26.6868,0 26.6868,0 0,0 0,230.93757 0,230.93757 0,0 -26.6868,0 -26.6868,0 0,0 0,-230.93757 0,-230.93757 z m -105.4799,102.99997 c 0,0 112.0001,0 112.0001,0 0,0 0,23.25001 0,23.25001 0,0 -112.0001,0 -112.0001,0 0,0 0,-23.25001 0,-23.25001 z" />
+    <path
+       inkscape:connector-curvature="0"
+       id="Tranny Gate"
+       inkscape:label="Tranny Gate"
+       style="fill:#6b6b6b;fill-rule:nonzero;stroke:none"
+       d="m 727.99988,977.49996 c 0,0 -188.50002,0 -188.50002,0 0,0 0,145.50004 0,145.50004 0,0 280.50003,0 280.50003,0 0,0 53.49988,0 53.49988,0 0,0 0,-501.00016 0,-501.00016 0,0 188.00013,0 188.00013,0 0,0 0,-145.5 0,-145.5 0,0 -333.50002,0 -333.50002,0 0,0 0,501.00012 0,501.00012 z" />
+    <path
+       inkscape:connector-curvature="0"
+       id="Ring"
+       inkscape:label="Ring"
+       style="fill:#6b6b6b;fill-rule:nonzero;stroke:none"
+       mask="url(#_2)"
+       d="m 800.49992,44.999886 c 416.83668,0 754.74998,337.913224 754.74998,754.749964 0,416.83685 -337.9133,754.75005 -754.74998,754.75005 -416.83684,0 -754.75016,-337.9132 -754.75016,-754.75005 0,-416.83674 337.91332,-754.749964 754.75016,-754.749964 z" />
+  </g>
+  <circle
+     cx="50"
+     cy="50"
+     ng-attr-stroke="{{config.color}}"
+     ng-attr-stroke-width="{{config.width}}"
+     ng-attr-r="{{config.radius}}"
+     ng-attr-stroke-dasharray="{{config.dasharray}}"
+     r="48.75"
+     transform="rotate(48 50 50)"
+     id="circle8726"
+     stroke-dashoffset="850"
+     stroke-dasharray="300"
+     stroke-width="2.5"
+     stroke="#0086f5"
+     fill="none">
+    <animateTransform
+       attributeName="transform"
+       type="rotate"
+       calcMode="linear"
+       values="0 50 50;360 50 50"
+       keyTimes="0;1"
+       dur="1s"
+       begin="0s"
+       repeatCount="indefinite" />
+  </circle>
+</svg>

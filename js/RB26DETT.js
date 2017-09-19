@@ -1,5 +1,5 @@
 (function() {
-    var carApp = angular.module('car-app', ['ngTouch']);
+    var carApp = angular.module('car-app', ['ngSanitize', 'ngTouch']);
 
     carApp.controller('car-ctrl', ['$http', '$scope', '$sce', function($http, $scope, $sce) {
         $http.get('/config/cars.json').then(
@@ -42,8 +42,9 @@
 
             if (index != undefined) {
                 return {
-                    'background-image': "url('" + $scope.carConfig[index].img + "')"
-                }
+                    'background-image': "url('" + $scope.carConfig[index].img + "')," +
+                        " url('/img/icons/img_load.svg')"
+                };
             }
         };
         $scope.getPhotoLink = function() {
@@ -294,6 +295,13 @@
                 return $scope.carConfig[index].vmax;
             }
         };
+        $scope.getDescription = function() {
+            var index = $scope.carIndex;
+
+            if (index != undefined) {
+                return $scope.carConfig[index].desc;
+            }
+        };
         $scope.nextCar = function() {
             if (!$scope.galleryView) {
                 $scope.setIndex($scope.carIndex + 1);
@@ -312,25 +320,19 @@
         };
         $scope.goFullscreen = function() {
             $scope.fullscreen = true;
-
-            var height = document.documentElement.clientWidth * 0.65 * 0.5625;
-            document.getElementsByClassName('car-info')[0].style.height = height + 'px';
-            document.getElementsByClassName('car-specs')[0].style.height = height + 'px';
             $scope.resizeGraphs();
         };
         $scope.exitFullscreen = function() {
             $scope.fullscreen = false;
-
-            document.getElementsByClassName('car-info')[0].style.height = 'auto';
-            document.getElementsByClassName('car-specs')[0].style.height = 'auto';
             $scope.resizeGraphs();
         };
 
         $scope.buildGraphs = function() {
             $scope.carSpecElement = document.getElementsByClassName('car-spec')[0];
-            $scope.width = $scope.carSpecElement.offsetWidth - 1;
-            $scope.height = $scope.carSpecElement.offsetHeight - 1;
-            $scope.getDisplacementAmount();
+
+            setTimeout(function() {
+                $scope.resizeGraphs();
+            }, 50);
         };
         $scope.getDisplacementAmount = function() {
             var turn = $scope.getDisplacement() / $scope.displMax / 2;
@@ -467,24 +469,22 @@
 
             setTimeout(function() {
                 $scope.calculateGalleryHeight();
+
                 $scope.width = $scope.carSpecElement.offsetWidth;
                 $scope.height = $scope.carSpecElement.offsetHeight;
 
-                if ($scope.fullscreen) {
-                    if ($scope.width > $scope.height) {
-                        displGauge.style.width = $scope.height * 9 / 10 + 'px';
-                        displGauge.style.height = $scope.height * 9 / 20 + 'px';
-                    }
-                    else {
-                        displGauge.style.width = $scope.width * 9 / 10 + 'px';
-                        displGauge.style.height = $scope.width * 9 / 20 + 'px';
-                    }
+                if ($scope.width > $scope.height) {
+                    displGauge.style.width = $scope.height * 9 / 10 + 'px';
+                    displGauge.style.height = $scope.height * 9 / 20 + 'px';
                 }
                 else {
                     displGauge.style.width = $scope.width * 9 / 10 + 'px';
                     displGauge.style.height = $scope.width * 9 / 20 + 'px';
                 }
             }, 50);
+        };
+        $scope.htmlDescription = function() {
+            return $sce.trustAsHtml($scope.getDescription());
         };
 
         window.addEventListener('resize', function() {
