@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head id="eat-the-head">
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="author" content="Brandon S. Hang"/>
@@ -50,7 +50,7 @@
                         below is a car companion viewer for a select number of my photos.
                     </p>
                     <div id="car-companion" ng-class="{'fullscreen': fullscreen}" next-car="nextCar()" prev-car="prevCar()" escape-key-press="exitFullscreen()">
-                        <div class="fullscreen-close" ng-click="exitFullscreen()">CLOSE</div>
+                        <!-- <div class="fullscreen-close" ng-click="exitFullscreen()">CLOSE</div> -->
                         <div class="companion-wrapper">
                             <div class="car-image-wrapper">
                                 <div class="car-wrapper-prev car-nav-button" ng-click="prevCar()"><img src="/img/icons/arrow_back.svg"/></div><!--

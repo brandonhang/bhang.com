@@ -320,10 +320,12 @@
         };
         $scope.goFullscreen = function() {
             $scope.fullscreen = true;
+            document.getElementsByTagName('body')[0].className = 'no-content';
             $scope.resizeGraphs();
         };
         $scope.exitFullscreen = function() {
             $scope.fullscreen = false;
+            document.getElementsByTagName('body')[0].className = '';
             $scope.resizeGraphs();
         };
 

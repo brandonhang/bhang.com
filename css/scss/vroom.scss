@@ -1,6 +1,12 @@
 @import 'partials/_variables';
 @import 'partials/_mixins';
 
+body {
+    &.no-content {
+        overflow-y: hidden;
+    }
+}
+
 .content {
     .content-background {
         background-image: url('/img/bkgrds/cars2.jpg');
@@ -578,7 +584,9 @@
         .companion-wrapper {
             position: relative;
             top: calc(50% + 1em);
+            left: 1em;
             @include translateY(-50%);
+            max-width: 190vh;
 
             .car-image-wrapper {
                 width: 65%;
@@ -633,6 +641,10 @@
         }
 
         @media only screen and (max-width: 1000px) {
+            min-height: 100%;
+            height: auto;
+            overflow-y: auto;
+
             .companion-wrapper {
                 text-align: center;
                 top: 5em;
@@ -641,6 +653,7 @@
 
                 .car-image-wrapper {
                     margin: 0 auto;
+                    width: 80%;
 
                     .car-image {
                         .car-name {
@@ -655,20 +668,170 @@
 
                 .car-info {
                     margin-left: auto;
+                    width: calc(40% - 3em);
                 }
 
                 .car-specs {
                     margin-right: auto;
+                    width: calc(40% - 3em);
                 }
             }
 
             .car-description {
                 position: relative;
                 top: 5em;
-                width: calc(65% - 6em);
+                width: calc(80% - 6em);
                 left: 50%;
                 @include translateX(-50%);
                 margin: 0;
+            }
+        }
+
+        @media #{$small-screen} {
+            .companion-wrapper {
+                max-width: none;
+
+                .car-image-wrapper {
+                    width: 90%;
+                }
+
+                .car-info {
+                    width: calc(45% - 3em);
+
+                    .info {
+                        span {
+                            font-size: 1.5em;
+                        }
+                    }
+                }
+
+                .car-specs {
+                    width: calc(45% - 3em);
+
+                    .car-spec {
+                        .text-container {
+                            font-size: 1em;
+
+                            &.pow-text {
+                                font-size: 0.65em;
+
+                                span {
+                                    display: block;
+                                }
+
+                                &.unknown-pow {
+                                    font-size: 1em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .car-description {
+                width: calc(90% - 6em);
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            .companion-wrapper {
+                .car-info {
+                    width: calc(90% - 6em);
+                    margin-right: auto;
+
+                    .info {
+                        span {
+                            font-size: 2.5em;
+                        }
+                    }
+                }
+
+                .car-specs {
+                    width: calc(90% - 6em);
+                    margin-left: auto;
+
+                    .car-spec {
+                        .text-container {
+                            font-size: 1.75em;
+
+                            &.pow-text {
+                                font-size: 1.25em;
+
+                                span {
+                                    display: block;
+                                }
+
+                                &.unknown-pow {
+                                    font-size: 1.75em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .companion-wrapper {
+                .car-info {
+                    .info {
+                        span {
+                            font-size: 2em;
+                        }
+                    }
+                }
+
+                .car-specs {
+                    .car-spec {
+                        .text-container {
+                            font-size: 1em;
+
+                            &.pow-text {
+                                font-size: 0.65em;
+
+                                span {
+                                    display: block;
+                                }
+
+                                &.unknown-pow {
+                                    font-size: 1em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .companion-wrapper {
+                .car-info {
+                    .info {
+                        span {
+                            font-size: 1.5em;
+                        }
+                    }
+                }
+
+                .car-specs {
+                    .car-spec {
+                        .text-container {
+                            font-size: 0.75em;
+
+                            &.pow-text {
+                                font-size: 0.55em;
+
+                                span {
+                                    display: block;
+                                }
+
+                                &.unknown-pow {
+                                    font-size: 0.75em;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
