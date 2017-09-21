@@ -1,0 +1,43 @@
+@import 'partials/_variables';
+@import 'partials/_mixins';
+
+.content {
+    .content-background {
+    }
+
+    .content-wrapper {
+        .content-picture {
+            @media #{$small-screen} {
+                background-image: url('/img/content/walk_tall.jpg');
+                background-size: 205% auto;
+                background-position: 52% 50%;
+            }
+        }
+
+        .content-section {
+            margin-bottom: 1.25em;
+        }
+
+        #work-app {
+            .resume-section {
+
+            }
+
+            .work-section {
+                .work-entry {
+                    .img-container {
+                        width: 20%;
+                        padding-top: 20%;
+                        display: inline-block;
+
+                    }
+
+                    .work-header {
+                        width: 80%;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}

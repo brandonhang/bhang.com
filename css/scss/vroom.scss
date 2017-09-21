@@ -97,31 +97,6 @@
             background-color: black;
             margin: 0 auto;
 
-            .car-name {
-                width: calc(100% - 4.333em);
-                font-size: 1.5em;
-                color: white;
-                font-weight: bold;
-                position: absolute;
-                top: 0;
-                margin: 0;
-                opacity: 0.25;
-                padding: 0.333em 0 0 0.333em;
-                @include transition-property(opacity, background-color, box-shadow);
-                @include transition-duration(0.25s);
-                @include transition-timing-function(ease-in-out);
-                @include box-shadow(0 8px 4px -4px transparent);
-                background-color: transparent;
-            }
-
-            &:hover {
-                .car-name {
-                    opacity: 0.8;
-                    background-color: rgba(0, 0, 0, 0.25);
-                    @include box-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-                }
-            }
-
             &.big-screen {
                 background-size: 0, 0;
             }
@@ -563,8 +538,19 @@
         }
     }
 
-    .car-description {
+    .car-title {
+        font-size: 1.75em;
+        margin: 0.5em 1.714em;
+    }
 
+    .car-description {
+        margin: 0 3em;
+
+        p {
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
     }
 }
 

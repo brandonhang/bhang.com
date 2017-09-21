@@ -1,0 +1,122 @@
+{
+    "work": [
+        {
+            "title": "Software Developer II",
+            "company": "Management Sciences Associates, Inc.",
+            "date": "Dec. 2016 – Present",
+            "location": "Pittsburgh, PA",
+            "duties": [
+                "Implemented, maintained, and executed build and deployment plans via the Atlassian software stack as a DevOps developer",
+                "Designed and developed a DevOps portal housing a number of monitoring tools using AngularJS, TypeScript, and SCSS",
+                "Built REST APIs using Node.js to query server, Apache Kafka, and TestRail data in real-time",
+                "Created automated testing suites using Scala, Cucumber, JUnit, and Mockito to expedite the testing phase of the SDLC",
+                "Generated automated tasks for server monitoring and data validation using Bash, Python, and HBase queries",
+                "Participated in grooming, planning, and daily standups within a Scrum environment",
+                "Reviewed daily Linux server logs to monitor development and production servers for potential problems",
+                "Carried out 24/7 on-call duties to assess and remedy production issues"
+            ],
+            "icon": "msa.png",
+            "old": "msa_old.png"
+        },
+        {
+            "title": "IT Business Analyst Intern",
+            "company": "TE Connectivity",
+            "date": "May 2016 – Aug. 2016",
+            "location": "Harrisburg, PA",
+            "duties": [
+                "Oversaw a multi-year project that inventories and rationalizes every application used by TE globally along with their associated operating costs, user base, strategic value, etc.",
+                "Collaborated with international teams to improve the data acquisition process and analyze the application portfolio data",
+                "Designed a prototype dashboard using the D3.js library and CAML Queries to summarize the application portfolio data",
+                "Provided quality assurance testing and wrote technical documentation for a web-based application tracker"
+            ],
+            "icon": "te.png",
+            "old": "te_old.png"
+        }
+    ],
+    "skills": {
+        "frontend": {
+            "name": "Frontend",
+            "list": [
+                "JavaScript", "jQuery", "AngularJS", "HTML", "CSS", "SCSS", "TypeScript", "Django", "PHP"
+            ]
+        },
+        "backend": {
+            "name": "Backend",
+            "list": [
+                "Java", "Scala", "Python", "Node.js", "C"
+            ]
+        },
+        "testing": {
+            "name": "Testing Frameworks",
+            "list": [
+                "JUnit", "Cucumber", "Selenium"
+            ]
+        },
+        "misc": {
+            "name": "Misc. Technical Skills",
+            "list": [
+                "Linux", "Bash", "Git", "SQL", "HBase"
+            ]
+        },
+        "other": {
+            "name": "Other Skills",
+            "list": [
+                "Scrum Methodology", "Atlassian Stack", "Adobe Creative Suite", "Microsoft Office"
+            ]
+        }
+    },
+    "education": [
+        {
+            "school": "University of Pittsburgh",
+            "location": "Pittsburgh, PA",
+            "years": [2015, 2016],
+            "type": "B.S.",
+            "major": "Computer Science"
+        },
+        {
+            "school": "Shippensburg University",
+            "location": "Shippensburg, PA",
+            "years": [2012, 2013],
+            "type": "M.S.",
+            "major": "Biology"
+        },
+        {
+            "school": "University of Pittsburgh",
+            "location": "Pittsburgh, PA",
+            "years": [2008, 2012],
+            "type": "B.S.",
+            "major": "Biological Sciences",
+            "minor": "Chemistry"
+        }
+    ],
+    "unrelated": [
+        {
+            "title": "Certified Nursing Assistant",
+            "company": "Twin Oaks Health and Rehabilitation Center",
+            "date": "Apr. 2014 – Jun. 2014",
+            "location": "Palmyra, PA",
+            "duties": [
+                "Provided healthcare for geriatric patients in both a long-term and acute rehab facility",
+                "Assisted in bathing, skin care, oral care, feeding, physical therapy, etc of patients",
+                "Documented healthcare provided and medical details of patients",
+                "Aided nurses with more advanced patient care"
+            ],
+            "icon": "twin_oaks.png",
+            "old": "twin_old.png"
+        },
+        {
+            "title": "Quality Control Technician (temp.)",
+            "company": "The Warrell Corporation through OnAssignment",
+            "date": "Dec. 2013 – Jan. 2014",
+            "location": "Camp Hill, PA",
+            "duties": [
+                "Analyzed food production lines to maintain compliance with GMP standards",
+                "Performed numerous checks on products including mass, oxygen levels, packaging, etc.",
+                "Documented daily checks with statistical analysis to ensure factory requirements",
+                "Improved functionality of company’s Excel spreadsheets regarding graphical and statistical analysis"
+            ],
+            "icon": "twin_oaks.png",
+            "old": "twin_old.png"
+        }
+    ]
+}

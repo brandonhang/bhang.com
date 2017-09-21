@@ -91,6 +91,7 @@ a[target="_blank"], .target-blank {
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
+        background-color: $dark-blue;
         @include box-shadow(0, 3px, 5px, rgba(0, 0, 0, 0.25));
 
         @media #{$small-screen} {

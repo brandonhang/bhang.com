@@ -11,7 +11,7 @@
         <link type="text/css" rel="stylesheet" href="./css/common.css"/>
         <link type="text/css" rel="stylesheet" href="./css/nav.css"/>
         <link type="text/css" rel="stylesheet" href="./css/vroom.css"/>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.min.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.min.js"></script>
         <script type="text/javascript" src="/js/bhangular.js"></script>
@@ -54,7 +54,7 @@
                             <div class="car-image-wrapper">
                                 <div class="car-wrapper-prev car-nav-button" ng-click="prevCar()"><img src="/img/icons/arrow_back.svg"/></div><!--
                                 --><div class="car-image" ng-swipe-left="nextCar()" ng-swipe-right="prevCar()" ng-style="getCar()" ng-class="{'big-screen': fullscreen}">
-                                    <h2 class="car-name">{{getCarName()}}</h2>
+                                    <!-- <h2 class="car-name">{{getCarName()}}</h2> -->
                                 </div><!--
                                 --><div class="car-gallery" ng-style="getGalleryHeight()" ng-class="{'gallery-view': galleryView}">
                                     <div class="gallery-close-wrapper">
@@ -114,14 +114,15 @@
                                 </div>
                             </div>
                         </div>
+                        <h2 class="car-title">{{getCarName()}}</h2>
                         <div class="car-description" ng-bind-html="htmlDescription()"></div>
                         <div id="lightbox" ng-class="{'light-em-up': fullscreen}">
                             <div id="lightbox-close" ng-click="exitFullscreen()">CLOSE</div>
                             <div id="prev-image" class="img-nav" ng-click="prevCar()"><img src="/img/icons/arrow_back.svg"/></div>
                             <div id="next-image" class="img-nav" ng-click="nextCar()"><img src="/img/icons/arrow_forward.svg"/></div>
                             <div id="lightbox-image" ng-swipe-left="nextCar()" ng-swipe-right="prevCar()" ng-style="getCar()"></div>
-                            <a ng-if="getPhotoLink() !== ''" class="lightbox-title" href="getPhotoLink()" title="Flickr Link" target="_blank">{{getCarName()}}</a>
-                            <h3 ng-if="getPhotoLink() === ''" class="lightbox-title no-link" href="getPhotoLink()" title="Flickr Link" target="_blank">{{getCarName()}}</h3>
+                            <a ng-if="getPhotoLink() !== ''" class="lightbox-title" href="{{getPhotoLink()}}" title="View on Flickr" target="_blank">{{getCarName()}}</a>
+                            <h3 ng-if="getPhotoLink() === ''" class="lightbox-title no-link">{{getCarName()}}</h3>
                         </div>
                     </div>
                 </div>

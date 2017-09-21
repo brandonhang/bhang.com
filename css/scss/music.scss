@@ -67,8 +67,8 @@
 
                 .thumbnail-wrapper {
                     .music-photo {
-                        width: calc(33.33333333% - 1.33333333em);
-                        padding-top: calc(33.33333333% - 1.33333333em);
+                        width: calc((100% / 3) - 1.33333333em - 1px);
+                        padding-top: calc((100% / 3) - 1.33333333em - 1px);
                         margin: 1em;
                         background-size: cover;
                         background-position: center center;
@@ -98,20 +98,20 @@
                         }
 
                         @media only screen and (max-width: 1350px) {
-                            width: calc(33.33333333% - 1em);
-                            padding-top: calc(33.33333333% - 1em);
+                            width: calc((100% / 3) - 1em);
+                            padding-top: calc((100% / 3) - 1em);
                             margin: 0.75em;
                         }
 
                         @media only screen and (max-width: 1200px) {
-                            width: calc(33.33333333% - 0.8em);
-                            padding-top: calc(33.33333333% - 0.8em);
+                            width: calc((100% / 3) - 0.8em);
+                            padding-top: calc((100% / 3) - 0.8em);
                             margin: 0.6em;
                         }
 
                         @media #{$small-screen} {
-                            width: calc(33.33333333% - 1.33333333em);
-                            padding-top: calc(33.33333333% - 1.33333333em);
+                            width: calc((100% / 3) - 1.33333333em - 1px);
+                            padding-top: calc((100% / 3) - 1.33333333em - 1px);
                             margin: 1em;
                         }
 

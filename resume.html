@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="/css/common.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/nav.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/resume.css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script type="text/javascript" src="/js/bhangular.js"></script>
+    </head>
+    <body>
+        <nav ng-app="bhang-app" ng-controller="bhang-ctrl" class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
+        <div class="content">
+            <div class="content-background"></div>
+            <div class="content-wrapper">
+                <div class="content-picture">
+                    <img src="/img/content/walk_tall.jpg"/>
+                </div><!--
+                --><div class="content-section" ng-app="work-app" ng-controller="work-ctrl" id="work-app">
+                    <h1 class="title">R&Eacute;SUM&Eacute;</h1>
+                    <div class="resume-section work-section">
+                        <h1 class="subtitle">Work Experience</h1>
+                        <div ng-repeat="work in resume.work" class="work-entry">
+                            <div class="img-container"></div><!--
+                            --><div class="work-header">
+                                <h4>{{work.title}}</h4>
+                                <h4>{{work.company}}</h4>
+                                <h4>{{work.date}}</h4>
+                                <h4>{{work.location}}</h4>
+                            </div>
+                            <div class="work-duties">
+                                <ul>
+                                    <li ng-repeat="duty in work.duties">{{duty}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resume-section skills-section">
+                        <h1 class="subtitle">Skills</h1>
+                    </div>
+                    <div class="resume-section education-section">
+                        <h1 class="subtitle">Education</h1>
+                    </div>
+                    <div class="resume-section other-section">
+                        <h1 class="subtitle">Other Work Experience</h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/js/work.js"></script>
+    </body>
+</html>
