@@ -320,12 +320,14 @@
         };
         $scope.goFullscreen = function() {
             $scope.fullscreen = true;
-            document.getElementsByTagName('body')[0].className = 'no-content';
+            // $scope.descriptionView = false;
+            // document.getElementsByTagName('body')[0].className = 'no-content';
             $scope.resizeGraphs();
         };
         $scope.exitFullscreen = function() {
             $scope.fullscreen = false;
-            document.getElementsByTagName('body')[0].className = '';
+            // $scope.descriptionView = false;
+            // document.getElementsByTagName('body')[0].className = '';
             $scope.resizeGraphs();
         };
 
@@ -452,6 +454,7 @@
             carGallery.style.height = carImage.offsetHeight + 'px';
         };
         $scope.enterGallery = function() {
+            // $scope.descriptionView = false;
             $scope.galleryView = true;
         };
         $scope.exitGallery = function() {
@@ -488,6 +491,9 @@
         $scope.htmlDescription = function() {
             return $sce.trustAsHtml($scope.getDescription());
         };
+        // $scope.toggleDescription = function() {
+        //     $scope.descriptionView = !$scope.descriptionView;
+        // };
 
         window.addEventListener('resize', function() {
 

@@ -1,12 +1,6 @@
 @import 'partials/_variables';
 @import 'partials/_mixins';
 
-body {
-    &.no-content {
-        overflow-y: hidden;
-    }
-}
-
 .content {
     .content-background {
         background-image: url('/img/bkgrds/cars2.jpg');
@@ -127,6 +121,10 @@ body {
                     @include box-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
                 }
             }
+
+            &.big-screen {
+                background-size: 0, 0;
+            }
         }
 
         .car-gallery {
@@ -208,10 +206,10 @@ body {
 
         .image-options {
             position: absolute;
-            width: calc(100% - 6em);
             height: 2.5em;
-            bottom: 0.5em;
+            bottom: 0;
             right: 3em;
+            padding: 0.5em 0;
             text-align: right;
 
             .image-button {
@@ -221,7 +219,9 @@ body {
                 margin: 0 0.25em;
                 background-color: $dark-gray;
                 border: 1px solid white;
-                @include transition(all, 0.25s, ease-in-out);
+                @include transition-property(opacity, background-color);
+                @include transition-duration(0.25s);
+                @include transition-timing-function(ease-in-out);
                 background-size: 80% auto;
                 background-repeat: no-repeat;
                 background-position: center center;
@@ -566,273 +566,121 @@ body {
     .car-description {
 
     }
+}
 
-    &.fullscreen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75);
-        z-index: 10000;
 
-        .fullscreen-close {
-            opacity: 1;
-            visibility: visible;
+#lightbox {
+    background-image: none;
+
+    #lightbox-image {
+        top: 40%;
+        height: 60%;
+        width: 60%;
+        background-size: contain, auto 35%;
+        background-position: center center, center center;
+        background-repeat: no-repeat, no-repeat;
+
+        @media only screen and (orientation: portrait) {
+            background-size: contain, auto 20%;
+        }
+    }
+
+    .img-nav {
+        top: 40%;
+    }
+
+    #prev-image {
+        left: calc(20% - 3em);
+    }
+
+    #next-image {
+        right: calc(20% - 3em);
+    }
+
+    .lightbox-title {
+        position: absolute;
+        color: white;
+
+        top: 71%;
+        width: 60%;
+        margin-left: 20%;
+        text-align: center;
+        font-size: 2.25em;
+
+        &:hover {
+            color: $old-gold;
         }
 
-        .companion-wrapper {
-            position: relative;
-            top: calc(50% + 1em);
-            left: 1em;
-            @include translateY(-50%);
-            max-width: 190vh;
+        &.no-link {
+            font-weight: normal;
+            margin-top: 0;
 
-            .car-image-wrapper {
-                width: 65%;
-
-                .car-nav-button {
-                    background-color: transparent;
-
-                    &:hover {
-                        background-color: rgba(80, 80, 80, 0.75);
-                    }
-                }
-
-                .car-image {
-                    .car-name {
-                        top: -2em;
-                        height: 2em;
-                        padding: 0 0 0 0.75em;
-                        width: calc(100% - 4.75em);
-                        opacity: 1;
-                        background-color: black;
-                        box-shadow: none;
-                        line-height: 2em;
-                    }
-                }
-            }
-
-            .car-info, .car-specs {
-                width: calc(32.5% - 3em);
-                display: inline-block;
-                margin: 0;
-            }
-
-            .car-info {
-                margin-left: 3em;
-            }
-
-            .car-specs {
-                margin-right: 3em;
-            }
-
-        }
-
-        .car-description {
-            position: fixed;
-            width: calc(35% - 4em);
-            color: white;
-            max-height: 80%;
-            overflow-y: auto;
-            top: 50%;
-            @include translateY(-50%);
-            right: 1em;
-        }
-
-        @media only screen and (max-width: 1000px) {
-            min-height: 100%;
-            height: auto;
-            overflow-y: auto;
-
-            .companion-wrapper {
-                text-align: center;
-                top: 5em;
-                left: 0;
-                @include translateY(0);
-
-                .car-image-wrapper {
-                    margin: 0 auto;
-                    width: 80%;
-
-                    .car-image {
-                        .car-name {
-                            text-align: left;
-                        }
-                    }
-
-                    .car-gallery {
-                        text-align: left;
-                    }
-                }
-
-                .car-info {
-                    margin-left: auto;
-                    width: calc(40% - 3em);
-                }
-
-                .car-specs {
-                    margin-right: auto;
-                    width: calc(40% - 3em);
-                }
-            }
-
-            .car-description {
-                position: relative;
-                top: 5em;
-                width: calc(80% - 6em);
-                left: 50%;
-                @include translateX(-50%);
-                margin: 0;
+            &:hover {
+                color: white;
             }
         }
 
-        @media #{$small-screen} {
-            .companion-wrapper {
-                max-width: none;
+        &::after {
+            background-image: url('/img/icons/new_window_w.svg');
+        }
+    }
 
-                .car-image-wrapper {
-                    width: 90%;
-                }
-
-                .car-info {
-                    width: calc(45% - 3em);
-
-                    .info {
-                        span {
-                            font-size: 1.5em;
-                        }
-                    }
-                }
-
-                .car-specs {
-                    width: calc(45% - 3em);
-
-                    .car-spec {
-                        .text-container {
-                            font-size: 1em;
-
-                            &.pow-text {
-                                font-size: 0.65em;
-
-                                span {
-                                    display: block;
-                                }
-
-                                &.unknown-pow {
-                                    font-size: 1em;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            .car-description {
-                width: calc(90% - 6em);
-            }
+    @media only screen and (max-width: 1000px) {
+        #lightbox-image {
+            height: 70%;
+            width: 70%;
         }
 
-        @media only screen and (max-width: 700px) {
-            .companion-wrapper {
-                .car-info {
-                    width: calc(90% - 6em);
-                    margin-right: auto;
-
-                    .info {
-                        span {
-                            font-size: 2.5em;
-                        }
-                    }
-                }
-
-                .car-specs {
-                    width: calc(90% - 6em);
-                    margin-left: auto;
-
-                    .car-spec {
-                        .text-container {
-                            font-size: 1.75em;
-
-                            &.pow-text {
-                                font-size: 1.25em;
-
-                                span {
-                                    display: block;
-                                }
-
-                                &.unknown-pow {
-                                    font-size: 1.75em;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        .lightbox-title {
+            top: 76%;
+            width: 70%;
+            margin-left: 15%;
         }
 
-        @media only screen and (max-width: 600px) {
-            .companion-wrapper {
-                .car-info {
-                    .info {
-                        span {
-                            font-size: 2em;
-                        }
-                    }
-                }
-
-                .car-specs {
-                    .car-spec {
-                        .text-container {
-                            font-size: 1em;
-
-                            &.pow-text {
-                                font-size: 0.65em;
-
-                                span {
-                                    display: block;
-                                }
-
-                                &.unknown-pow {
-                                    font-size: 1em;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        #prev-image {
+            left: calc(15% - 3em);
         }
 
-        @media only screen and (max-width: 500px) {
-            .companion-wrapper {
-                .car-info {
-                    .info {
-                        span {
-                            font-size: 1.5em;
-                        }
-                    }
-                }
+        #next-image {
+            right: calc(15% - 3em);
+        }
+    }
 
-                .car-specs {
-                    .car-spec {
-                        .text-container {
-                            font-size: 0.75em;
+    @media #{$small-screen} {
+        #lightbox-image {
+            width: 80%;
+        }
 
-                            &.pow-text {
-                                font-size: 0.55em;
+        .lightbox-title {
+            width: 80%;
+            margin-left: 10%;
+        }
 
-                                span {
-                                    display: block;
-                                }
+        #prev-image {
+            left: calc(10% - 3em);
+        }
 
-                                &.unknown-pow {
-                                    font-size: 0.75em;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        #next-image {
+            right: calc(10% - 3em);
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+        #lightbox-image {
+            width: 85%;
+        }
+
+        .lightbox-title {
+            width: 85%;
+            margin-left: 7.5%;
+        }
+
+        #prev-image {
+            left: calc(7.5% - 3em);
+        }
+
+        #next-image {
+            right: calc(7.5% - 3em);
         }
     }
 }

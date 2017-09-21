@@ -49,12 +49,11 @@
                         <a href="https://www.flickr.com/photos/dangitshang" target="_blank">Flickr page</a>,
                         below is a car companion viewer for a select number of my photos.
                     </p>
-                    <div id="car-companion" ng-class="{'fullscreen': fullscreen}" next-car="nextCar()" prev-car="prevCar()" escape-key-press="exitFullscreen()">
-                        <!-- <div class="fullscreen-close" ng-click="exitFullscreen()">CLOSE</div> -->
+                    <div id="car-companion" next-car="nextCar()" prev-car="prevCar()" escape-key-press="exitFullscreen()">
                         <div class="companion-wrapper">
                             <div class="car-image-wrapper">
                                 <div class="car-wrapper-prev car-nav-button" ng-click="prevCar()"><img src="/img/icons/arrow_back.svg"/></div><!--
-                                --><div class="car-image" ng-swipe-left="nextCar()" ng-swipe-right="prevCar()" ng-style="getCar()">
+                                --><div class="car-image" ng-swipe-left="nextCar()" ng-swipe-right="prevCar()" ng-style="getCar()" ng-class="{'big-screen': fullscreen}">
                                     <h2 class="car-name">{{getCarName()}}</h2>
                                 </div><!--
                                 --><div class="car-gallery" ng-style="getGalleryHeight()" ng-class="{'gallery-view': galleryView}">
@@ -116,6 +115,14 @@
                             </div>
                         </div>
                         <div class="car-description" ng-bind-html="htmlDescription()"></div>
+                        <div id="lightbox" ng-class="{'light-em-up': fullscreen}">
+                            <div id="lightbox-close" ng-click="exitFullscreen()">CLOSE</div>
+                            <div id="prev-image" class="img-nav" ng-click="prevCar()"><img src="/img/icons/arrow_back.svg"/></div>
+                            <div id="next-image" class="img-nav" ng-click="nextCar()"><img src="/img/icons/arrow_forward.svg"/></div>
+                            <div id="lightbox-image" ng-swipe-left="nextCar()" ng-swipe-right="prevCar()" ng-style="getCar()"></div>
+                            <a ng-if="getPhotoLink() !== ''" class="lightbox-title" href="getPhotoLink()" title="Flickr Link" target="_blank">{{getCarName()}}</a>
+                            <h3 ng-if="getPhotoLink() === ''" class="lightbox-title no-link" href="getPhotoLink()" title="Flickr Link" target="_blank">{{getCarName()}}</h3>
+                        </div>
                     </div>
                 </div>
             </div>
