@@ -2,7 +2,7 @@
     "work": [
         {
             "title": "Software Developer II",
-            "company": "Management Sciences Associates, Inc.",
+            "company": "Management Science Associates, Inc.",
             "date": "Dec. 2016 – Present",
             "location": "Pittsburgh, PA",
             "duties": [
@@ -15,8 +15,8 @@
                 "Reviewed daily Linux server logs to monitor development and production servers for potential problems",
                 "Carried out 24/7 on-call duties to assess and remedy production issues"
             ],
-            "icon": "msa.png",
-            "old": "msa_old.png"
+            "icon": "msa.svg",
+            "old": "msa_old.svg"
         },
         {
             "title": "IT Business Analyst Intern",
@@ -29,8 +29,8 @@
                 "Designed a prototype dashboard using the D3.js library and CAML Queries to summarize the application portfolio data",
                 "Provided quality assurance testing and wrote technical documentation for a web-based application tracker"
             ],
-            "icon": "te.png",
-            "old": "te_old.png"
+            "icon": "te.svg",
+            "old": "amp_inc.svg"
         }
     ],
     "skills": {
@@ -71,14 +71,18 @@
             "location": "Pittsburgh, PA",
             "years": [2015, 2016],
             "type": "B.S.",
-            "major": "Computer Science"
+            "major": "Computer Science",
+            "logo": "pitt.svg",
+            "seal": "pitt_seal.svg"
         },
         {
             "school": "Shippensburg University",
             "location": "Shippensburg, PA",
             "years": [2012, 2013],
             "type": "M.S.",
-            "major": "Biology"
+            "major": "Biology",
+            "logo": "ship.svg",
+            "seal": "ship_seal.svg"
         },
         {
             "school": "University of Pittsburgh",
@@ -86,7 +90,9 @@
             "years": [2008, 2012],
             "type": "B.S.",
             "major": "Biological Sciences",
-            "minor": "Chemistry"
+            "minor": "Chemistry",
+            "logo": "pitt.svg",
+            "seal": "pitt_seal.svg"
         }
     ],
     "unrelated": [
