@@ -20,31 +20,113 @@
 
         #work-app {
             .resume-section {
+                font-size: 1.35em;
 
-            }
+                .subtitle {
+                    font-size: 1.5em;
+                }
 
-            .work-section {
-                .work-entry {
-                    font-size: 1.35em;
+                &:not(.main-section) {
+                    .subtitle {
+                        margin-top: 1.5em;
+                    }
+                }
+
+                .icon-wrapper {
+                    width: 6em;
+                    height: 6em;
+                    margin-right: 1em;
+                    position: relative;
+                    float: left;
 
                     .company-icon {
-                        width: 6em;
-                        height: 6em;
-                        margin-right: 1em;
-                        display: inline;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        background-position: center center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                }
+
+                h4 {
+                    margin: 0;
+                }
+
+                ul {
+                    list-style-position: inside;
+                    padding-left: 0;
+                }
+            }
+
+            .main-section, .education-section {
+                .icon-wrapper {
+                    .company-icon {
+                        @include transition-property(opacity, visibility);
+                        @include transition-duration(0.25s);
+                        @include transition-timing-function(ease-in-out);
+
+                        &.current-icon {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                        &.old-icon {
+                            visibility: hidden;
+                            opacity: 0;
+                        }
                     }
 
-                    .work-header {
+                    &:hover {
+                        .company-icon {
+                            &.current-icon {
+                                visibility: hidden;
+                                opacity: 0;
+                            }
+
+                            &.old-icon {
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .work-section, .education-section {
+                .work-entry, .school-entry {
+                    .work-header, .school-header {
                         width: calc(100% - 7em);
                         display: inline-block;
-                        height: 6em;
 
                         h4 {
-                            // margin: 0 0 0.15em 0;
-                            margin: 0;
-                            height: 1.5em;
-                            line-height: 1.5em;
+                            &.subheader {
+                                font-weight: normal;
+                                font-style: italic;
+                            }
                         }
+                    }
+                }
+            }
+
+            .skills-section {
+                .skill-entry {
+                    ul {
+                        @include columns(2);
+
+                        li {
+                        }
+                    }
+                }
+            }
+
+            .education-section {
+                .school-entry {
+                    display: flex;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 0.5em;
                     }
                 }
             }

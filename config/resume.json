@@ -49,7 +49,7 @@
         "testing": {
             "name": "Testing Frameworks",
             "list": [
-                "JUnit", "Cucumber", "Selenium"
+                "JUnit", "Mockito", "Cucumber", "Selenium"
             ]
         },
         "misc": {
@@ -107,12 +107,11 @@
                 "Documented healthcare provided and medical details of patients",
                 "Aided nurses with more advanced patient care"
             ],
-            "icon": "twin_oaks.png",
-            "old": "twin_old.png"
+            "icon": "twin_oaks.svg"
         },
         {
             "title": "Quality Control Technician (temp.)",
-            "company": "The Warrell Corporation through OnAssignment",
+            "company": "The Warrell Corporation",
             "date": "Dec. 2013 – Jan. 2014",
             "location": "Camp Hill, PA",
             "duties": [
@@ -121,8 +120,7 @@
                 "Documented daily checks with statistical analysis to ensure factory requirements",
                 "Improved functionality of company’s Excel spreadsheets regarding graphical and statistical analysis"
             ],
-            "icon": "twin_oaks.png",
-            "old": "twin_old.png"
+            "icon": "warrell.svg"
         }
     ]
 }

@@ -24,15 +24,18 @@
                 </div><!--
                 --><div class="content-section" ng-app="work-app" ng-controller="work-ctrl" id="work-app">
                     <h1 class="title">R&Eacute;SUM&Eacute;</h1>
-                    <div class="resume-section work-section">
+                    <div class="resume-section work-section main-section">
                         <h1 class="subtitle">Work Experience</h1>
                         <div ng-repeat="work in resume.work" class="work-entry">
-                            <img class="company-icon" src="/img/icons/{{work.icon}}"/><!--
+                            <div class="icon-wrapper">
+                                <div class="company-icon current-icon" style="background-image: url('/img/icons/{{work.icon}}')"></div>
+                                <div class="company-icon old-icon" style="background-image: url('/img/icons/{{work.old}}')"></div>
+                            </div><!--
                             --><div class="work-header">
                                 <h4>{{work.title}}</h4>
                                 <h4>{{work.company}}</h4>
-                                <h4>{{work.date}}</h4>
-                                <h4>{{work.location}}</h4>
+                                <h4 class="subheader">{{work.date}}</h4>
+                                <h4 class="subheader">{{work.location}}</h4>
                             </div>
                             <div class="work-duties">
                                 <ul>
@@ -43,14 +46,47 @@
                     </div>
                     <div class="resume-section skills-section">
                         <h1 class="subtitle">Skills</h1>
+                        <div ng-repeat="skill in resume.skills" class="skill-entry">
+                            <h4>{{skill.name}}</h4>
+                            <ul>
+                                <li ng-repeat="tech in skill.list" class="technique">{{tech}}</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="resume-section education-section">
                         <h1 class="subtitle">Education</h1>
+                        <div ng-repeat="school in resume.education" class="school-entry">
+                            <div class="icon-wrapper">
+                                <div class="company-icon current-icon" style="background-image: url('/img/icons/{{school.logo}}')"></div>
+                                <div class="company-icon old-icon" style="background-image: url('/img/icons/{{school.seal}}')"></div>
+                            </div><!--
+                            --><div class="school-header">
+                                <h4>{{school.school}}</h4>
+                                <h4>{{school.location}}</h4>
+                                <h4 class="subheader">{{school.type}} {{school.major}}<span ng-if="school.minor !== undefined">, Minor in {{school.minor}}</span></h4>
+                                <h4 class="subheader">{{school.years[0]}} &ndash; {{school.years[1]}}</h4>
+                            </div>
+                        </div>
                     </div>
-                    <div class="resume-section other-section">
+                    <div class="resume-section work-section">
                         <h1 class="subtitle">Other Work Experience</h1>
+                        <div ng-repeat="work in resume.unrelated" class="work-entry">
+                            <div class="icon-wrapper">
+                                <div class="company-icon current-icon" style="background-image: url('/img/icons/{{work.icon}}')"></div>
+                            </div><!--
+                            --><div class="work-header">
+                                <h4>{{work.title}}</h4>
+                                <h4>{{work.company}}</h4>
+                                <h4 class="subheader">{{work.date}}</h4>
+                                <h4 class="subheader">{{work.location}}</h4>
+                            </div>
+                            <div class="work-duties">
+                                <ul>
+                                    <li ng-repeat="duty in work.duties">{{duty}}</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>

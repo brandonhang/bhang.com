@@ -115,3 +115,9 @@
     -moz-transition-timing-function: $fxn;
     -o-transition-timing-function: $fxn;
 }
+
+@mixin columns($num) {
+    columns: $num;
+    -webkit-columns: $num;
+    -moz-columns: $num;
+}
