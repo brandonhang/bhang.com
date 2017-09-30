@@ -3,14 +3,28 @@
 
 .content {
     .content-background {
-        background-image: url('/img/bkgrds/about_banner1.jpg');
-        background-position: center 85%;
+        // background-image: url('/img/bkgrds/about_banner1.jpg');
+        // background-position: center 85%;
+        background-image: url('/img/bkgrds/topsail-o.jpg');
+        background-position: center 70%;
+
+        @media only screen and (max-width: 3000px) {
+            background-image: url('/img/bkgrds/topsail-3000.jpg');
+        }
+
+        @media only screen and (max-width: 2000px) {
+            background-image: url('/img/bkgrds/topsail-2000.jpg');
+        }
+
+        @media only screen and (max-width: 1000px) {
+            background-image: url('/img/bkgrds/topsail-1000.jpg');
+        }
     }
 
     .content-wrapper {
         .content-picture {
             @media #{$small-screen} {
-                background-image: url('/img/content/about_kick.jpg');
+                background-image: url('/img/content/flying_kick-1280.jpg');
                 background-size: 180% auto;
                 background-position: 66% 35%;
             }

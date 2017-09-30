@@ -3,18 +3,30 @@
 
 .content {
     .content-background {
-        background-image: url('/img/bkgrds/cars2.jpg');
+        background-image: url('/img/bkgrds/gt40-o.jpg');
         background-position: center 85%;
         // background-image: url('/img/bkgrds/cars5.jpg');
         // background-position: center 80%;
+
+        @media only screen and (max-width: 3000px) {
+            background-image: url('/img/bkgrds/gt40-3000.jpg');
+        }
+
+        @media only screen and (max-width: 2000px) {
+            background-image: url('/img/bkgrds/gt40-2000.jpg');
+        }
+
+        @media only screen and (max-width: 1000px) {
+            background-image: url('/img/bkgrds/gt40-1000.jpg');
+        }
     }
 
     .content-wrapper {
         .content-picture {
             @media #{$small-screen} {
-                background-image: url('/img/content/drive1.jpg');
-                background-size: 150% auto;
-                background-position: 33% 13%;
+                background-image: url('/img/content/ferrari-1280.jpg');
+                background-size: 200% auto;
+                background-position: 58% 70%;
             }
         }
 

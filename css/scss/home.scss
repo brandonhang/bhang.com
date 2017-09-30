@@ -13,11 +13,23 @@ body {
 
 .content {
     background-color: #001a0f;
-    background-image: url('/img/bkgrds/me2.jpg');
+    background-image: url('/img/bkgrds/home-o.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left top;
     position: relative;
+
+    @media only screen and (max-width: 3000px) {
+        background-image: url('/img/bkgrds/home-3000.jpg');
+    }
+
+    @media only screen and (max-width: 2000px) {
+        background-image: url('/img/bkgrds/home-2000.jpg');
+    }
+
+    @media only screen and (max-width: 1000px) {
+        background-image: url('/img/bkgrds/home-1000.jpg');
+    }
 
     .panel-outer-wrapper {
         width: 40%;
@@ -154,7 +166,7 @@ body {
                 height: 17em;
                 margin: 7em auto -1.5em auto;
                 @include border-radius(100%);
-                background-image: url('/img/bkgrds/me_face.jpg');
+                background-image: url('/img/content/bhang-888.jpg');
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;

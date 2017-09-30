@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="/css/common.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/nav.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/contact.css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="/js/bhangular.js"></script>
+    </head>
+    <body>
+        <nav ng-app="bhang-app" ng-controller="bhang-ctrl" class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
+        <div class="content">
+            <div class="content-background"></div>
+            <div class="content-wrapper">
+                <div class="content-picture">
+                    <img src="/img/content/philly-1280.jpg"/>
+                </div><!--
+                --><div class="content-section" ng-app="contact-app" ng-controller="contact-ctrl" id="contact-app">
+                    <h1 class="title">CONTACT ME</h1>
+                    <form id="contact-form" ng-submit="sendMessage()">
+                        <div class="contact-section contact-small contact-name" ng-class="{'message-up': sendingMessage}">
+                            <h3>Name</h3>
+                            <input ng-model="name" type="text" maxlength="40" placeholder="Your name"/>
+                        </div><!--
+                        --><div class="contact-section contact-small contact-email" ng-class="{'message-up': sendingMessage}">
+                            <h3>Email</h3>
+                            <input ng-model="email" type="email" maxlength="40"placeholder="your@email"/>
+                        </div>
+                        <div class="contact-section contact-big contact-message" ng-class="{'message-up': sendingMessage}">
+                            <h3>Message</h3>
+                            <textarea ng-model="message" rows="8" placeholder="What would you like to say?"></textarea>
+                        </div>
+                        <div class="contact-section contact-recaptcha" ng-class="{'message-up': sendingMessage}">
+                            <h3>Anti-Skynet</h3>
+                            <div id="recaptcha"></div>
+                        </div>
+                        <div class="contact-section" ng-class="{'message-up': sendingMessage}">
+                            <button class="button" type="submit">Send</button>
+                        </div>
+                        <div class="mail-message-wrapper" ng-if="sendingMessage">
+                            <div class="mail-inner-wrapper">
+                                <h3 class="mail-message">{{mailMessage}}</h3>
+                                <button class="button" ng-click="closeMessageBox()" ng-if="mailSent">OK</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/js/contact.js"></script>
+        <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    </body>
+</html>

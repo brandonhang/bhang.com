@@ -3,14 +3,28 @@
 
 .content {
     .content-background {
-        background-image: url('/img/bkgrds/photo4.jpg');
+        background-image: url('/img/bkgrds/temple-o.jpg');
         background-position: center 32%;
+        // background-image: url('/img/bkgrds/camera1.jpg');
+        // background-position: center 56%;
+
+        @media only screen and (max-width: 3000px) {
+            background-image: url('/img/bkgrds/temple-3000.jpg');
+        }
+
+        @media only screen and (max-width: 2000px) {
+            background-image: url('/img/bkgrds/temple-2000.jpg');
+        }
+
+        @media only screen and (max-width: 1000px) {
+            background-image: url('/img/bkgrds/temple-1000.jpg');
+        }
     }
 
     .content-wrapper {
         .content-picture {
             @media #{$small-screen} {
-                background-image: url('/img/content/the_enemy.jpg');
+                background-image: url('/img/content/the_enemy-1280.jpg');
                 background-size: 230% auto;
                 background-position: 70% 45%;
             }

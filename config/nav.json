@@ -38,39 +38,9 @@
                 "icon": "portfolio_w.svg"
             },
             {
-                "title": "GitHub",
-                "url": "github",
-                "icon": "github_w.svg"
-            },
-            {
                 "title": "Contact Me",
                 "url": "contact",
                 "icon": "contact_w.svg"
-            }
-        ]
-    },
-    "applications": {
-        "icon": "apps_w.svg",
-        "links": [
-            {
-                "title": "Movies DB",
-                "url": "movies",
-                "icon": "film_w.svg"
-            },
-            {
-                "title": "Triple Triad",
-                "url": "triad-x3",
-                "icon": "triad_x3_w.svg"
-            },
-            {
-                "title": "Solitaire",
-                "url": "solitaire",
-                "icon": "solitaire_w.svg"
-            },
-            {
-                "title": "Blue Screen",
-                "url": "bsod",
-                "icon": "bsod_w.svg"
             }
         ]
     }

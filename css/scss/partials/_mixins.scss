@@ -121,3 +121,11 @@
     -webkit-columns: $num;
     -moz-columns: $num;
 }
+
+@mixin scale($amt) {
+    transform: scale($amt);
+    -webkit-transform: scale($amt);
+    -ms-transform: scale($amt);
+    -moz-transform: scale($amt);
+    -o-transform: scale($amt);
+}

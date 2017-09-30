@@ -3,12 +3,26 @@
 
 .content {
     .content-background {
+        background-image: url('/img/bkgrds/river-o.jpg');
+        background-position: center 75%;
+
+        @media only screen and (max-width: 3000px) {
+            background-image: url('/img/bkgrds/river-3000.jpg');
+        }
+
+        @media only screen and (max-width: 2000px) {
+            background-image: url('/img/bkgrds/river-2000.jpg');
+        }
+
+        @media only screen and (max-width: 1000px) {
+            background-image: url('/img/bkgrds/river-1000.jpg');
+        }
     }
 
     .content-wrapper {
         .content-picture {
             @media #{$small-screen} {
-                background-image: url('/img/content/walk_tall.jpg');
+                background-image: url('/img/content/walk_tall-1280.jpg');
                 background-size: 205% auto;
                 background-position: 52% 50%;
             }
@@ -56,9 +70,25 @@
                 }
 
                 ul {
-                    list-style-position: inside;
-                    padding-left: 0;
+                    padding-left: 0.25em;
+
+                    li {
+                        margin-left: 1em;
+                    }
                 }
+
+                // &.skills-section {
+                //     ul {
+                //         list-style-position: inside;
+                //         padding-left: 0.25em;
+                //     }
+                // }
+                //
+                // &:not(.skills-section) {
+                //     ul {
+                //         padding-left: 1.5em;
+                //     }
+                // }
             }
 
             .main-section, .education-section {
