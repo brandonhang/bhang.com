@@ -215,7 +215,7 @@ a[target="_blank"], .target-blank {
         @include transition(color, 0.25s, ease-in-out);
 
         &:hover {
-            color: $dark-gold;
+            color: $old-gold;
         }
     }
 }

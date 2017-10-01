@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="./img/icons/icon.ico"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="/css/common.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/nav.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/portfolio.css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script type="text/javascript" src="/js/bhangular.js"></script>
+    </head>
+    <body>
+        <nav ng-app="bhang-app" ng-controller="bhang-ctrl" class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
+        <div class="content">
+            <div class="content-background"></div>
+            <div class="content-wrapper">
+                <div class="content-picture">
+                    <img src="/img/content/hdd_not_found-1280.jpg"/>
+                </div><!--
+                --><div class="content-section" ng-app="portfolio-app" ng-controller="portfolio-ctrl" id="portfolio-app">
+                    <h1 class="title">PORTFOLIO</h1>
+                    <div class="portfolio-section">
+                        <div id="github-card">
+                            <div class="card-header"></div>
+                            <div class="card-user">
+                                <h2><a href="https://github.com/{{username}}" target="_blank">@{{username}}</a></h2>
+                            </div>
+                            <div class="card-data">
+                                <div class="card-data-section">
+                                    <h3>{{numRepos}}</h3>
+                                    <a href="https://github.com/{{username}}?tab=repositories" target="_blank">REPOS</a>
+                                </div><!--
+                                --><div class="card-data-section">
+                                    <h3>{{numFollowers}}</h3>
+                                    <a href="https://github.com/{{username}}/followers" target="_blank">FOLLOWERS</a>
+                                </div>
+                            </div>
+                            <div class="card-pic" style="background-image: url('{{profilePic}}')"></div>
+                        </div>
+                    </div>
+                    <div class="portfolio-section">
+                        <p>
+                            Clicking on my username above (@{{username}}) will take you to my GitHub page.
+                            Alternatively, below is a sample of some past projects I've completed, most of
+                            which were completed during my time at the University of Pittsburgh. Click on
+                            a square to reveal more information about the project.
+                        </p>
+                    </div>
+                    <div class="portfolio-section"></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/js/portfolio.js"></script>
+    </body>
+</html>

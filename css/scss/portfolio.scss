@@ -1,0 +1,147 @@
+@import 'partials/_variables';
+@import 'partials/_mixins';
+
+.content {
+    .content-background {
+        background-image: url('/img/bkgrds/code-o.jpg');
+        background-position: center center;
+
+        @media only screen and (max-width: 3000px) {
+            background-image: url('/img/bkgrds/code-3000.jpg');
+        }
+
+        @media only screen and (max-width: 2000px) {
+            background-image: url('/img/bkgrds/code-2000.jpg');
+        }
+
+        @media only screen and (max-width: 1000px) {
+            background-image: url('/img/bkgrds/code-1000.jpg');
+        }
+    }
+
+    .content-wrapper {
+        .content-picture {
+            @media #{$small-screen} {
+                background-image: url('/img/content/hdd_not_found-1280.jpg');
+                background-size: 205% auto;
+                background-position: 50% 62%;
+            }
+        }
+
+        .content-section {
+            margin-bottom: 1.25em;
+        }
+
+        #portfolio-app {
+            .portfolio-section {
+                #github-card {
+                    width: 30em;
+                    margin: 2.5em auto 2em auto;
+                    @include border-radius(4px);
+                    border: 1px solid $light-gray;
+                    position: relative;
+                    background-color: white;
+
+                    .card-header {
+                        background-color: $world-rally-blue;
+                        background-image: url('/img/icons/github_w.svg');
+                        background-size: auto calc(100% - 0.3em);
+                        background-position: calc(100% - 0.15em) center;
+                        background-repeat: no-repeat;
+                        background: url('/img/icons/github_w.svg') calc(100% - 0.15em) center/auto 90% no-repeat, -webkit-linear-gradient(left, $world-rally-blue, $galaxy-blue);
+                        background: url('/img/icons/github_w.svg') calc(100% - 0.15em) center/auto 90% no-repeat, -o-linear-gradient(right, $world-rally-blue, $galaxy-blue);
+                        background: url('/img/icons/github_w.svg') calc(100% - 0.15em) center/auto 90% no-repeat, -moz-linear-gradient(right, $world-rally-blue, $galaxy-blue);
+                        background: url('/img/icons/github_w.svg') calc(100% - 0.15em) center/auto 90% no-repeat, linear-gradient(to right, $world-rally-blue, $galaxy-blue);
+                        height: 3.5em;
+                        border-bottom: 1px solid $light-gray;
+                    }
+
+                    .card-user {
+                        border-bottom: 1px solid $light-gray;
+
+                        h2 {
+                            font-size: 1.75em;
+                            text-align: center;
+                            margin: 0.25em auto;
+
+                            a {
+                                color: black;
+                                text-decoration: none;
+
+                                &::after {
+                                    background-image: url('/img/icons/new_window_b.svg');
+                                }
+
+                                &:hover {
+                                    color: $old-gold;
+                                }
+                            }
+                        }
+                    }
+
+                    .card-data {
+                        .card-data-section {
+                            display: inline-block;
+                            width: 50%;
+                            text-align: center;
+
+                            h3 {
+                                font-size: 1.3em;
+                                margin: 0.25em auto 0 auto;
+                            }
+
+                            a {
+                                font-size: 1.3em;
+                                margin-bottom: 0.25em;
+                            }
+
+                            &:first-of-type {
+                                border-right: 1px solid $light-gray;
+                                box-sizing: border-box;
+                            }
+                        }
+                    }
+
+                    .card-pic {
+                        @include box-shadow(0 0 1px $light-gray);
+                        border: 0.4em solid white;
+                        @include border-radius(100%);
+                        background-size: cover;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        height: 9em;
+                        width: 9em;
+                        position: absolute;
+                        top: -2em;
+                        left: -3em;
+                    }
+
+                    @media only screen and (max-width: 450px) {
+                        width: 20em;
+
+                        .card-user {
+                            h2 {
+                                font-size: 1.3em;
+                            }
+                        }
+
+                        .card-data {
+                            .card-data-section {
+                                h3, a {
+                                    font-size: 1.15em;
+                                }
+                            }
+                        }
+
+                        .card-pic {
+                            height: 7em;
+                            width: 7em;
+                            top: -1.5em;
+                            left: -2.5em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
