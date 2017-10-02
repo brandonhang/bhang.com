@@ -23,8 +23,8 @@
         .content-picture {
             @media #{$small-screen} {
                 background-image: url('/img/content/hdd_not_found-1280.jpg');
-                background-size: 205% auto;
-                background-position: 50% 62%;
+                background-size: 225% auto;
+                background-position: 50% 64%;
             }
         }
 
@@ -138,6 +138,164 @@
                             width: 7em;
                             top: -1.5em;
                             left: -2.5em;
+                        }
+                    }
+                }
+
+                &.projects {
+                    .project-outer {
+                        perspective: 10000px;
+                        -webkit-perspective: 10000px;
+                        -moz-perspective: 10000px;
+                        width: calc((100% / 3) - 1.33333333em - 1px);
+                        padding-top: calc((100% / 3) - 1.33333333em - 1px);
+                        margin: 1em;
+                        display: inline-block;
+                        float: left;
+                        cursor: pointer;
+
+                        &.flipped {
+                            .project-inner {
+                                @include rotateY(180deg);
+                            }
+                        }
+
+                        .project-inner {
+                            @include transition(all, 0.5s, ease-in-out);
+                            transform-style: preserve-3d;
+                            -webkit-transform-style: preserve-3d;
+                            -moz-transform-style: preserve-3d;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        .front, .back {
+                            width: 100%;
+                            height: 100%;
+                            backface-visibility: hidden;
+                            -webkit-backface-visibility: hidden;
+                            -moz-backface-visibility: hidden;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+
+                        .front {
+                            z-index: 2;
+                            @include rotateY(0deg);
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+
+                            .title-wrapper {
+                                height: 100%;
+                                width: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                @include transition-property(opacity, visibility);
+                                @include transition-duration(0.25s);
+                                @include transition-timing-function(ease-in-out);
+                                visibility: hidden;
+                                opacity: 0;
+                                background-color: rgba(0, 0, 0, 0.5);
+
+                                h2 {
+                                    position: absolute;
+                                    width: calc(100% - 0.5em);
+                                    margin: 0 0.25em;
+                                    text-align: center;
+                                    color: white;
+                                    top: 50%;
+                                    @include translateY(-50%);
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            .front {
+                                .title-wrapper {
+                                    visibility: visible;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                        .back {
+                            @include rotateY(180deg);
+                            background-color: $dark-gray;
+
+                            h2 {
+                                margin: 0.25em;
+                                color: white;
+                            }
+
+                            h3 {
+                                margin: 0.25em;
+                            }
+
+                            p {
+                                margin: 0.25em 0.15em;
+                                color: white;
+                            }
+                        }
+
+                        &:nth-of-type(3n + 1) {
+                            margin-left: 0;
+                        }
+
+                        &:nth-of-type(3n + 3) {
+                            margin-right: 0;
+                        }
+
+                        @media only screen and (max-width: 1350px) {
+                            width: calc((100% / 3) - 1em - 1px);
+                            padding-top: calc((100% / 3) - 1em - 1px);
+                            margin: 0.75em;
+                        }
+
+                        @media only screen and (max-width: 1200px) {
+                            width: calc((100% / 3) - 0.8em - 1px);
+                            padding-top: calc((100% / 3) - 0.8em - 1px);
+                            margin: 0.6em;
+                        }
+
+                        @media #{$small-screen} {
+                            width: calc((100% / 3) - 1.33333333em - 1px);
+                            padding-top: calc((100% / 3) - 1.33333333em - 1px);
+                            margin: 1em;
+                        }
+
+                        @media only screen and (max-width: 550px) {
+                            width: calc(50% - 1em - 1px);
+                            padding-top: calc(50% - 1em - 1px);
+
+                            &:nth-of-type(3n + 1) {
+                                margin-left: 1em;
+                            }
+
+                            &:nth-of-type(3n + 3) {
+                                margin-right: 1em;
+                            }
+
+                            &:nth-of-type(odd) {
+                                margin-left: 0 !important;
+                            }
+
+                            &:nth-of-type(even) {
+                                margin-right: 0 !important;
+                            }
+                        }
+
+                        img {
+                            width: 2em;
+                            height: 2em;
+                            position: absolute;
+                            bottom: 0.25em;
+                            right: 0.25em;
                         }
                     }
                 }

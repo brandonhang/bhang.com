@@ -5,7 +5,6 @@
         $http.get('/config/resume.json').then(
             function(resumeData) {
                 $scope.resume = resumeData.data;
-                console.log($scope.resume);
             },
             function(workErr) {
                 console.log(workErr);

@@ -13,6 +13,13 @@
     -o-transform: rotate($amt);
 }
 
+@mixin rotateY($amt) {
+    transform: rotateY($amt);
+    -webkit-transform: rotateY($amt);
+    -moz-transform: rotateY($amt);
+    -o-transform: rotateY($amt);
+}
+
 @mixin box-sizing($type) {
     box-sizing: $type;
     -webkit-box-sizing: $type;

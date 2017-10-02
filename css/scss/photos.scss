@@ -210,8 +210,8 @@
                         }
 
                         @media only screen and (max-width: 1350px) {
-                            width: calc((100% / 3) - 1em);
-                            padding-top: calc((100% / 3) - 1em);
+                            width: calc((100% / 3) - 1em - 1px);
+                            padding-top: calc((100% / 3) - 1em - 1px);
                             margin: 0.75em;
 
                             &:nth-of-type(3n + 1) {
@@ -222,8 +222,8 @@
                         }
 
                         @media only screen and (max-width: 1200px) {
-                            width: calc((100% / 3) - 0.8em);
-                            padding-top: calc((100% / 3) - 0.8em);
+                            width: calc((100% / 3) - 0.8em - 1px);
+                            padding-top: calc((100% / 3) - 0.8em - 1px);
                             margin: 0.6em;
 
                             &:nth-of-type(3n + 1) {
@@ -260,8 +260,8 @@
                         }
 
                         @media only screen and (max-width: 550px) {
-                            width: calc(50% - 1em);
-                            padding-top: calc(50% - 1em);
+                            width: calc(50% - 1em - 1px);
+                            padding-top: calc(50% - 1em - 1px);
 
                             &:nth-of-type(3n + 1) {
                                 margin-left: 1em;

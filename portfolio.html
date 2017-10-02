@@ -51,7 +51,23 @@
                             a square to reveal more information about the project.
                         </p>
                     </div>
-                    <div class="portfolio-section"></div>
+                    <div class="portfolio-section projects">
+                        <div ng-repeat="project in projects" ng-click="flipSquare($event, $index)" ng-class="{'flipped': flippers[$index]}" class="project-outer">
+                            <div class="project-inner">
+                                <div class="front" style="background-image: url('{{project.image}}')">
+                                    <div class="title-wrapper">
+                                        <h2>{{project.title}}</h2>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <h2>{{project.title}}</h2>
+                                    <h3><a href="{{project.link}}" target="_blank">GitHub Link</a></h3>
+                                    <p>{{project.desc}}</p>
+                                </div>
+                            </div>
+                            <img src="/img/icons/flip.svg"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
