@@ -9,3 +9,4 @@ npm-debug.log
 engine_icons.tar.gz
 php/*
 /img/old-*
+*.psd
