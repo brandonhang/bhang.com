@@ -12,6 +12,7 @@
         <link type="text/css" rel="stylesheet" href="/css/nav.css"/>
         <link type="text/css" rel="stylesheet" href="/css/portfolio.css"/>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.min.js"></script>
         <script type="text/javascript" src="/js/bhangular.js"></script>
     </head>
     <body>
@@ -52,17 +53,18 @@
                         </p>
                     </div>
                     <div class="portfolio-section projects">
-                        <div ng-repeat="project in projects" ng-click="flipSquare($event, $index)" ng-class="{'flipped': flippers[$index]}" class="project-outer">
+                        <div ng-repeat="project in projects.main" ng-click="flipSquare($event, $index, true)" ng-class="{'flipped': flippers[$index]}" class="project-outer">
                             <div class="project-inner">
-                                <div class="front" style="background-image: url('{{project.image}}')">
+                                <div class="front" style="background-image: url('{{project.image}}'); background-color: {{project.color}}">
                                     <div class="title-wrapper">
                                         <h2>{{project.title}}</h2>
                                     </div>
                                 </div>
                                 <div class="back">
                                     <h2>{{project.title}}</h2>
+                                    <h4>{{project.note}}</h4>
                                     <h3><a href="{{project.link}}" target="_blank">GitHub Link</a></h3>
-                                    <p>{{project.desc}}</p>
+                                    <p ng-bind-html="htmlDescription($index, true)"></p>
                                 </div>
                             </div>
                             <img src="/img/icons/flip.svg"/>

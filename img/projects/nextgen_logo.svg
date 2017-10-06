@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1000"
+   height="1000"
+   version="1.1"
+   id="svg905"
+   sodipodi:docname="nextgen_logo.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata911">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs909" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     id="namedview907"
+     showgrid="false"
+     inkscape:zoom="0.858"
+     inkscape:cx="490.67599"
+     inkscape:cy="500"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Group 1 copy 2" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Group 1 copy 2"
+     id="Group 1 copy 2">
+    <mask
+       id="_1">
+      <g
+         id="g883">
+        <path
+           d="M 0,0 1000,0 1000,1000 0,1000 0,0 Z"
+           style="stroke:none; fill:white"
+           id="path879" />
+        <path
+           d="M 500.000000,914.999962 C 270.801842,914.999962 84.999979,729.198098 84.999979,500.000000 C 84.999979,270.801842 270.801842,84.999979 500.000000,84.999979 C 729.198098,84.999979 914.999962,270.801842 914.999962,500.000000 C 914.999962,729.198098 729.198098,914.999962 500.000000,914.999962 Z"
+           style="stroke:none; fill:black"
+           fill-rule="nonzero"
+           id="path881" />
+      </g>
+    </mask>
+    <mask
+       id="_2">
+      <g
+         id="g892">
+        <path
+           d="M 0,0 1000,0 1000,1000 0,1000 0,0 Z"
+           style="stroke:none; fill:white"
+           id="path888" />
+        <path
+           d="M 304.290533,654.062450 C 312.333167,654.062450 319.885671,647.542596 321.159482,639.499962 C 322.433352,631.457329 316.946149,624.937475 308.903456,624.937475 C 308.903456,624.937475 248.997211,624.937475 248.997211,624.937475 C 248.997211,624.937475 244.384289,654.062450 244.384289,654.062450 C 244.384289,654.062450 304.290533,654.062450 304.290533,654.062450 Z"
+           style="stroke:none; fill:black"
+           fill-rule="nonzero"
+           id="path890" />
+      </g>
+    </mask>
+    <mask
+       id="_3">
+      <g
+         id="g900">
+        <path
+           d="M 0,0 1000,0 1000,1000 0,1000 0,0 Z"
+           style="stroke:none; fill:white"
+           id="path896" />
+        <path
+           d="M 301.459432,671.937466 C 309.502065,671.937466 314.989269,678.457320 313.715458,686.499953 C 312.441587,694.542587 304.889083,701.062441 296.846449,701.062441 C 296.846449,701.062441 236.940205,701.062441 236.940205,701.062441 C 236.940205,701.062441 241.553187,671.937466 241.553187,671.937466 C 241.553187,671.937466 301.459432,671.937466 301.459432,671.937466 Z"
+           style="stroke:none; fill:black"
+           fill-rule="nonzero"
+           id="path898" />
+      </g>
+    </mask>
+    <g
+       id="g3500"
+       transform="matrix(0.9,0,0,0.9,49.999997,49.999997)">
+      <path
+         id="Shape 4 copy 8"
+         inkscape:label="Shape 4 copy 8"
+         style="fill:#6b6b6b;fill-rule:nonzero;stroke:none"
+         d="m 483.49994,336.99995 c 0,-9.11265 7.38734,-16.49999 16.5,-16.49999 9.11272,0 98.38736,0 107.50002,0 9.11271,0 16.49999,7.38734 16.49999,16.49999 0,9.11272 -7.38728,16.5 -16.49999,16.5 -9.11266,0 -90.99996,0 -90.99996,0 0,0 0,300.38732 0,309.50004 0,9.11265 -7.38734,16.49999 -16.50006,16.49999 -9.11266,0 -98.3873,0 -107.49996,0 -9.11271,0 -16.49999,-7.38734 -16.49999,-16.49999 0,-9.11272 7.38728,-16.5 16.49999,-16.5 9.11266,0 90.99996,0 90.99996,0 0,0 0,-300.38732 0,-309.50004 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="Shape 1 copy 3"
+         inkscape:label="Shape 1 copy 3"
+         style="fill:#8b8b8b;fill-rule:nonzero;stroke:none"
+         mask="url(#_1)"
+         d="M 500,947.99995 C 252.57647,947.99995 51.999986,747.42347 51.999986,500 51.999986,252.57647 252.57647,51.999986 500,51.999986 747.42347,51.999986 947.99995,252.57647 947.99995,500 947.99995,747.42347 747.42347,947.99995 500,947.99995 Z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="Shape 8"
+         inkscape:label="Shape 8"
+         style="fill:#6b6b6b;fill-rule:nonzero;stroke:none"
+         d="m 648.08226,392.59374 c 0,0 17.61037,-111.18752 17.61037,-111.18752 0,0 25.53129,0 25.53129,0 0,0 -7.38967,46.65625 -7.38967,46.65625 0,0 74.4688,0 74.4688,0 0,0 7.3896,-46.65625 7.3896,-46.65625 0,0 25.62499,0 25.62499,0 0,0 -17.61037,111.18752 -17.61037,111.18752 0,0 -25.62499,0 -25.62499,0 0,0 7.38961,-46.65625 7.38961,-46.65625 0,0 -74.46874,0 -74.46874,0 0,0 -7.3896,46.65625 -7.3896,46.65625 0,0 -25.53129,0 -25.53129,0 z"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g915">
+        <path
+           d="m 309.38131,671.93747 c 17.81976,0 34.55358,-14.44585 37.37598,-32.26561 2.8224,-17.81982 -9.33546,-32.26566 -27.15528,-32.26566 0,0 -93.35935,0 -93.35935,0 0,0 -10.22077,64.53127 -10.22077,64.53127 0,0 93.35942,0 93.35942,0 z"
+           mask="url(#_2)"
+           style="fill:#ff0000;fill-rule:nonzero;stroke:none"
+           inkscape:label="Shape 7"
+           id="Shape 7"
+           inkscape:connector-curvature="0" />
+        <path
+           d="m 312.21241,654.06245 c 17.81982,0 29.97762,14.44584 27.15528,32.26566 -2.8224,17.81976 -19.55623,32.26561 -37.37605,32.26561 0,0 -93.35935,0 -93.35935,0 0,0 10.22077,-64.53127 10.22077,-64.53127 0,0 93.35935,0 93.35935,0 z"
+           mask="url(#_3)"
+           style="fill:#ff0000;fill-rule:nonzero;stroke:none"
+           inkscape:label="Shape 7 copy"
+           id="Shape 7 copy"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+  </g>
+</svg>

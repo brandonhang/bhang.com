@@ -1,0 +1,63 @@
+{
+    "main": [
+        {
+            "title": "BrandonHang.com",
+            "link": "",
+            "note": "Released: Oct. 13, 2017",
+            "desc": "The next generation website of me!",
+            "image": "/img/projects/nextgen_logo.svg",
+            "color": "#b3e2fc"
+        },
+        {
+            "title": "HIPEC Risk Assessment",
+            "link": "https://github.com/brandonhang/HIPEC-Analysis",
+            "note": "Completed: Dec. 9, 2016",
+            "desc": "A web application that generates a HIPEC surgical risk assessment report",
+            "image": "/img/projects/hipec.svg",
+            "color": "#0000bb"
+        },
+        {
+            "title": "Legacy Website",
+            "link": "https://github.com/brandonhang/CS1520-Website",
+            "note": "Retired: Oct. 13, 2017",
+            "desc": "Legacy code for Version 2 of brandonhang.com",
+            "image": "/img/projects/legacy_logo.svg",
+            "color": "#baa5ff"
+        },
+        {
+            "title": "Laboon Chess",
+            "link": "https://github.com/benlind/cs1530-project",
+            "note": "Completed: Nov. 30, 2016",
+            "desc": "A chess game built using Java, Gradle, and the Stockfish chess engine",
+            "image": "/img/projects/laboon-chess.svg",
+            "color": "#000000"
+        },
+        {
+            "title": "Triple Triad",
+            "link": "https://github.com/brandonhang/Triple-Triad",
+            "note": "Completed: Jul, 6, 2016",
+            "desc": "A clone of the popular card game from <i>Final Fantasy VIII</i>",
+            "image": "/img/projects/triple-triad.svg",
+            "color": "#ffffff"
+        },
+        {
+            "title": "Coffee Maker Quest 2",
+            "link": "",
+            "note": "Completed: Apr. 21, 2017",
+            "desc": "A dynamically-generated game based on Bill Laboon's <i>Coffee Maker Quest</i>",
+            "image": "",
+            "color": "#000"
+        },
+        {
+            "title": "jQuery Solitare",
+            "link": "https://gist.github.com/brandonhang/054c8c333b19f15b9e4c096eb868d841",
+            "note": "Completed: Jun. 21, 2017",
+            "desc": "Portable web version of the classic single-player card game",
+            "image": "",
+            "color": "#880088"
+        }
+    ],
+    "school": [
+
+    ]
+}
