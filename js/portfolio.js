@@ -16,27 +16,24 @@
         $http.get('/config/projects.json').then(
             function(projectData) {
                 $scope.projects = projectData.data;
-                $scope.flippers = Array.apply(null, Array($scope.projects.main.length +
-                    $scope.projects.school.length)).map(Boolean.prototype.valueOf, false);
+                $scope.flippers = Array.apply(null, Array($scope.projects.length)).map(Boolean.prototype.valueOf, false);
             },
             function(projectErr) {
             }
         );
-        $scope.flipSquare = function(event, index, isMain) {
-            var mainMod = isMain ? 0 : $scope.projects.main.length;
-
+        $scope.flipSquare = function(event, index) {
             if (event.target.tagName !== 'A') {
-                $scope.flippers[index + mainMod] = !$scope.flippers[index + mainMod];
+                $scope.flippers[index] = !$scope.flippers[index];
             }
         };
-        $scope.getDescription = function(index, isMain) {
+        $scope.getDescription = function(index) {
             try {
-                return isMain ? $scope.projects.main[index].desc : $scope.projects.school[index].desc;
+                return $scope.projects[index].desc;
             }
             catch (exc) {}
         };
-        $scope.htmlDescription = function(index, isMain) {
-            return $sce.trustAsHtml($scope.getDescription(index, isMain));
+        $scope.htmlDescription = function(index) {
+            return $sce.trustAsHtml($scope.getDescription(index));
         };
 
         //////// TEMP DATA ////////

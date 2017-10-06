@@ -143,6 +143,11 @@
                 }
 
                 &.projects {
+                    .subtitle {
+                        margin: 1.25em auto 0.5em auto;
+
+                    }
+
                     .project-outer {
                         perspective: 10000px;
                         -webkit-perspective: 10000px;
@@ -306,6 +311,12 @@
                             right: 0.25em;
                             opacity: 0.8;
                         }
+                    }
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        clear: both;
                     }
                 }
             }
