@@ -1,0 +1,59 @@
+@import 'partials/_variables';
+@import 'partials/_mixins';
+
+body {
+    .content {
+        margin-bottom: 0;
+        display: block;
+        position: relative;
+        background-image: url('/img/bkgrds/500-o.jpg');
+        background-position: right bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media only screen and (max-width: 3000px) {
+            background-image: url('/img/bkgrds/500-3000.jpg');
+        }
+
+        @media only screen and (max-width: 2000px) {
+            background-image: url('/img/bkgrds/500-2000.jpg');
+        }
+
+        @media only screen and (max-width: 1000px) {
+            background-image: url('/img/bkgrds/500-1000.jpg');
+        }
+
+        @media #{$small-screen} {
+            background-position: 60% bottom;
+        }
+
+        .error-wrapper {
+            background-color: rgba(53, 53, 53, 0.6);
+            @include border-radius(4px);
+            padding: 3em;
+            color: white;
+            position: absolute;
+            font-family: $montserrat;
+            bottom: 25%;
+            left: 5%;
+            width: 35%;
+
+            .error {
+                font-size: 3em;
+                margin: 0;
+            }
+
+            @media only screen and (max-width: 1200px) {
+                bottom: 60%;
+                left: 50%;
+                @include translate(-50%, 50%);
+                width: 70%;
+                text-align: center;
+            }
+
+            @media only screen and (max-width: 550px) {
+                bottom: 65%;
+            }
+        }
+    }
+}

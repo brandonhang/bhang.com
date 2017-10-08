@@ -1,5 +1,5 @@
 angular.element(document).ready(function() {
-    const FLICKR_PHOTO_URL = 'https://api.flickr.com/services/rest/' +
+    var FLICKR_PHOTO_URL = 'https://api.flickr.com/services/rest/' +
         '?method=flickr.people.getPublicPhotos' +
         '&api_key=4ba1675febe39451e90b210a634230e0' +
         '&user_id=129886391@N02' +
@@ -7,7 +7,7 @@ angular.element(document).ready(function() {
         '&page=1' +
         '&format=json' +
         '&nojsoncallback=1';
-    const FLICKR_ALBUM_URL = 'https://api.flickr.com/services/rest/' +
+    var FLICKR_ALBUM_URL = 'https://api.flickr.com/services/rest/' +
         '?method=flickr.photosets.getList' +
         '&api_key=4ba1675febe39451e90b210a634230e0' +
         '&user_id=129886391@N02' +

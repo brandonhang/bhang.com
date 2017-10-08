@@ -10,3 +10,5 @@ engine_icons.tar.gz
 php/*
 /img/old-*
 *.psd
+js/*.min.js
+

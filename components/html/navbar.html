@@ -13,7 +13,7 @@
             <a class="nav-links" href="#" ng-click="openSubMenu($event, navGroup)" style="background-image: url('/img/icons/{{navGroupData.icon}}');">{{navGroup | uppercase}}</a>
             <ul>
                 <li ng-repeat="link in navGroupData.links">
-                    <a class="nav-link" href="/{{link.url}}.html">{{link.title}}</a>
+                    <a class="nav-link" href="/{{link.url}}">{{link.title}}</a>
                 </li>
             </ul>
         </div>

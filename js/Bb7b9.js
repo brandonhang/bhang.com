@@ -3,7 +3,7 @@
 console.log = function() {};
 
 angular.element(document).ready(function() {
-    const VF = Vex.Flow;
+    var VF = Vex.Flow;
     var body = document.getElementsByTagName('body')[0];
     var contentWidth = document.querySelector('.content-section .title').offsetWidth;
     if (contentWidth > 900) { contentWidth = 900; }
