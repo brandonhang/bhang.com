@@ -1,4 +1,4 @@
-(function() {
+angular.element(document).ready(function() {
     var carApp = angular.module('car-app', ['ngSanitize', 'ngTouch']);
 
     carApp.controller('car-ctrl', ['$http', '$scope', '$sce', function($http, $scope, $sce) {
@@ -491,9 +491,6 @@
         $scope.htmlDescription = function() {
             return $sce.trustAsHtml($scope.getDescription());
         };
-        // $scope.toggleDescription = function() {
-        //     $scope.descriptionView = !$scope.descriptionView;
-        // };
 
         window.addEventListener('resize', function() {
 
@@ -574,4 +571,4 @@
     }]);
 
     angular.bootstrap(document.getElementById('car-app'), ['car-app']);
-})();
+});

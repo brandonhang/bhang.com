@@ -38,6 +38,7 @@
 
                 .subtitle {
                     font-size: 1.5em;
+                    font-family: $montserrat;
                 }
 
                 &:not(.main-section) {
@@ -76,19 +77,6 @@
                         margin-left: 1em;
                     }
                 }
-
-                // &.skills-section {
-                //     ul {
-                //         list-style-position: inside;
-                //         padding-left: 0.25em;
-                //     }
-                // }
-                //
-                // &:not(.skills-section) {
-                //     ul {
-                //         padding-left: 1.5em;
-                //     }
-                // }
             }
 
             .main-section, .education-section {
@@ -142,6 +130,10 @@
 
             .skills-section {
                 .skill-entry {
+                    h4 {
+                        font-family: $montserrat;
+                    }
+
                     ul {
                         @include columns(2);
 

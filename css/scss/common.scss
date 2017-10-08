@@ -79,7 +79,7 @@ a[target="_blank"], .target-blank {
     min-height: 100%;
     width: 100%;
     display: inline-block;
-    // color: white;
+    margin-bottom: 5em;
 
     @media only screen and (max-height: 700px) {
         min-height: 700px;
@@ -130,6 +130,7 @@ a[target="_blank"], .target-blank {
                     margin-top: 0 !important;
                     font-size: 2.5em;
                     margin: 0.5em 0;
+                    font-family: $montserrat;
 
                     &::after {
                         content: '';

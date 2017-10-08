@@ -13,7 +13,8 @@
                 "Generated automated tasks for server monitoring and data validation using Bash, Python, and HBase queries",
                 "Participated in grooming, planning, and daily standups within a Scrum environment",
                 "Reviewed daily Linux server logs to monitor development and production servers for potential problems",
-                "Carried out 24/7 on-call duties to assess and remedy production issues"
+                "Carried out 24/7 on-call duties to assess and remedy production issues",
+                "Wrote comprehensive documentation on completed projects denoting usage and process flow"
             ],
             "icon": "msa.svg",
             "old": "msa_old.svg"

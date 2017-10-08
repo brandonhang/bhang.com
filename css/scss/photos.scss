@@ -38,6 +38,7 @@
 
                 .subtitle {
                     font-size: 2em;
+                    font-family: $montserrat;
                 }
 
                 .return-wrapper {
@@ -310,7 +311,6 @@
     .lightbox-title {
         position: absolute;
         color: white;
-
         top: 71%;
         width: 60%;
         margin-left: 20%;
@@ -382,6 +382,12 @@
 
         #next-image {
             right: calc(7.5% - 3em);
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        .img-nav {
+            font-size: calc(2em / 3);
         }
     }
 }

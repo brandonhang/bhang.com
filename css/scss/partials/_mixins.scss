@@ -1,5 +1,5 @@
 //////////////// Mixins ////////////////
-@mixin transition($property, $time, $type: "") {
+@mixin transition($property, $time, $type) {
     transition: $property $time unquote($type);
     -webkit-transition: $property $time unquote($type);
     -moz-transition: $property $time unquote($type);

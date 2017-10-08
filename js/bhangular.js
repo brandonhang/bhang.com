@@ -120,4 +120,15 @@
             }
         };
     }]);
+
+    angular.element(document).ready(function() {
+        var footer = document.getElementById('footer');
+        if (footer !== null) {
+            var footer = document.getElementById('footer');
+            var footerApp = angular.module('footer', []);
+
+            footerApp.controller('footwork', [function() {}]);
+            angular.bootstrap(footer, ['footer']);
+        }
+    });
 })();

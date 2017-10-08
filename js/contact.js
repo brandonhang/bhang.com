@@ -1,4 +1,4 @@
-(function() {
+angular.element(document).ready(function() {
     var contactApp = angular.module('contact-app', ['ngSanitize']);
 
     contactApp.controller('contact-ctrl', ['$http', '$scope', '$sanitize', function($http, $scope, $sanitize) {
@@ -70,7 +70,7 @@
     }]);
 
     angular.bootstrap(document.getElementById('contact-app'), ['contact-app']);
-})();
+});
 
 var onloadCallback = function() {
     grecaptcha.render('recaptcha', {

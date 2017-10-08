@@ -1,4 +1,4 @@
-(function() {
+angular.element(document).ready(function() {
     const FLICKR_PHOTO_URL = 'https://api.flickr.com/services/rest/' +
         '?method=flickr.people.getPublicPhotos' +
         '&api_key=4ba1675febe39451e90b210a634230e0' +
@@ -207,4 +207,4 @@
     }]);
 
     angular.bootstrap(document.getElementById('flickr-photos'), ['flickr-app']);
-})();
+});

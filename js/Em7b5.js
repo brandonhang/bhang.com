@@ -1,4 +1,4 @@
-(function() {
+angular.element(document).ready(function() {
     var musicApp = angular.module('music-app', ['ngSanitize', 'ngTouch']);
 
     musicApp.controller('music-ctrl', ['$http', '$scope', '$sce', function($http, $scope, $sce) {
@@ -15,7 +15,6 @@
             $scope.lightbox = false;
 
             try {
-                $scope.youtube.stopVideo();
                 $scope.youtube.destroy();
             }
             catch (e) {}
@@ -74,7 +73,6 @@
             }
 
             try {
-                $scope.youtube.stopVideo();
                 $scope.youtube.destroy();
             }
             catch (e) {}
@@ -105,7 +103,6 @@
                         start: start
                     }
                 });
-                // $scope.youtube.seekTo(30, true);
             }
             else {
                 $scope.youtube = new YT.Player('lightbox-image', {
@@ -122,7 +119,6 @@
             $scope.lightbox = false;
 
             try {
-                $scope.youtube.stopVideo();
                 $scope.youtube.destroy();
             }
             catch (e) {}
@@ -140,7 +136,6 @@
 
             if ($scope.musicGallery[index].type === 'img') {
                 try {
-                    $scope.youtube.stopVideo();
                     $scope.youtube.destroy();
                 }
                 catch (e) {}
@@ -313,4 +308,4 @@
     }]);
 
     angular.bootstrap(document.getElementById('music-gallery'), ['music-app']);
-})();
+});

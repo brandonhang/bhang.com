@@ -11,7 +11,7 @@
         <link type="text/css" rel="stylesheet" href="/css/common.css"/>
         <link type="text/css" rel="stylesheet" href="/css/nav.css"/>
         <link type="text/css" rel="stylesheet" href="/css/contact.css"/>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.min.js"></script>
         <script type="text/javascript" src="/js/bhangular.js"></script>
     </head>
@@ -52,9 +52,15 @@
                             </div>
                         </div>
                     </form>
+                    <div class="other-contact">
+                        <h2>Other Ways to Connect</h2>
+                        <a class="other-link in" href="https://www.linkedin.com/in/brandonhang" target="_blank">LinkedIn</a>
+                        <a class="other-link git" href="https://github.com/brandonhang" target="_blank">GitHub</a>
+                    </div>
                 </div>
             </div>
         </div>
+        <footer id="footer" ng-app="footer" ng-controller="footwork" ng-include="'/components/html/footer.html'"></footer>
         <script type="text/javascript" src="/js/contact.js"></script>
         <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
     </body>

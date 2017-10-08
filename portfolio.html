@@ -30,6 +30,7 @@
                             <div class="card-header"></div>
                             <div class="card-user">
                                 <h2><a href="https://github.com/{{username}}" target="_blank">@{{username}}</a></h2>
+                                <h3>{{location}}</h3>
                             </div>
                             <div class="card-data">
                                 <div class="card-data-section">
@@ -55,7 +56,7 @@
                     <div class="portfolio-section projects">
                         <div ng-repeat="project in projects" ng-click="flipSquare($event, $index)" ng-class="{'flipped': flippers[$index]}" class="project-outer">
                             <div class="project-inner">
-                                <div class="front" style="background-image: url('{{project.image}}'); background-color: {{project.color}}">
+                                <div class="front" ng-style="setFront(project.image, project.color)">
                                     <div class="title-wrapper">
                                         <h2>{{project.title}}</h2>
                                     </div>
@@ -73,6 +74,7 @@
                 </div>
             </div>
         </div>
+        <footer id="footer" ng-app="footer" ng-controller="footwork" ng-include="'/components/html/footer.html'"></footer>
         <script type="text/javascript" src="/js/portfolio.js"></script>
     </body>
 </html>

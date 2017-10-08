@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="300mm"
+   height="300mm"
+   viewBox="0 0 300 300"
+   version="1.1"
+   id="svg2363"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="flickr_c.svg">
+  <defs
+     id="defs2357">
+    <linearGradient
+       x1="-344.14999"
+       y1="274.70999"
+       gradientTransform="matrix(-0.59146,0,0,0.59146,-163.62,-176.11)"
+       x2="-395.85001"
+       gradientUnits="userSpaceOnUse"
+       y2="425.39999"
+       id="linearGradient2449">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop2557" />
+      <stop
+         offset="1"
+         stop-opacity="0"
+         stop-color="#fff"
+         id="stop2559" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="400"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2360">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,3)">
+    <g
+       id="g4545"
+       transform="matrix(1.3296348,0,0,1.3296348,-13.877532,-29.509062)"
+       style="fill:#ffffff;fill-opacity:1">
+      <path
+         id="path4776"
+         d="m 116.25016,132.75002 c 0,20.98724 -17.01268,38 -38.000002,38 -20.986296,0 -37.999999,-17.01371 -37.999999,-38 0,-20.98723 17.012681,-38.000003 37.999999,-38.000003 20.986296,0 38.000002,17.013713 38.000002,38.000003 z"
+         inkscape:connector-curvature="0"
+         style="fill:#0d65d3;fill-opacity:1;stroke-width:0.98148948" />
+      <path
+         id="path4778"
+         d="m 206.24988,132.75002 c 0,20.98727 -17.01318,38 -37.99999,38 -20.98682,0 -38,-17.01369 -38,-38 0,-20.98726 17.01318,-38 38,-38 20.98681,0 37.99999,17.01369 37.99999,38 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ff0084;fill-opacity:1;stroke-width:0.97412843" />
+    </g>
+  </g>
+</svg>

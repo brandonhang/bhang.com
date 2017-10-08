@@ -1,4 +1,4 @@
-(function() {
+angular.element(document).ready(function() {
     var workApp = angular.module('work-app', []);
 
     workApp.controller('work-ctrl', ['$scope', '$http', function($scope, $http) {
@@ -12,4 +12,4 @@
         );
     }]);
     angular.bootstrap(document.getElementById('work-app'), ['work-app']);
-})();
+});

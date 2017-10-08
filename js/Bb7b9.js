@@ -1,4 +1,8 @@
-(function() {
+// VexFlow has some stupid bug where the minified production version still
+// outputs information to the console
+console.log = function() {};
+
+angular.element(document).ready(function() {
     const VF = Vex.Flow;
     var body = document.getElementsByTagName('body')[0];
     var contentWidth = document.querySelector('.content-section .title').offsetWidth;
@@ -210,4 +214,4 @@
         playSaxophone();
         playPiano();
     });
-})();
+});
