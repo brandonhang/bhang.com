@@ -83,7 +83,7 @@
                     </p>
                     <div class="lightbox-wrapper">
                         <div class="thumbnail-wrapper">
-                            <div ng-repeat-start="gallery in musicGallery" ng-if="gallery.type === 'img'" ng-click="getMedia($event, $index)" class="music-photo" style="background-image: url('/img/content/{{gallery.src}}')"></div>
+                            <div ng-repeat-start="gallery in musicGallery" ng-if="gallery.type === 'img'" ng-click="getMedia($event, $index)" class="music-photo" style="background-image: url('/img/content/{{gallery.thmb}}')"></div>
                             <div ng-repeat-end="gallery in musicGallery" ng-if="gallery.type === 'vid'" ng-click="getMedia($event, $index)" class="music-photo music-video" style="background-image: url('http://i3.ytimg.com/vi/{{gallery.src}}/hqdefault.jpg')"><img src="/img/icons/youtube-op.svg"/></div>
                             <!-- <div ng-repeat-start="gallery in musicGallery" ng-if="gallery.type === 'img'" ng-click="viewMusicPhoto($event, gallery.src, gallery.cap)" class="music-photo" style="background-image: url('/img/content/{{gallery.src}}')"></div>
                             <div ng-repeat-end ng-if="gallery.type === 'vid'" ng-click="playYouTube($event, gallery.src, gallery.st)" class="music-photo music-video" style="background-image: url('http://i3.ytimg.com/vi/{{gallery.src}}/hqdefault.jpg')"><img src="/img/icons/youtube.svg"/></div> -->
