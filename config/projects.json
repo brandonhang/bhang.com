@@ -2,7 +2,7 @@
     {
         "title": "BHang.com",
         "link": "https://github.com/brandonhang/bhang.com",
-        "note": "Released 10/13/2017",
+        "note": "Released 10/9/2017",
         "desc": "The next generation website of me!",
         "image": "/img/projects/nextgen_logo.svg",
         "color": "#b3e2fc"
@@ -18,7 +18,7 @@
     {
         "title": "Legacy Website",
         "link": "https://github.com/brandonhang/CS1520-Website",
-        "note": "Release 6/21/2016",
+        "note": "Released 6/21/2016",
         "desc": "Legacy code for Version 2 of my website",
         "image": "/img/projects/legacy_logo.svg",
         "color": "#baa5ff"
@@ -51,7 +51,7 @@
         "title": "Solitare",
         "link": "https://gist.github.com/brandonhang/054c8c333b19f15b9e4c096eb868d841",
         "note": "Completed 6/21/2017",
-        "desc": "Portable web version of the classic single-player card game",
+        "desc": "Web version of the classic single-player card game",
         "image": "/img/projects/solitaire.svg",
         "color": "#2fb04a"
     },
