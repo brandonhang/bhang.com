@@ -11,4 +11,5 @@ php/*
 /img/old-*
 *.psd
 js/*.min.js
+package-lock.json
 
