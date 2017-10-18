@@ -1,0 +1,165 @@
+{
+	"name": "Final Fantasy VI",
+	"set": [
+		{
+			"level": "Level 1",
+			"cards": [
+				"Lobo",
+				"RepoMan",
+				"Leafer",
+				"Hornet",
+				"Rhodox",
+				"Brawler",
+				"Merchant",
+				"Trilobiter",
+				"Doberman",
+				"Templar",
+				"StillGoing"
+			]
+		},
+		{
+			"level": "Level 2",
+			"cards": [
+				"Fidor",
+				"Rider",
+				"ProtoArmor",
+				"Gobbler",
+				"Rhinox",
+				"WeedFeeder",
+				"Baskervor",
+				"Cephaler",
+				"Chimera",
+				"SpitFireSkyArmor",
+				"Behemoth"
+			]
+		},
+		{
+			"level": "Level 3",
+			"cards": [
+				"Mesosaur",
+				"HermitCrab",
+				"GiganToad",
+				"Buffalax",
+				"Harpiai",
+				"AlloVer",
+				"Crusher",
+				"Covert",
+				"TapDancer",
+				"Necromancr",
+				"Wizard"
+			]
+		},
+		{
+			"level": "Level 4",
+			"cards": [
+				"TombThumb",
+				"TRexAllosaurus",
+				"Suriander",
+				"Io",
+				"L.60Magic",
+				"L.80Magic",
+				"Brachosaur",
+				"Hoover",
+				"Sprinter",
+				"BlackDrgn",
+				"Cactrot"
+			]
+		},
+		{
+			"level": "Level 5",
+			"cards": [
+				"Apokryphos",
+				"Brainpan",
+				"Misfit",
+				"Dragon",
+				"WireyDrgn",
+				"Gigantos",
+				"DarkForce",
+				"Dueller",
+				"KatanaSoul",
+				"MasterPug",
+				"Presenter"
+			]
+		},
+		{
+			"level": "Level 6",
+			"cards": [
+				"Whelk",
+				"Vargas",
+				"GhostTrain",
+				"Crane",
+				"Ultros",
+				"TunnelArmr",
+				"Ifrit/Shiva",
+				"FlameEater",
+				"Chupon",
+				"AirForce",
+				"AtmaWeapon"
+			]
+		},
+		{
+			"level": "Level 7",
+			"cards": [
+				"Dullahan",
+				"Phunbaba",
+				"Hidon",
+				"Tritoch",
+				"DoomGaze",
+				"Atma",
+				"Inferno",
+				"Poltrgeist",
+				"Goddess",
+				"Doom",
+				"Kefka"
+			]
+		},
+		{
+			"level": "Level 8",
+			"cards": [
+				"Ramuh",
+				"Kirin",
+				"Siren",
+				"Stray",
+				"Unicorn",
+				"Maduin",
+				"Shoat",
+				"Phantom",
+				"Carbunkl",
+				"Bismark",
+				"Sraphim"
+			]
+		},
+		{
+			"level": "Level 9",
+			"cards": [
+				"Golem/ZoneSeek",
+				"Palidor",
+				"Fenrir",
+				"Terrato",
+				"Starlet",
+				"Alexandr",
+				"Phoenix",
+				"Odin/Raiden",
+				"Bahamut",
+				"Ragnarok",
+				"Crusader"
+			]
+		},
+		{
+			"level": "Level 10",
+			"cards": [
+				"Terra",
+				"Locke",
+				"Edgar/Sabin",
+				"Celes",
+				"Shadow",
+				"Cyan",
+				"Gau",
+				"MogUmaro",
+				"Setzer",
+				"RelmStrago",
+				"GogoGhost"
+			]
+		}
+	]
+}

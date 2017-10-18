@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Solitaire</title>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="/css/solitaire.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    </head>
+    <body>
+        <table class="score">
+            <tr>
+                <td><button id="reset" class="button">New Game</button></td>
+                <td>Time: <span id="hours">0</span>:<span id="minutes">00</span>:<span id="seconds">00</span></td>
+            </tr>
+        </table>
+        <table class="patience">
+            <tr class="top-shelf">
+                <td id="card-pile" class="stack"><div class="outline"></div></td>
+                <td id="next-card" class="stack"><div class="outline"></div></td>
+                <td class="spacer"><div></div></td>
+                <td id="clubs-stack" class="stack finish"><div class="outline black-fade">&clubs;</div></td>
+                <td id="diamonds-stack" class="stack finish"><div class="outline red-fade">&diams;</div></td>
+                <td id="hearts-stack" class="stack finish"><div class="outline red-fade">&hearts;</div></td>
+                <td id="spades-stack" class="stack finish"><div class="outline black-fade">&spades;</div></td>
+            </tr>
+            <tr class="bottom-shelf">
+                <td id="slot-0" class="slot"><div class="outline"></div></td>
+                <td id="slot-1" class="slot"><div class="outline"></div></td>
+                <td id="slot-2" class="slot"><div class="outline"></div></td>
+                <td id="slot-3" class="slot"><div class="outline"></div></td>
+                <td id="slot-4" class="slot"><div class="outline"></div></td>
+                <td id="slot-5" class="slot"><div class="outline"></div></td>
+                <td id="slot-6" class="slot"><div class="outline"></div></td>
+            </tr>
+        </table>
+        <script type="text/javascript" src="/js/solitaire.min.js"></script>
+    </body>
+</html>

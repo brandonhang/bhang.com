@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Movie Finder</title>
+        <link type="image/x-icon" rel="shortcut icon" href="img/icons/icon.ico"/>
+        <link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Sorts+Mill+Goudy'/>
+        <link type="text/css" rel="stylesheet" href="/css/nouislider.min.css"/>
+        <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/movies.min.css"/>
+    </head>
+    <body>
+        <form id="query">
+            <div class="filter-fxn">
+                <div class="filter-img-wrapper">
+                    <span class="filter-fxn-text">Click to </span>
+                    <img src="/img/icons/drop_arrow_down_w.svg"/>
+                </div>
+                <h2>Movie Filters</h2>
+            </div>
+            <div class="filters">
+                <div class="slide-wrapper">
+                    <h3>Movie Debut Year</h3>
+                    <div id="year-slider" class="slider"></div>
+                    <p>Year Range: <span id="min-year">&minus;&infin;</span> to <span id="max-year">&infin;</span></p>
+                </div>
+                <div class="slide-wrapper">
+                    <h3>Movie Length</h3>
+                    <div id="length-slider" class="slider"></div>
+                    <p>Max Length: <span id="length">&infin;</span> minutes</p>
+                </div>
+                <div class="genre-filter">
+                    <h3>Movie Genre</h3>
+                    <label class="control control-checkbox">Action
+                        <input class="optional" type="checkbox" name="genres" value="Action"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Adventure
+                        <input class="optional" type="checkbox" name="genres" value="Adventure"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Animation
+                        <input class="optional" type="checkbox" name="genres" value="Animation"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Biography
+                        <input class="optional" type="checkbox" name="genres" value="Biography"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Comedy
+                        <input class="optional" type="checkbox" name="genres" value="Comedy"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Crime
+                        <input class="optional" type="checkbox" name="genres" value="Crime"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Drama
+                        <input class="optional" type="checkbox" name="genres" value="Drama"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Family
+                        <input class="optional" type="checkbox" name="genres" value="Family"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Fantasy
+                        <input class="optional" type="checkbox" name="genres" value="Fantasy"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">History
+                        <input class="optional" type="checkbox" name="genres" value="History"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Music
+                        <input class="optional" type="checkbox" name="genres" value="Music"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Musical
+                        <input class="optional" type="checkbox" name="genres" value="Musical"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Mystery
+                        <input class="optional" type="checkbox" name="genres" value="Mystery"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Romance
+                        <input class="optional" type="checkbox" name="genres" value="Romance"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Sci-Fi
+                        <input class="optional" type="checkbox" name="genres" value="Sci-Fi"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Sport
+                        <input class="optional" type="checkbox" name="genres" value="Sport"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                    <label class="control control-checkbox">Thriller
+                        <input class="optional" type="checkbox" name="genres" value="Thriller"/>
+                        <div class="control-indicator"></div>
+                    </label>
+                </div>
+            </div>
+        </form>
+
+        <table id="results">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Length (min.)</th>
+                    <th>Rating</th>
+                    <th>Genre</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/nouislider.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="/js/movie_query.min.js"></script>
+    </body>
+</html>

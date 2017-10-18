@@ -1,0 +1,807 @@
+[
+	{
+		"title": "A Beautiful Mind",
+		"year": 2001,
+		"length": 135,
+		"rating": "PG-13",
+		"genre": "Biography Drama"
+	},
+	{
+		"title": "A Knight's Tale",
+		"year": 2001,
+		"length": 132,
+		"rating": "PG-13",
+		"genre": "Action Adventure Romance"
+	},
+	{
+		"title": "Apollo 13",
+		"year": 1995,
+		"length": 140,
+		"rating": "PG",
+		"genre": "Adventure Drama History"
+	},
+	{
+		"title": "Big Hero 6",
+		"year": 2014,
+		"length": 102,
+		"rating": "PG",
+		"genre": "Animation Action Adventure"
+	},
+	{
+		"title": "Brave",
+		"year": 2012,
+		"length": 93,
+		"rating": "PG",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "Captain America: The First Avenger",
+		"year": 2011,
+		"length": 124,
+		"rating": "PG-13",
+		"genre": "Action Adventure Sci-Fi"
+	},
+	{
+		"title": "Cars",
+		"year": 2006,
+		"length": 117,
+		"rating": "G",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "Castle in the Sky",
+		"year": 1986,
+		"length": 125,
+		"rating": "PG",
+		"genre": "Animation Adventure Family"
+	},
+	{
+		"title": "Crouching Tiger, Hidden Dragon",
+		"year": 2000,
+		"length": 120,
+		"rating": "PG-13",
+		"genre": "Action Adventure Fantasy"
+	},
+	{
+		"title": "District 9",
+		"year": 2009,
+		"length": 112,
+		"rating": "R",
+		"genre": "Action Sci-Fi Thriller"
+	},
+	{
+		"title": "Driving Miss Daisy",
+		"year": 1989,
+		"length": 99,
+		"rating": "PG",
+		"genre": "Drama"
+	},
+	{
+		"title": "Edward Scissorhands",
+		"year": 1990,
+		"length": 105,
+		"rating": "PG-13",
+		"genre": "Drama Fantasy Romance"
+	},
+	{
+		"title": "Enter the Dragon",
+		"year": 1973,
+		"length": 102,
+		"rating": "R",
+		"genre": "Action Crime Drama"
+	},
+	{
+		"title": "Fearless",
+		"year": 2006,
+		"length": 104,
+		"rating": "PG-13",
+		"genre": "Action Biography Drama"
+	},
+	{
+		"title": "Final Fantasy VII: Advent Children",
+		"year": 2005,
+		"length": 101,
+		"rating": "PG-13",
+		"genre": "Animation Action Adventure"
+	},
+	{
+		"title": "Finding Dory",
+		"year": 2016,
+		"length": 97,
+		"rating": "PG",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "Finding Nemo",
+		"year": 2003,
+		"length": 100,
+		"rating": "G",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "Fist of Fury",
+		"year": 1972,
+		"length": 107,
+		"rating": "R",
+		"genre": "Action Drama Romance"
+	},
+	{
+		"title": "Forrest Gump",
+		"year": 1994,
+		"length": 144,
+		"rating": "PG-13",
+		"genre": "Comedy Drama"
+	},
+	{
+		"title": "From Up on Poppy Hill",
+		"year": 2011,
+		"length": 91,
+		"rating": "PG",
+		"genre": "Animation Drama Family"
+	},
+	{
+		"title": "Gladiator",
+		"year": 2000,
+		"length": 155,
+		"rating": "R",
+		"genre": "Action Adventure Drama"
+	},
+	{
+		"title": "Godzilla",
+		"year": 2014,
+		"length": 123,
+		"rating": "PG-13",
+		"genre": "Action Thriller"
+	},
+	{
+		"title": "Hero",
+		"year": 2002,
+		"length": 99,
+		"rating": "PG-13",
+		"genre": "Action Adventure History"
+	},
+	{
+		"title": "Hook",
+		"year": 1991,
+		"length": 142,
+		"rating": "PG",
+		"genre": "Adventure Comedy Family"
+	},
+	{
+		"title": "House of Flying Daggers",
+		"year": 2004,
+		"length": 119,
+		"rating": "PG-13",
+		"genre": "Action Adventure Drama"
+	},
+	{
+		"title": "How To Train Your Dragon",
+		"year": 2010,
+		"length": 98,
+		"rating": "PG",
+		"genre": "Animation Action Adventure"
+	},
+	{
+		"title": "How To Train Your Dragon 2",
+		"year": 2014,
+		"length": 102,
+		"rating": "PG",
+		"genre": "Animation Action Adventure"
+	},
+	{
+		"title": "Howl's Moving Castle",
+		"year": 2004,
+		"length": 119,
+		"rating": "PG",
+		"genre": "Animation Adventure Fantasy"
+	},
+	{
+		"title": "Hugo",
+		"year": 2011,
+		"length": 126,
+		"rating": "PG",
+		"genre": "Adventure Drama Family"
+	},
+	{
+		"title": "I Spy",
+		"year": 2002,
+		"length": 97,
+		"rating": "PG-13",
+		"genre": "Action Adventure Comedy"
+	},
+	{
+		"title": "I, Robot",
+		"year": 2004,
+		"length": 115,
+		"rating": "PG-13",
+		"genre": "Action Mystery Sci-Fi"
+	},
+	{
+		"title": "Interstellar",
+		"year": 2014,
+		"length": 169,
+		"rating": "PG-13",
+		"genre": "Adventure Drama Sci-Fi"
+	},
+	{
+		"title": "Iron Man",
+		"year": 2008,
+		"length": 126,
+		"rating": "PG-13",
+		"genre": "Action Adventure Sci-Fi"
+	},
+	{
+		"title": "Iron Man 3",
+		"year": 2013,
+		"length": 130,
+		"rating": "PG-13",
+		"genre": "Action Adventure Sci-Fi"
+	},
+	{
+		"title": "Jason Bourne",
+		"year": 2016,
+		"length": 123,
+		"rating": "PG-13",
+		"genre": "Action Thriller"
+	},
+	{
+		"title": "Jurassic World",
+		"year": 2015,
+		"length": 124,
+		"rating": "PG-13",
+		"genre": "Action Adventure Sci-Fi"
+	},
+	{
+		"title": "Kiki's Delivery Service",
+		"year": 1989,
+		"length": 103,
+		"rating": "G",
+		"genre": "Animation Adventure Drama"
+	},
+	{
+		"title": "Kung Fu Hustle",
+		"year": 2004,
+		"length": 99,
+		"rating": "R",
+		"genre": "Action Comedy Crime"
+	},
+	{
+		"title": "Kung Fu Panda",
+		"year": 2008,
+		"length": 92,
+		"rating": "PG",
+		"genre": "Animation Action Adventure"
+	},
+	{
+		"title": "Lawrence of Arabia",
+		"year": 1962,
+		"length": 216,
+		"rating": "PG",
+		"genre": "Adventure Biography Drama"
+	},
+	{
+		"title": "Les MisÃ©rables",
+		"year": 2012,
+		"length": 158,
+		"rating": "PG-13",
+		"genre": "Drama Musical Romance"
+	},
+	{
+		"title": "Life of Pi",
+		"year": 2012,
+		"length": 127,
+		"rating": "PG",
+		"genre": "Adventure Drama Fantasy"
+	},
+	{
+		"title": "Little Big Soldier",
+		"year": 2010,
+		"length": 96,
+		"rating": "PG-13",
+		"genre": "Action Adventure Comedy"
+	},
+	{
+		"title": "Live Free or Die Hard",
+		"year": 2007,
+		"length": 128,
+		"rating": "PG-13",
+		"genre": "Action Adventure Thriller"
+	},
+	{
+		"title": "Man of the House",
+		"year": 2005,
+		"length": 100,
+		"rating": "PG-13",
+		"genre": "Action Comedy"
+	},
+	{
+		"title": "Master and Commander: The Far Side of the World",
+		"year": 2003,
+		"length": 138,
+		"rating": "PG-13",
+		"genre": "Action Adventure Drama"
+	},
+	{
+		"title": "Men in Black",
+		"year": 1997,
+		"length": 98,
+		"rating": "PG-13",
+		"genre": "Adventure Comedy Family"
+	},
+	{
+		"title": "Men in Black II",
+		"year": 2002,
+		"length": 88,
+		"rating": "PG-13",
+		"genre": "Action Adventure Comedy"
+	},
+	{
+		"title": "Minority Report",
+		"year": 2002,
+		"length": 145,
+		"rating": "PG-13",
+		"genre": "Action Mystery Sci-Fi"
+	},
+	{
+		"title": "Monsters University",
+		"year": 2013,
+		"length": 104,
+		"rating": "G",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "Monsters, Inc.",
+		"year": 2001,
+		"length": 92,
+		"rating": "G",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "Mr. & Mrs. Smith",
+		"year": 2005,
+		"length": 120,
+		"rating": "PG-13",
+		"genre": "Action Comedy Crime"
+	},
+	{
+		"title": "My Neighbor Totoro",
+		"year": 1988,
+		"length": 86,
+		"rating": "G",
+		"genre": "Animation Family Fantasy"
+	},
+	{
+		"title": "NausicaÃ¤ of the Valley of the Wind",
+		"year": 1984,
+		"length": 117,
+		"rating": "PG",
+		"genre": "Animation Adventure Fantasy"
+	},
+	{
+		"title": "Night at the Museum",
+		"year": 2006,
+		"length": 108,
+		"rating": "PG",
+		"genre": "Adventure Comedy Family"
+	},
+	{
+		"title": "Oblivion",
+		"year": 2013,
+		"length": 124,
+		"rating": "PG-13",
+		"genre": "Action Adventure Mystery"
+	},
+	{
+		"title": "Only Yesterday",
+		"year": 2001,
+		"length": 118,
+		"rating": "PG",
+		"genre": "Animation Drama Romance"
+	},
+	{
+		"title": "Ponyo",
+		"year": 2008,
+		"length": 101,
+		"rating": "G",
+		"genre": "Animation Adventure Family"
+	},
+	{
+		"title": "Princess Mononoke",
+		"year": 1997,
+		"length": 134,
+		"rating": "PG-13",
+		"genre": "Animation Adventure Fantasy"
+	},
+	{
+		"title": "Ratatouille",
+		"year": 2007,
+		"length": 111,
+		"rating": "G",
+		"genre": "Animation Comedy Family"
+	},
+	{
+		"title": "Reign Over Me",
+		"year": 2007,
+		"length": 124,
+		"rating": "R",
+		"genre": "Drama"
+	},
+	{
+		"title": "Remember the Titans",
+		"year": 2000,
+		"length": 113,
+		"rating": "PG",
+		"genre": "Biography Drama Sport"
+	},
+	{
+		"title": "Schindler's List",
+		"year": 1993,
+		"length": 195,
+		"rating": "R",
+		"genre": "Biography Drama History"
+	},
+	{
+		"title": "School of Rock",
+		"year": 2003,
+		"length": 108,
+		"rating": "PG-13",
+		"genre": "Comedy Family Music"
+	},
+	{
+		"title": "Skyfall",
+		"year": 2012,
+		"length": 143,
+		"rating": "PG-13",
+		"genre": "Action Adventure Thriller"
+	},
+	{
+		"title": "Space Jam",
+		"year": 1996,
+		"length": 88,
+		"rating": "PG",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "Spritied Away",
+		"year": 2001,
+		"length": 125,
+		"rating": "PG",
+		"genre": "Animation Adventure Family"
+	},
+	{
+		"title": "Star Wars: The Force Awakens",
+		"year": 2015,
+		"length": 136,
+		"rating": "PG-13",
+		"genre": "Action Adventure Fantasy"
+	},
+	{
+		"title": "Super 8",
+		"year": 2011,
+		"length": 112,
+		"rating": "PG-13",
+		"genre": "Mystery Sci-Fi Thriller"
+	},
+	{
+		"title": "Taken",
+		"year": 2008,
+		"length": 93,
+		"rating": "PG-13",
+		"genre": "Action Thriller"
+	},
+	{
+		"title": "Terminator 2: Judgement Day",
+		"year": 1991,
+		"length": 137,
+		"rating": "R",
+		"genre": "Action Sci-Fi"
+	},
+	{
+		"title": "The Adjustment Bureau",
+		"year": 2011,
+		"length": 106,
+		"rating": "PG-13",
+		"genre": "Romance Sci-Fi Thriller"
+	},
+	{
+		"title": "The Avengers",
+		"year": 2012,
+		"length": 143,
+		"rating": "PG-13",
+		"genre": "Action Sci-Fi"
+	},
+	{
+		"title": "The Big Boss",
+		"year": 1971,
+		"length": 99,
+		"rating": "R",
+		"genre": "Action Crime Drama"
+	},
+	{
+		"title": "The Blind Side",
+		"year": 2009,
+		"length": 129,
+		"rating": "PG-13",
+		"genre": "Biography Drama Sport"
+	},
+	{
+		"title": "The Bourne Identity",
+		"year": 2002,
+		"length": 119,
+		"rating": "PG-13",
+		"genre": "Action Mystery Thriller"
+	},
+	{
+		"title": "The Bourne Supremacy",
+		"year": 2004,
+		"length": 108,
+		"rating": "PG-13",
+		"genre": "Action Mystery Thriller"
+	},
+	{
+		"title": "The Bourne Ultimatum",
+		"year": 2007,
+		"length": 115,
+		"rating": "PG-13",
+		"genre": "Action Mystery Thriller"
+	},
+	{
+		"title": "The Da Vinci Code",
+		"year": 2006,
+		"length": 149,
+		"rating": "PG-13",
+		"genre": "Mystery Thriller"
+	},
+	{
+		"title": "The Departed",
+		"year": 2006,
+		"length": 151,
+		"rating": "R",
+		"genre": "Crime Drama Thriller"
+	},
+	{
+		"title": "The Fast and the Furious",
+		"year": 2001,
+		"length": 106,
+		"rating": "PG-13",
+		"genre": "Action Crime Thriller"
+	},
+	{
+		"title": "The Fifth Element",
+		"year": 1997,
+		"length": 126,
+		"rating": "PG-13",
+		"genre": "Action Adventure Sci-Fi"
+	},
+	{
+		"title": "The Forbidden Kingdom",
+		"year": 2008,
+		"length": 104,
+		"rating": "PG-13",
+		"genre": "Action Adventure Fantasy"
+	},
+	{
+		"title": "The Fugitive",
+		"year": 1993,
+		"length": 130,
+		"rating": "PG-13",
+		"genre": "Action Crime Drama"
+	},
+	{
+		"title": "The Heat",
+		"year": 2013,
+		"length": 117,
+		"rating": "R",
+		"genre": "Action Comedy Crime"
+	},
+	{
+		"title": "The Incredibles",
+		"year": 2004,
+		"length": 115,
+		"rating": "PG",
+		"genre": "Animation Action Adventure"
+	},
+	{
+		"title": "The Karate Kid",
+		"year": 2010,
+		"length": 140,
+		"rating": "PG",
+		"genre": "Action Drama Family"
+	},
+	{
+		"title": "The Lego Movie",
+		"year": 2014,
+		"length": 100,
+		"rating": "PG",
+		"genre": "Animation Action Adventure"
+	},
+	{
+		"title": "The Lion King",
+		"year": 1994,
+		"length": 89,
+		"rating": "G",
+		"genre": "Animation Adventure Drama"
+	},
+	{
+		"title": "The Mask of Zorro",
+		"year": 1998,
+		"length": 136,
+		"rating": "PG-13",
+		"genre": "Action Adventure Comedy"
+	},
+	{
+		"title": "The Matrix",
+		"year": 1999,
+		"length": 136,
+		"rating": "R",
+		"genre": "Action Sci-Fi"
+	},
+	{
+		"title": "The Peanuts Movie",
+		"year": 2015,
+		"length": 88,
+		"rating": "G",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "The Phantom of the Opera",
+		"year": 2004,
+		"length": 143,
+		"rating": "PG-13",
+		"genre": "Drama Musical Romance"
+	},
+	{
+		"title": "The Pursuit of Happyness",
+		"year": 2006,
+		"length": 117,
+		"rating": "PG-13",
+		"genre": "Biography Drama"
+	},
+	{
+		"title": "The Rock",
+		"year": 1996,
+		"length": 136,
+		"rating": "R",
+		"genre": "Action Adventure Thriller"
+	},
+	{
+		"title": "The Secret World of Arrietty",
+		"year": 2010,
+		"length": 94,
+		"rating": "G",
+		"genre": "Animation Adventure Family"
+	},
+	{
+		"title": "The Shawshank Redemption",
+		"year": 1994,
+		"length": 144,
+		"rating": "R",
+		"genre": "Crime Drama"
+	},
+	{
+		"title": "The Sixth Sense",
+		"year": 1999,
+		"length": 107,
+		"rating": "PG-13",
+		"genre": "Drama Mystery Thriller"
+	},
+	{
+		"title": "The Sound of Music",
+		"year": 1965,
+		"length": 174,
+		"rating": "G",
+		"genre": "Biography Drama Family"
+	},
+	{
+		"title": "The Tale of Princess Kaguya",
+		"year": 2013,
+		"length": 137,
+		"rating": "PG",
+		"genre": "Animation Drama Fantasy"
+	},
+	{
+		"title": "The Wind Rises",
+		"year": 2013,
+		"length": 126,
+		"rating": "PG-13",
+		"genre": "Animation Biography Drama"
+	},
+	{
+		"title": "Thor",
+		"year": 2011,
+		"length": 115,
+		"rating": "PG-13",
+		"genre": "Action Adventure Fantasy"
+	},
+	{
+		"title": "Total Recall",
+		"year": 1990,
+		"length": 93,
+		"rating": "R",
+		"genre": "Action Sci-Fi Thriller"
+	},
+	{
+		"title": "Toy Story",
+		"year": 1995,
+		"length": 81,
+		"rating": "G",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "Toy Story 2",
+		"year": 1999,
+		"length": 92,
+		"rating": "G",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "Toy Story 3",
+		"year": 2010,
+		"length": 103,
+		"rating": "G",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "U.S. Marshalls",
+		"year": 1998,
+		"length": 131,
+		"rating": "PG-13",
+		"genre": "Action Crime Drama"
+	},
+	{
+		"title": "Up",
+		"year": 2009,
+		"length": 96,
+		"rating": "PG",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "Way of the Dragon",
+		"year": 1972,
+		"length": 90,
+		"rating": "R",
+		"genre": "Action Adventure Crime"
+	},
+	{
+		"title": "Whisper of the Heart",
+		"year": 1995,
+		"length": 111,
+		"rating": "G",
+		"genre": "Animation Drama Family"
+	},
+	{
+		"title": "Wreck-It Ralph",
+		"year": 2012,
+		"length": 101,
+		"rating": "PG",
+		"genre": "Animation Adventure Comedy"
+	},
+	{
+		"title": "Guardians of the Galaxy Vol. 2",
+		"year": 2017,
+		"length": 136,
+		"rating": "PG-13",
+		"genre": "Action Adventure Sci-Fi"
+	},
+	{
+		"title": "John Wick: Chapter 2",
+		"year": 2017,
+		"length": 122,
+		"rating": "R",
+		"genre": "Action Crime Thriller"
+	},
+	{
+		"title": "Rogue One",
+		"year": 2016,
+		"length": 133,
+		"rating": "PG-13",
+		"genre": "Action Adventure Sci-Fi"
+	},
+	{
+		"title": "Doctor Strange",
+		"year": 2016,
+		"length": 115,
+		"rating": "PG-13",
+		"genre": "Action Adventure Fantasy"
+	}
+]

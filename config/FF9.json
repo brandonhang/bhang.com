@@ -1,0 +1,165 @@
+{
+	"name": "Final Fantasy IX",
+	"set": [
+		{
+			"level": "Level 1",
+			"cards": [
+				"dendrobium",
+				"feathercircle",
+				"flan",
+				"garuda",
+				"ghost",
+				"hedgehogpie",
+				"hornet",
+				"ladybug",
+				"mandragora",
+				"mu",
+				"skeleton"
+			]
+		},
+		{
+			"level": "Level 2",
+			"cards": [
+				"bandersnatch",
+				"blazerbeetle",
+				"bomb",
+				"cactuar",
+				"epitaph",
+				"fang",
+				"ironite",
+				"ragtimemouse",
+				"ringleader",
+				"sandscorpion",
+				"troll"
+			]
+		},
+		{
+			"level": "Level 3",
+			"cards": [
+				"abomination",
+				"anemone",
+				"benerozenero",
+				"catoblepas",
+				"clipper",
+				"griffen",
+				"hecteyes",
+				"landworm",
+				"ochu",
+				"ogre",
+				"zombie"
+			]
+		},
+		{
+			"level": "Level 4",
+			"cards": [
+				"adamantoise",
+				"armstrong",
+				"cerebus",
+				"chimera",
+				"drakan",
+				"lizardman",
+				"sandgolem",
+				"shelldragon",
+				"vepal",
+				"zaghnol",
+				"zemzelett"
+			]
+		},
+		{
+			"level": "Level 5",
+			"cards": [
+				"abadon",
+				"behemoth",
+				"dracozombie",
+				"granddragon",
+				"ironman",
+				"malboro",
+				"mistodon",
+				"movers",
+				"tonberry",
+				"veteran",
+				"yan"
+			]
+		},
+		{
+			"level": "Level 6",
+			"cards": [
+				"gizamaluke",
+				"antlion",
+				"baku",
+				"hilgigars",
+				"cinna",
+				"marcus",
+				"plantbrain",
+				"quclan",
+				"ralvuimago",
+				"sealion",
+				"blank"
+			]
+		},
+		{
+			"level": "Level 7",
+			"cards": [
+				"blackwaltz1",
+				"blackwaltz2",
+				"blackwaltz3",
+				"number288",
+				"silverdragon",
+				"lani",
+				"soulcage",
+				"taharka",
+				"meltigemini",
+				"valiapira",
+				"zornthorn"
+			]
+		},
+		{
+			"level": "Level 8",
+			"cards": [
+				"hildagarde",
+				"deathguise",
+				"garland",
+				"hades",
+				"kraken",
+				"lich",
+				"malaris",
+				"hildagarde3",
+				"necron",
+				"novadragon",
+				"tiamat"
+			]
+		},
+		{
+			"level": "Level 9",
+			"cards": [
+				"alexander",
+				"ark",
+				"bahamut",
+				"carbuncle",
+				"fenrir",
+				"ifrit",
+				"leviathan",
+				"madeen",
+				"odin",
+				"ramuh",
+				"shiva"
+			]
+		},
+		{
+			"level": "Level 10",
+			"cards": [
+				"amarant",
+				"beatrix",
+				"eiko",
+				"freya",
+				"garnet",
+				"kuja",
+				"quina",
+				"steiner",
+				"brahne",
+				"vivi",
+				"zidane"
+			]
+		}
+	]
+}

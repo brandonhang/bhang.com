@@ -1,0 +1,218 @@
+$mobile-portrait: "only screen
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (min-resolution: 192dpi)
+    and (orientation: portrait)";
+$mobile-landscape: "only screen
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (min-resolution: 192dpi)
+    and (orientation: landscape)
+    and (max-device-width: 1024px)";
+
+@mixin rotate($num) {
+    -ms-transform: rotate($num);
+    -ms-transform-origin: 50% 50%;
+    -webkit-transform: rotate($num);
+    -webkit-transform-origin: 50% 50%;
+    transform: rotate($num);
+    transform-origin: 50% 50%;
+}
+
+@mixin border-radius($num) {
+    -webkit-border-radius: $num;
+    -moz-border-radius: $num;
+    border-radius: $num;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sorts Mill Goudy', 'Palatino', serif;
+
+    @media #{$mobile-portrait} {
+        font-size: 200%;
+    }
+
+    @media #{$mobile-landscape} {
+        &::before {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 314158265359;
+            background-color: #0C1155;
+            color: white;
+            content: "I was lazy and didn't optimize this for landscape view.\ASorry :(";
+            white-space: pre;
+            font-family: 'Montserrat', 'Verdana', sans-serif;
+            font-weight: bold;
+            font-size: 200%;
+            text-align: center;
+            padding-top: calc(50vh - 2em);
+        }
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'Verdana', sans-serif;
+}
+
+#results_wrapper {
+    position: relative;
+    top: 4em;
+    margin: 1em;
+}
+
+#query {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #0C1155;
+    z-index: 9001;
+    color: white;
+
+    h2 {
+        width: 100%;
+        text-align: center;
+        margin: 0.25em auto;
+        color: #D4B92B;
+    }
+
+    h3 {
+        color: #D4B92B;
+    }
+}
+
+.filter-fxn {
+    position: relative;
+
+    .filter-img-wrapper {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+
+        .filter-fxn-text {
+            font-size: 80%;
+            position: relative;
+            top: -25%;
+
+            &:not(.closed) {
+                &::after {
+                    content: 'close';
+                }
+            }
+
+            &.closed {
+                &::after {
+                    content: 'open';
+                }
+            }
+        }
+
+        img {
+            height: 100%;
+			@include rotate(0);
+        }
+    }
+}
+
+.filters {
+    margin: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+.flipped {
+    @include rotate(0);
+}
+
+.slider {
+    width: calc(100% - 3em);
+    margin: 1em auto;
+}
+
+#results {
+    width: 90%;
+    margin: 1em auto;
+
+    tr {
+        td {
+            &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.control {
+    font-size: 1em;
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    padding-left: 1.25em;
+    cursor: pointer;
+
+    input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+        &:checked {
+            ~ .control-indicator {
+                background: #2aa1c0;
+
+                &::after {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.control-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    background: #e6e6e6;
+
+    &::after {
+        position: absolute;
+        display: none;
+        content: '';
+    }
+}
+
+.control-radio {
+    .control-indicator {
+        @include border-radius(50%);
+
+        &::after {
+            top: 0.25em;
+            left: 0.25em;
+            width: 0.5em;
+            height: 0.5em;
+            @include border-radius(50%);
+            background: #fff;
+        }
+    }
+}
+
+.control-checkbox {
+    .control-indicator {
+        &::after {
+            top: 0.15em;
+            left: 0.35em;
+            width: 0.2em;
+            height: 0.5em;
+            @include rotate(45deg);
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+        }
+    }
+}

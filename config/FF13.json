@@ -1,0 +1,165 @@
+{
+	"name": "Final Fantasy XIII",
+	"set": [
+		{
+			"level": "Level 1",
+			"cards": [
+				"Bomb",
+				"Crawler",
+				"Ghoul",
+				"Gremlin",
+				"HedgeFrog",
+				"Pantheron",
+				"AerialRecon",
+				"Ranger",
+				"Warden",
+				"ZwergMetroid",
+				"ZwergScandroid"
+			]
+		},
+		{
+			"level": "Level 2",
+			"cards": [
+				"Alraune",
+				"BetaBehemoth",
+				"CiconiaVelocycle",
+				"CorpsPacifex",
+				"Deckdrone",
+				"Incubus",
+				"Raider",
+				"Scavenger",
+				"PulseworkSoldier",
+				"SilverLobo",
+				"Uhlan"
+			]
+		},
+		{
+			"level": "Level 3",
+			"cards": [
+				"Ceratosaur",
+				"Flanborg",
+				"Hoplite",
+				"Munchkin",
+				"Orion",
+				"Executioner",
+				"Huntress",
+				"Seeker",
+				"Stikini",
+				"Thexteron",
+				"VespidSoldier"
+			]
+		},
+		{
+			"level": "Level 4",
+			"cards": [
+				"BoxedPhalanx",
+				"CorpsSteward",
+				"Cryohedron",
+				"Picochu",
+				"Reaver",
+				"Warlord",
+				"PulseworkKnight",
+				"RustPudding",
+				"Sacrifice",
+				"Taxim",
+				"Triffid"
+			]
+		},
+		{
+			"level": "Level 5",
+			"cards": [
+				"Adamantheron",
+				"Adamantoise",
+				"BehemothKing",
+				"Bulwarker",
+				"HybridFlora",
+				"Megistotherian",
+				"Navidon",
+				"Orobon",
+				"SanctumInquisitrix",
+				"SanctumSeraph",
+				"Vampire"
+			]
+		},
+		{
+			"level": "Level 6",
+			"cards": [
+				"Adroa",
+				"Amam",
+				"AmblingBellows",
+				"Ectopudding",
+				"GoblinChieftain",
+				"Gurangatch",
+				"Mithridates",
+				"Numidia",
+				"Sahagin",
+				"Vetala",
+				"CiethStone"
+			]
+		},
+		{
+			"level": "Level 7",
+			"cards": [
+				"Attacus",
+				"Gelatitan",
+				"Gigantuar",
+				"Humbaba",
+				"Neochu",
+				"Raktavija",
+				"Syphax",
+				"Tonberry",
+				"Tyrant",
+				"Verdelet",
+				"Zirnitra"
+			]
+		},
+		{
+			"level": "Level 8",
+			"cards": [
+				"AsterProtoflorian",
+				"Barthandalus",
+				"Dahaka",
+				"Dreadnought",
+				"EnkiEnlil",
+				"KalavinkaStriker",
+				"TiamatEliminator",
+				"TheProudclad",
+				"UshumgalSubjugator",
+				"Wladislaus",
+				"LCieMark"
+			]
+		},
+		{
+			"level": "Level 9",
+			"cards": [
+				"Odin",
+				"Shiva",
+				"Brynhildr",
+				"Alexander",
+				"Hecatoncheir",
+				"Bahamut",
+				"Anima",
+				"Eden",
+				"Titan",
+				"Jihl",
+				"Yaag"
+			]
+		},
+		{
+			"level": "Level 10",
+			"cards": [
+				"Lightning",
+				"Snow",
+				"Sazh",
+				"Hope",
+				"Vanille",
+				"Fang",
+				"Serah",
+				"Orphan",
+				"Dysley",
+				"Cid",
+				"ChocoboChick"
+			]
+		}
+	]
+}

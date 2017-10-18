@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Triple Triad",
+        "link": "tt2",
+        "icon": "3x-triad.svg",
+        "color": "#ffffff"
+    },
+    {
+        "title": "Valentine's Day",
+        "link": "valentine",
+        "icon": "valentine.svg",
+        "color": "#7234b7"
+    },
+    {
+        "title": "Solitaire",
+        "link": "solitaire",
+        "icon": "solitaire.svg",
+        "color": "white"
+    },
+    {
+        "title": "Movies DB",
+        "link": "movies",
+        "icon": "movies.svg",
+        "color": "#a51018"
+    },
+    {
+        "title": "Logical Button",
+        "link": "nological",
+        "icon": "nologic.svg",
+        "color": "white"
+    },
+    {
+        "title": "Blue Screen of Death",
+        "link": "bsod",
+        "icon": "bsod.svg",
+        "color": "#0000aa"
+    }
+]

@@ -56,7 +56,12 @@ gulp.task('default', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['./css/scss/*.scss', './js/*.js'], ['default']);
+    try {
+        gulp.watch(['./css/scss/*.scss', './js/*.js'], ['default']);
+    }
+    catch (exc) {
+        console.error(exc);
+    }
 });
 
 gulp.task('test', function() {

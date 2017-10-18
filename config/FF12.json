@@ -1,0 +1,165 @@
+{
+	"name": "Final Fantasy XII",
+	"set": [
+		{
+			"level": "Level 1",
+			"cards": [
+				"Alraune",
+				"Axebeak",
+				"Cactoid",
+				"Cockatrice",
+				"HappyBunny",
+				"Nidhogg",
+				"Rocktoise",
+				"RogueTomato",
+				"Seeq",
+				"Urstrix",
+				"Werewolf"
+			]
+		},
+		{
+			"level": "Level 2",
+			"cards": [
+				"Anubys",
+				"ClayGolem",
+				"Dustia",
+				"Jelly",
+				"LesserChimera",
+				"Nightmare",
+				"Panther",
+				"SiliconTortoise",
+				"Tyranorox",
+				"WaryWolf",
+				"Wildsnake"
+			]
+		},
+		{
+			"level": "Level 3",
+			"cards": [
+				"Bagoly",
+				"Coeurl",
+				"Diresaur",
+				"DiveTalon",
+				"Facer",
+				"Malboro",
+				"Mirrorknight",
+				"Oiling",
+				"SlavenWarder",
+				"Vulture",
+				"WildOnion"
+			]
+		},
+		{
+			"level": "Level 4",
+			"cards": [
+				"Alteci",
+				"Basilisk",
+				"DaikonEntite",
+				"Deathscythe",
+				"Gazer",
+				"Gorgimera",
+				"Kris",
+				"Mandragora",
+				"Ose",
+				"Pyrolisk",
+				"Thalassinon"
+			]
+		},
+		{
+			"level": "Level 5",
+			"cards": [
+				"Aspidochelon",
+				"Avenger",
+				"Crystalbug",
+				"Dreadguard",
+				"Grimalkin",
+				"Hecteyes",
+				"Ishteen",
+				"MatriarchBomb",
+				"Nazarnir",
+				"TerrorTyrant",
+				"VagrantSoul"
+			]
+		},
+		{
+			"level": "Level 6",
+			"cards": [
+				"BehemothKing",
+				"Daedalus",
+				"DemonWall",
+				"ElderWyrm",
+				"Fury",
+				"KingBomb",
+				"Orthros",
+				"Phoenix",
+				"Rafflesia",
+				"Tiamat",
+				"Vinuskar"
+			]
+		},
+		{
+			"level": "Level 7",
+			"cards": [
+				"BaGamnan",
+				"Enkidu",
+				"Fafnir",
+				"GijukRinok",
+				"Gilgamesh",
+				"JudgeBergan",
+				"JudgeDrace",
+				"JudgeGhis",
+				"JudgeZargabaath",
+				"Trickster",
+				"VayneNovus"
+			]
+		},
+		{
+			"level": "Level 8",
+			"cards": [
+				"Al-Cid",
+				"EmperorGramis",
+				"LordRasler",
+				"Marquis",
+				"MontblancNono",
+				"Reddas",
+				"Reks",
+				"Strahl",
+				"SwordofKings",
+				"Belias",
+				"Mateus"
+			]
+		},
+		{
+			"level": "Level 9",
+			"cards": [
+				"Adrammelech",
+				"Chaos",
+				"Cuchrain",
+				"Exodus",
+				"Famfrit",
+				"Hashmal",
+				"Shemhazai",
+				"Ultima",
+				"Zalera",
+				"Zeromus",
+				"Zodiark"
+			]
+		},
+		{
+			"level": "Level 10",
+			"cards": [
+				"Ashe",
+				"Balthier",
+				"Basch",
+				"DrCidolfus",
+				"Fran",
+				"JudgeGabranth",
+				"Larsa",
+				"Penelo",
+				"Vaan",
+				"Vayne",
+				"Vossler"
+			]
+		}
+	]
+}

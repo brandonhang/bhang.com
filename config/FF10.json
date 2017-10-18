@@ -1,0 +1,165 @@
+{
+	"name": "Final Fantasy X",
+	"set": [
+		{
+			"level": "Level 1",
+			"cards": [
+				"Bomb",
+				"Condor",
+				"Dingo",
+				"FloatingEye",
+				"Funguar",
+				"Garuda",
+				"Ragora",
+				"Sahagin",
+				"SinspawnWaste",
+				"WaterFlan",
+				"YellowElement"
+			]
+		},
+		{
+			"level": "Level 2",
+			"cards": [
+				"Basilisk",
+				"Bunyip",
+				"Cactuar",
+				"Chimera",
+				"Larva",
+				"MechGuard",
+				"Iguion",
+				"Mushussu",
+				"Ochu",
+				"Gandarewa",
+				"Xiphos"
+			]
+		},
+		{
+			"level": "Level 3",
+			"cards": [
+				"Shoopuf",
+				"Monks",
+				"Blitzball",
+				"Sandworm",
+				"Anacondaur",
+				"FlameFlan",
+				"Coeurl",
+				"Malboro",
+				"Nebiros",
+				"Ogre",
+				"MechDefender"
+			]
+		},
+		{
+			"level": "Level 4",
+			"cards": [
+				"Achelous",
+				"Thorn",
+				"Sandragora",
+				"GreatMalboro",
+				"MagicUrn",
+				"Zu",
+				"Ahriman",
+				"Bashura",
+				"Grendel",
+				"Tonberry",
+				"Chocobo"
+			]
+		},
+		{
+			"level": "Level 5",
+			"cards": [
+				"Adamantoise",
+				"Barbatos",
+				"Behemoth",
+				"DefenderZ",
+				"Demonolith",
+				"DarkFlan",
+				"Gemini",
+				"Mimic",
+				"Varuna",
+				"YAT-97",
+				"YKT-11"
+			]
+		},
+		{
+			"level": "Level 6",
+			"cards": [
+				"SinspawnAmmes",
+				"Tros",
+				"Spherimorph",
+				"Cid",
+				"Isaaru",
+				"ElmaClasko",
+				"Belgemine",
+				"SinspawnGeneaux",
+				"LuzzuGatta",
+				"Lucil",
+				"Dona"
+			]
+		},
+		{
+			"level": "Level 7",
+			"cards": [
+				"Mortibody",
+				"Evrae",
+				"SinspawnGui",
+				"BiranYenke",
+				"Crawler",
+				"Geosgaeno",
+				"SanctuaryKeeper",
+				"Mika",
+				"Oblitzerator",
+				"ChocoboEater",
+				"SpectralKeeper"
+			]
+		},
+		{
+			"level": "Level 8",
+			"cards": [
+				"Penance",
+				"Caladbolg",
+				"WorldChampion",
+				"Masamune",
+				"SpiritLance",
+				"Nirvana",
+				"OnionKnight",
+				"Yunalesca",
+				"Airship",
+				"OmegaWeapon",
+				"Godhand"
+			]
+		},
+		{
+			"level": "Level 9",
+			"cards": [
+				"Anima",
+				"Bahamut",
+				"FinalAeon",
+				"Cindy",
+				"Ifrit",
+				"Ixion",
+				"Mindy",
+				"Sandy",
+				"Shiva",
+				"Valefor",
+				"Yojimbo"
+			]
+		},
+		{
+			"level": "Level 10",
+			"cards": [
+				"Auron",
+				"Braska",
+				"Jecht",
+				"Kimahri",
+				"Lulu",
+				"Rikku",
+				"Seymour",
+				"Sin",
+				"Tidus",
+				"Wakka",
+				"Yuna"
+			]
+		}
+	]
+}

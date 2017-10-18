@@ -1,0 +1,69 @@
+{
+	"name": "Special Edition Cards",
+	"set": [
+		{
+			"level": "Final Fantasy VII",
+			"cards": [
+				"SE-Aeris",
+				"SE-Barret",
+				"SE-CaitSith",
+				"SE-Cid",
+				"SE-Cloud",
+				"SE-Nanaki",
+				"SE-Rufus",
+				"SE-Sephiroth",
+				"SE-Tifa",
+				"SE-Vincent",
+				"SE-Yuffie"
+			]
+		},
+		{
+			"level": "Final Fantasy VIII",
+			"cards": [
+				"se-ward",
+				"se-kiros",
+				"se-laguna",
+				"se-selphie",
+				"se-quistis",
+				"se-irvine",
+				"se-zell",
+				"se-rinoa",
+				"se-edea",
+				"se-seifer",
+				"se-squall"
+			]
+		},
+		{
+			"level": "Villain",
+			"cards": [
+				"SE-Garland",
+				"SE-Palamecia",
+				"SE-CloudofDarkness",
+				"SE-Golbez",
+				"SE-Gilgamesh",
+				"SE-Exdeath",
+				"SE-Kefka",
+				"SE-Ultimecia",
+				"SE-Kuja",
+				"SE-Jecht",
+				"SE-Gabranth"
+			]
+		},
+		{
+			"level": "Hero",
+			"cards": [
+				"SE-WarriorofLight",
+				"SE-Firion",
+				"SE-OnionKnight",
+				"SE-Cecil",
+				"SE-Bartz",
+				"SE-Terra",
+				"SE-Zidane",
+				"SE-TidusYuna",
+				"SE-Prishe",
+				"SE-Vaan",
+				"SE-Lightning"
+			]
+		}
+	]
+}

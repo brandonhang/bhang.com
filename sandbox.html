@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="/img/icons/icon.ico"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="/css/common.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/nav.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/sandbox.min.css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="/js/bhangular.min.js"></script>
+    </head>
+    <body>
+        <nav ng-app="bhang-app" ng-controller="bhang-ctrl" class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
+        <div class="content" id="sandbox" ng-app="sandbox-app" ng-controller="sandbox-ctrl">
+            <div class="content-inner">
+                <div ng-repeat="app in apps" class="app-wrap">
+                    <a href="/sandbox/{{app.link}}" class="app" style="background-image: url('/img/sandbox/{{app.icon}}'); background-color: {{app.color}}"></a>
+                    <h2 class="app-title"><a href="/sandbox/{{app.link}}">{{app.title}}</a></h2>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" ng-app="footer" ng-controller="footwork" ng-include="'/components/html/footer.html'"></footer>
+        <script type="text/javascript" src="/js/sandbox.min.js"></script>
+    </body>
+</html>

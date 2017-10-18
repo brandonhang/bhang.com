@@ -95,7 +95,7 @@ nav {
                         }
                     }
 
-                    &:not(.nav-menu):not(.nav-home) {
+                    &:not(.nav-menu):not(.nav-home):not(.sandy) {
                         padding-right: 1.5em;
 
                         &::after {
@@ -109,6 +109,11 @@ nav {
                             background-repeat: no-repeat;
                             background-size: contain;
                         }
+                    }
+
+                    &.sandy {
+                        padding-right: 0.5em;
+                        background-image: url('/img/icons/apps_w.svg');
                     }
                 }
 

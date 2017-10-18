@@ -1,0 +1,165 @@
+{
+	"name": "Final Fantasy VIII",
+	"set": [
+		{
+			"level": "Level 1",
+			"cards": [
+				"geezard",
+				"funguar",
+				"bitebug",
+				"redbat",
+				"blobra",
+				"gayla",
+				"gesper",
+				"fastitocalon-f",
+				"bloodsoul",
+				"caterchipillar",
+				"cockatrice"
+			]
+		},
+		{
+			"level": "Level 2",
+			"cards": [
+				"grat",
+				"buel",
+				"mesmerize",
+				"glacialeye",
+				"belhelmel",
+				"thrustaevis",
+				"anacondaur",
+				"creeps",
+				"grendel",
+				"jelleye",
+				"grandmantis"
+			]
+		},
+		{
+			"level": "Level 3",
+			"cards": [
+				"forbidden",
+				"armadodo",
+				"tri-face",
+				"fastitocalon",
+				"snowlion",
+				"ochu",
+				"sam08g",
+				"deathclaw",
+				"cactuar",
+				"tonberry",
+				"abyssworm"
+			]
+		},
+		{
+			"level": "Level 4",
+			"cards": [
+				"turtapod",
+				"vysage",
+				"t-rexaur",
+				"bomb",
+				"blitz",
+				"wendigo",
+				"torama",
+				"imp",
+				"bluedragon",
+				"adamantoise",
+				"hexadragon"
+			]
+		},
+		{
+			"level": "Level 5",
+			"cards": [
+				"irongiant",
+				"behemoth",
+				"chimera",
+				"pupu",
+				"elastoid",
+				"gim47n",
+				"malboro",
+				"rubydragon",
+				"elnoyle",
+				"tonberryking",
+				"wedgebiggs"
+			]
+		},
+		{
+			"level": "Level 6",
+			"cards": [
+				"fujinraijin",
+				"elvoret",
+				"x-atm092",
+				"granaldo",
+				"gerogero",
+				"iguion",
+				"abadon",
+				"trauma",
+				"oilboyle",
+				"shumitribe",
+				"krysta"
+			]
+		},
+		{
+			"level": "Level 7",
+			"cards": [
+				"propogator",
+				"jumbocactuar",
+				"tri-point",
+				"gargantua",
+				"mobiletype8",
+				"sphinxara",
+				"tiamat",
+				"bgh251f2",
+				"redgiant",
+				"catoblepas",
+				"ultimaweapon"
+			]
+		},
+		{
+			"level": "Level 8",
+			"cards": [
+				"chubbychocobo",
+				"angelo",
+				"gilgamesh",
+				"minimog",
+				"chicobo",
+				"quezacotl",
+				"shiva",
+				"ifrit",
+				"siren",
+				"sacred",
+				"minotaur"
+			]
+		},
+		{
+			"level": "Level 9",
+			"cards": [
+				"carbuncle",
+				"diablos",
+				"leviathan",
+				"odin",
+				"pandemona",
+				"cerberus",
+				"alexander",
+				"phoenix",
+				"bahamut",
+				"doomtrain",
+				"eden"
+			]
+		},
+		{
+			"level": "Level 10",
+			"cards": [
+				"ward",
+				"kiros",
+				"laguna",
+				"selphie",
+				"quistis",
+				"irvine",
+				"zell",
+				"rinoa",
+				"edea",
+				"seifer",
+				"squall"
+			]
+		}
+	]
+}

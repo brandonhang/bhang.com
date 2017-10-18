@@ -1,0 +1,340 @@
+@mixin grayscale($bool) {
+    @if $bool == 'auto' {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+        filter: none;
+    }
+    @else {
+        -webkit-filter: grayscale(1);
+        filter: grayscale(1);
+        filter: gray;
+    }
+}
+
+@mixin stroke($color) {
+    text-shadow:
+        -1px -1px 0 $color,
+        1px -1px 0 $color,
+        -1px 1px 0 $color,
+        1px 1px 0 $color;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sansita One', sans-serif;
+}
+
+.what-else-floats {
+    background-image: url('/img/cards/wood.png');
+    background-repeat: repeat;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: fixed;
+    z-index: -9001;
+    top: 0;
+    left: 0;
+}
+
+.pointer-container {
+    width: 585px;
+    margin: 2em auto 0.5em auto;
+    display: none;
+
+    .pointer {
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 30px solid #dfdf01;
+        margin-left: 36px;
+
+        &.right {
+            margin-left: calc(100% - 66px);
+        }
+    }
+}
+
+.game-container {
+    position: relative;
+    margin: 0 auto;
+    display: none;
+    width: 585px;
+    height: 379px;
+    background-image: url('/img/cards/board2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: black;
+
+    .deck-container {
+        position: absolute;
+        width: 130px;
+
+        &:first-of-type {
+            left: 0;
+
+            .card-img {
+                &:hover {
+                    padding-left: 30px;
+                }
+            }
+        }
+
+        + .deck-container {
+            right: 0;
+            text-align: right;
+        }
+
+        .deck {
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                &:not(:first-of-type) {
+                    margin-top: -70px;
+                }
+            }
+        }
+    }
+}
+
+#tt {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 auto;
+    padding: 0;
+
+    tr, td {
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    div.card {
+        height: 127px;
+        width: 100px;
+        margin: 0;
+        padding: 0;
+
+        &:hover {
+            background-color: rgba(222, 222, 222, 0.25);
+        }
+    }
+}
+
+.scoreboard {
+    width: 100%;
+
+    &, tr, th {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: none;
+    }
+
+    tr {
+        position: absolute;
+        bottom: -3em;
+        z-index: 9001;
+
+        th {
+            font-size: 4.5em;
+            color: #cfcfcf;
+            @include stroke(black);
+
+            &:not(:nth-of-type(2)) {
+                width: 100px;
+                text-align: center;
+            }
+
+            &:nth-of-type(2) {
+                width: 385px;
+            }
+        }
+    }
+}
+
+#msg {
+    margin-top: 3em;
+    text-align: center;
+    display: none;
+
+    span {
+        font-size: 5em;
+        color: white;
+        @include stroke(black);
+    }
+}
+
+.pick-hand {
+    position: absolute;
+
+    p {
+        text-align: center;
+    }
+
+    .game-options {
+
+    }
+
+    .card-list {
+        margin-bottom: 3em;
+
+        input[type=checkbox] {
+            &:not(:checked) {
+                + .card-img {
+                    @include grayscale(1);
+                }
+            }
+
+            &:checked {
+                + .card-img {
+                    @include grayscale(auto);
+                }
+            }
+        }
+
+        .card-img {
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .locked {
+            opacity: 0.6;
+        }
+    }
+}
+
+.button {
+    @include border-radius(4px);
+    font-family: 'Sansita One', sans-serif;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0.5em 1em;
+    background-color: #5ee057;
+    border: 1px solid #287524;
+
+    &:hover {
+        background-color: #97f292;
+    }
+
+    &:active {
+        background-color: #d3ffd1;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.selected-l {
+    padding-left: 30px;
+}
+
+.selected-r {
+    padding-right: 30px;
+}
+
+.used {
+    visibility: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.element {
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    span {
+        font-size: 2.75em;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 9001;
+        padding-right: 0.15em;
+        color: #cfcfcf;
+        @include stroke(black);
+        display: none;
+    }
+
+    &.elem-earth {
+        background-image: url('/img/cards/earth.png');
+    }
+
+    &.elem-fire {
+        background-image: url('/img/cards/fire.png');
+    }
+
+    &.elem-holy {
+        background-image: url('/img/cards/holy.png');
+    }
+
+    &.elem-ice {
+        background-image: url('/img/cards/ice.png');
+    }
+
+    &.elem-poison {
+        background-image: url('/img/cards/poison.png');
+    }
+
+    &.elem-shadow {
+        background-image: url('/img/cards/shadow.png');
+    }
+
+    &.elem-thunder {
+        background-image: url('/img/cards/thunder.png');
+    }
+
+    &.elem-water {
+        background-image: url('/img/cards/water.png');
+    }
+
+    &.elem-wind {
+        background-image: url('/img/cards/wind.png');
+    }
+}
+
+#controls {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 20px;
+
+    button {
+        background-color: rgba(18, 52, 86, 0.75);
+        color: white;
+        display: inline-flex;
+        border: 1px solid rgba(0, 0, 0, 0.75);
+        font-family: 'Sansita One', sans-serif;
+        @include border-radius(4px);
+        padding: 2px 5px;
+        opacity: 0.5;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+#shuffle-or-boogie {
+    position: fixed;
+    z-index: -1;
+    height: 0;
+    width: 0;
+}

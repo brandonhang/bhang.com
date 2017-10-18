@@ -1,0 +1,99 @@
+@import 'partials/_variables';
+@import 'partials/_mixins';
+
+.content {
+    .content-inner {
+        width: calc(100% - 4em);
+        margin: 5em auto 0 auto;
+
+        @media only screen and (max-width: 700px) {
+            width: calc(100% - 3em);
+        }
+
+        @media only screen and (max-width: 500px) {
+            width: calc(100% - 2em);
+        }
+
+        .app-wrap {
+            width: calc(16.666% - 4em - 1px);
+            margin: 2em;
+            float: left;
+
+            @media only screen and (max-width: 1200px) {
+                width: calc(20% - 4em);
+            }
+
+            @media only screen and (max-width: 900px) {
+                width: calc(25% - 4em);
+            }
+
+            @media only screen and (max-width: 700px) {
+                width: calc(25% - 3em);
+                margin: 1.5em;
+            }
+            @media only screen and (max-width: 500px) {
+                width: calc(25% - 2em);
+                margin: 1em;
+            }
+
+            .app {
+                width: 100%;
+                padding-top: 100%;
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: block;
+                position: relative;
+                @include border-radius(10%);
+                @include box-shadow(5px, 5px, 5px, rgba(0, 0, 0, 0.25));
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    @include border-radius(10%);
+                    background: linear-gradient(to bottom right, transparent, rgba(0, 0, 0, 0.25));
+                    background: -webkit-linear-gradient(left top, transparent, rgba(0, 0, 0, 0.25));
+                    background: -moz-linear-gradient(bottom right, transparent, rgba(0, 0, 0, 0.25));
+                    background: -o-linear-gradient(bottom right, transparent, rgba(0, 0, 0, 0.25));
+                    background-color: transparent;
+                    @include transition(background-color, 0.25s, ease-in-out);
+                }
+
+                &:hover {
+                    &::before {
+                        background-color: rgba(0, 0, 0, 0.5);
+                    }
+                }
+            }
+
+            .app-title {
+                margin: 0.333em auto 1em auto;
+                word-wrap: break-word;
+                text-align: center;
+                height: 2em;
+                font-size: 2em;
+
+                a {
+                    color: $blurple;
+                    text-decoration: none;
+                }
+
+                @media only screen and (max-width: 1200px) {
+                    font-size: 1.5em;
+                }
+
+                @media only screen and (max-width: 700px) {
+                    font-size: 1.25em;
+                }
+
+                @media only screen and (max-width: 500px) {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
