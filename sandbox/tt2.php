@@ -9,6 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Sansita+One" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="/css/tt2.min.css"/>
         <link type="image/x-icon" rel="shortcut icon" href="/img/icons/icon.ico"/>
+        <link rel="apple-touch-icon" href="/img/icons/apple-logo.png"/>
         <title>Triple Triad</title>
     </head>
     <body>
