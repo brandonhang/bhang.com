@@ -92,10 +92,10 @@
                             foreach ($deck->cards as $card) {
                                 if (file_exists("$root/img/cards/$file/$card.jpg")) {
                                     echo "<label><input id='select-$card' class='hidden' type='checkbox' deck='$file' value='$card'/>";
-                                    echo "<img class='card-img' src='$root/img/cards/$file/$card.jpg'/></label>";
+                                    echo "<img class='card-img' src='/img/cards/$file/$card.jpg'/></label>";
                                 }
                                 else {
-                                    echo '<img class="locked" src="' . $root . '/img/cards/TTlocked.jpg"/>';
+                                    echo '<img class="locked" src="/img/cards/TTlocked.jpg"/>';
                                 }
                             }
                             echo "</div>";
