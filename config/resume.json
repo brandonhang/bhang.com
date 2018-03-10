@@ -1,20 +1,34 @@
 {
     "work": [
         {
-            "title": "Software Developer II",
-            "company": "Management Science Associates, Inc.",
-            "date": "Dec. 2016 – Present",
+            "title": "Software Developer",
+            "company": "Grant Street Group",
+            "date": "Mar. 2018 - Present",
             "location": "Pittsburgh, PA",
             "duties": [
-                "Implemented, maintained, and executed build and deployment plans via the Atlassian software stack as a DevOps developer",
-                "Designed and developed a DevOps portal housing a number of monitoring tools using AngularJS, TypeScript, and SCSS",
-                "Built REST APIs using Node.js to query server, Apache Kafka, and TestRail data in real-time",
+                "Perl developer on the PaymentExpress™ team",
+                "More on the way!"
+            ],
+            "icon": "gsg.svg",
+            "old": "tellurium.svg"
+        },
+        {
+            "title": "Software Developer II",
+            "company": "Management Science Associates, Inc.",
+            "date": "Dec. 2016 – Mar. 2018",
+            "location": "Pittsburgh, PA",
+            "duties": [
+                "Designed and developed a DevOps portal housing a number of monitoring tools using AngularJS, TypeScript, and SCSS using Gulp.js as a build tool",
+                "Built REST APIs using Node.js with Express.js to query server, Apache Kafka, Apache ZooKeeper, TestRail, and other miscellaneous data in real-time",
                 "Created automated testing suites using Scala, Cucumber, JUnit, and Mockito to expedite the testing phase of the SDLC",
-                "Generated automated tasks for server monitoring and data validation using Bash, Python, and HBase queries",
+                "Generated automated tasks for monitoring server health and validation of processed files in the ETL pipeline using Bash, Python, and HBase queries",
+                "Developed a multi-threaded application used for data quality analysis with Scala, sbt, and Apache Hive SQL",
+                "Developed an account tracking tool for weekly status updates using a complex SQL query that reads Apache HBase and Apache Hive tables",
+                "Implemented, maintained, and executed build and deployment plans via the Atlassian software stack as a DevOps engineer",
                 "Participated in grooming, planning, and daily standups within a Scrum environment",
+                "Wrote comprehensive documentation on completed projects denoting usage and process flow",
                 "Reviewed daily Linux server logs to monitor development and production servers for potential problems",
-                "Carried out 24/7 on-call duties to assess and remedy production issues",
-                "Wrote comprehensive documentation on completed projects denoting usage and process flow"
+                "Carried out 24/7 on-call duties to assess and remedy production issues"
             ],
             "icon": "msa.svg",
             "old": "msa_old.svg"
