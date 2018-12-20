@@ -2,7 +2,8 @@ angular.element(document).ready(function() {
     var carApp = angular.module('car-app', ['ngSanitize', 'ngTouch']);
 
     carApp.controller('car-ctrl', ['$http', '$scope', '$sce', function($http, $scope, $sce) {
-        $http.get('/config/cars.json').then(
+        // $http.get('/config/cars.json').then(
+        $http.get('/api/bhang/cars').then(
             function(carConfig) {
                 $scope.carConfig = carConfig.data;
                 $scope.carIndex = Math.floor(Math.random() * carConfig.data.length);
