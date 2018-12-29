@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="/img/icons/icon.ico"/>
+        <link rel="apple-touch-icon" href="/img/icons/apple-logo.png"/>
+        <link rel="icon" href="/img/icons/android-logo.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="/css/common.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/nav.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/piwigo-download.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/piwigo-nav.min.css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="/js/bhangular.min.js"></script>
+        <script type="text/javascript" src="/js/piwigo-nav.min.js"></script>
+    </head>
+    <body>
+        <nav ng-app="bhang-app" ng-controller="bhang-ctrl" class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
+        <div class="content">
+            <div class="content-background"></div>
+            <div ng-app="piwigo-nav-app" ng-controller="piwigo-nav-ctrl" id="piwigo-nav" ng-include="'/components/html/piwigo.html'"></div>
+            <div class="content-wrapper">
+                <div class="content-section">
+                    <div ng-app="piwigo-app" ng-controller="piwigo-ctrl" id="piwigo-photos">
+                        <h3 ng-if="badLoading" class="busted">Something broke :(</h3>
+                        <table ng-if="currentDownload" class="download-table">
+                            <tbody>
+                                <tr>
+                                    <td colspan="5">
+                                        <a id="back-to-image" class="photo-back" href="javascript:history.back()">Back to Image Details</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="header">License</td>
+                                    <td>&copy; All rights reserved</td>
+                                </tr>
+                                <tr ng-if="currentDownload">
+                                    <td class="header">Download</td>
+                                    <td colspan="4">
+                                        <a href="{{currentDownload.url}}" download>Download the {{currentDownload.display}} size of this photo</a>
+                                    </td>
+                                </tr>
+                                <tr ng-if="sizeData">
+                                    <td class="header">Sizes</td>
+                                    <td>
+                                        <span ng-repeat="size in group1" class="download-size" ng-if="sizeData[size]" ng-class="{'active': activeSize === size}"><a href="#" ng-click="changeDownload($event, size)">{{sizeData[size].display}}</a>&nbsp;({{sizeData[size].width}} x {{sizeData[size].height}})</span>
+                                    </td>
+                                    <td>
+                                        <span ng-repeat="size in group2" class="download-size" ng-if="sizeData[size]" ng-class="{'active': activeSize === size}"><a href="#" ng-click="changeDownload($event, size)">{{sizeData[size].display}}</a>&nbsp;({{sizeData[size].width}} x {{sizeData[size].height}})</span>
+                                    </td>
+                                    <td>
+                                        <span ng-repeat="size in group3" class="download-size" ng-if="sizeData[size]" ng-class="{'active': activeSize === size}"><a href="#" ng-click="changeDownload($event, size)">{{sizeData[size].display}}</a>&nbsp;({{sizeData[size].width}} x {{sizeData[size].height}})</span>
+                                    </td>
+                                    <td>
+                                        <span ng-if="sizeData.original" ng-class="{'active': activeSize === 'original'}" class="download-size"><a href="#" ng-click="changeDownload($event, 'original')">{{sizeData.original.display}}</a>&nbsp;({{sizeData.original.width}} x {{sizeData.original.height}})</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="photo-preview">
+                            <img ng-src="{{currentDownload.url}}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" ng-app="footer" ng-controller="footwork" ng-include="'/components/html/footer.html'"></footer>
+        <script type="text/javascript" src="/js/piwigo-download.min.js"></script>
+    </body>
+</html>

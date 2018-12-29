@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="/img/icons/icon.ico"/>
+        <link rel="apple-touch-icon" href="/img/icons/apple-logo.png"/>
+        <link rel="icon" href="/img/icons/android-logo.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="/css/common.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/nav.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/piwigo-cameraroll.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/piwigo-nav.min.css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.min.js"></script>
+        <script type="text/javascript" src="/js/bhangular.min.js"></script>
+        <script type="text/javascript" src="/js/piwigo-nav.min.js"></script>
+    </head>
+    <body>
+        <nav ng-app="bhang-app" ng-controller="bhang-ctrl" class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
+        <div class="content">
+            <div class="content-background"></div>
+            <div ng-app="piwigo-nav-app" ng-controller="piwigo-nav-ctrl" id="piwigo-nav" ng-include="'/components/html/piwigo.html'"></div>
+            <div class="content-wrapper">
+                <div class="content-section">
+                    <div ng-app="piwigo-app" ng-controller="piwigo-ctrl" id="piwigo-photos">
+                        <div id="photo-details" class="photo-details hidden">
+                            <a id="back-to-album" class="photo-back" href="/photography">Back to Camera Roll</a>
+                            <div class="photo-single-wrapper">
+                                <a ng-if="prevImage" ng-href="/photography/cameraroll/image/{{prevImage}}" title="{{prevTitle}}" class="photo-single-prev photo-nav slideshow-ui"></a>
+                                <a ng-if="nextImage" ng-href="/photography/cameraroll/image/{{nextImage}}" title="{{nextTitle}}" class="photo-single-next photo-nav slideshow-ui"></a>
+                                <img id="photo-actual" ng-src="{{currentImage.result.derivatives.large.url}}"/>
+                                <div ng-if="currentImage" class="photo-button download-button" ng-click="toggleDownload()" title="Download Photo"></div>
+                                <a ng-if="currentImage" class="photo-button fullscreen-button" href="/photography/cameraroll/fullscreen/image/{{photoId}}" title="Enter Fullscreen"></a>
+                                <div ng-if="currentImage" class="download-overlay" ng-click="closeDownload()" ng-class="{'open-download-list': downloadList}"></div>
+                                <ul class="download-list" ng-class="{'open-download-list': downloadList}">
+                                    <a class="download-link" href="{{currentImage.result.derivatives.square.url}}" ng-click="closeDownload()" download>Square ({{currentImage.result.derivatives.square.width}} x {{currentImage.result.derivatives.square.height}})</a>
+                                    <a class="download-link" href="{{currentImage.result.derivatives.small.url}}" ng-click="closeDownload()" download>Small ({{currentImage.result.derivatives.small.width}} x {{currentImage.result.derivatives.small.height}})</a>
+                                    <a class="download-link" href="{{currentImage.result.derivatives.medium.url}}" ng-click="closeDownload()" download>Medium ({{currentImage.result.derivatives.medium.width}} x {{currentImage.result.derivatives.medium.height}})</a>
+                                    <a class="download-link" href="{{currentImage.result.derivatives.large.url}}" ng-click="closeDownload()" download>Large ({{currentImage.result.derivatives.large.width}} x {{currentImage.result.derivatives.large.height}})</a>
+                                    <a class="download-link" href="{{currentImage.result.element_url}}" ng-click="closeDownload()" download>Original ({{currentImage.result.width}} x {{currentImage.result.height}})</a>
+                                    <a class="download-link" href="/photography/download/image/{{photoId}}">View more sizes</a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="photo-single-details">
+                            <div class="photo-single-data photo-details-wrapper">
+                                <h3 ng-if="exif" class="photo-single-title">{{currentImage.result.name}}</h3>
+                                <h3 ng-if="!exif" class="photo-single-title">Something broke :(</h3>
+                                <h4 ng-if="currentImage.result.date_creation" class="photo-single-date">Taken on {{formatDate(currentImage.result.date_creation)}}</h4>
+                                <h4 class="photo-single-description" ng-bind-html="imageDescription"></h4>
+                            </div>
+                            <div class="photo-single-exif photo-details-wrapper">
+                                <div ng-if="exif" class="exif-camera">
+                                    <div class="exif-camera-icon" ng-class="{{getCameraType()}}"></div>
+                                    <h5 class="exif-camera-name">{{exif.camera}}</h5>
+                                    <h5 class="exif-camera-lens">{{exif.lens}}</h5>
+                                </div>
+                                <table ng-if="exif" class="exif-data">
+                                    <tbody>
+                                        <tr>
+                                            <td title="Aperture" class="exif-aperture">&fnof;/{{exif.aperture}}</td>
+                                            <td title="Focal Length" class="exif-focal-length">{{exif.focal_length}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td title="Shutter Speed" class="exif-shutter-speed">{{exif.shutter_speed}} sec</td>
+                                            <td title="ISO" class="exif-iso">{{exif.iso}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td title="Flash" class="exif-flash" ng-if="exif.flash">{{exif.flash}}</td>
+                                            <td title="Exposure" class="exif-exposure">{{exif.exposure}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="copyright photo-details-wrapper">
+                                <h5><em>&copy; All rights reserved</em></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" ng-app="footer" ng-controller="footwork" ng-include="'/components/html/footer.html'"></footer>
+        <script type="text/javascript" src="/js/piwigo-cameraroll.min.js"></script>
+    </body>
+</html>

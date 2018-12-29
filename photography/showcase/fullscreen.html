@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="/img/icons/icon.ico"/>
+        <link rel="apple-touch-icon" href="/img/icons/apple-logo.png"/>
+        <link rel="icon" href="/img/icons/android-logo.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="/css/common.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/nav.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/piwigo-cameraroll-fullscreen.min.css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="piwigo-app" ng-controller="piwigo-ctrl" id="piwigo-photos" ng-mousemove="headerTimer()">
+            <div id="photo-details" class="photo-details hidden">
+                <div class="photo-single-wrapper" style="background-image: url('{{currentImage.result.derivatives.xlarge.url}}')">
+                    <a ng-if="prevImage" ng-href="/photography/showcase/fullscreen/image/{{prevImage}}" title="{{prevTitle}}" class="photo-single-prev photo-nav slideshow-ui"></a>
+                    <a ng-if="nextImage" ng-href="/photography/showcase/fullscreen/image/{{nextImage}}" title="{{nextTitle}}" class="photo-single-next photo-nav slideshow-ui"></a>
+                </div>
+            </div>
+            <h3 ng-if="currentImage" id="photo-title" class="photo-single-title">{{currentImage.result.name}}</h3>
+            <h3 ng-if="!currentImage" id="photo-title" class="photo-single-title">Something broke :(</h3>
+            <a id="exit-fullscreen" class="photo-button fullscreen-button" href="/photography/showcase/image/{{photoId}}" title="Exit Fullscreen"></a>
+        </div>
+        <script type="text/javascript" src="/js/piwigo-showcase-fullscreen.min.js"></script>
+    </body>
+</html>

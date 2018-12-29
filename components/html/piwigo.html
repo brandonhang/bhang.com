@@ -1,0 +1,5 @@
+<ul class="piwigo-nav-wrapper">
+    <li ng-repeat="navGroup in navData" ng-class="{'active': currentNav === navGroup.display}" class="piwigo-nav-link">
+        <a href="{{navGroup.link}}">{{navGroup.display}}</a>
+    </li>
+</ul>

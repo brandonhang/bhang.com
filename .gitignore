@@ -13,4 +13,4 @@ php/*
 js/*.min.js
 package-lock.json
 hostgator
-
+*.swp

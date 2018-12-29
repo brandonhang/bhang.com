@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Brandon S. Hang</title>
+        <link type="image/x-icon" rel="shortcut icon" href="/img/icons/icon.ico"/>
+        <link rel="apple-touch-icon" href="/img/icons/apple-logo.png"/>
+        <link rel="icon" href="/img/icons/android-logo.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="/css/common.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/nav.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/photos.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/piwigo-nav.min.css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.min.js"></script>
+        <script type="text/javascript" src="/js/bhangular.min.js"></script>
+        <script type="text/javascript" src="/js/piwigo-nav.min.js"></script>
+    </head>
+    <body>
+        <nav ng-app="bhang-app" ng-controller="bhang-ctrl" class="nav-menu" ng-include="'/components/html/navbar.html'" ng-class="{'main-menu-open': mobileMenu}"></nav>
+        <div class="content">
+            <div class="content-background"></div>
+            <div ng-app="piwigo-nav-app" ng-controller="piwigo-nav-ctrl" id="piwigo-nav" ng-include="'/components/html/piwigo.html'"></div>
+            <div class="content-wrapper">
+                <div class="content-picture">
+                    <img src="/img/content/the_enemy-1280.jpg"/>
+                </div><!--
+                --><div class="content-section">
+                    <h1 class="title">ABOUT</h1>
+                    <p>I dabble in photography when I have free time. I primarily shoot with a
+                        Nikon D5300, but I occasionally take photos with a Canon PowerShot SX200 IS,
+                        a Canon EOS Rebel T3, and a Samsung Galaxy S7.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" ng-app="footer" ng-controller="footwork" ng-include="'/components/html/footer.html'"></footer>
+    </body>
+</html>

@@ -34,26 +34,17 @@
                                 <h3 ng-if="loadAlbumError">Try again later.</h3>
                             </div>
                         </div>
-                        <div><p>
-                            Due to the fragile nature of the <em>Piwigo API</em>, you can also visit
-                            <a href="/bokeh_manager/">the built-in Piwigo gallery</a> if this section
-                            ever breaks.
-                        <div class="photostream-wrapper image-tile-wrapper">
-                            <a ng-repeat="photo in piwigoStream.result.images" class="image-tile" style="--w: {{photo.derivatives.xsmall.width}}; --h: {{photo.derivatives.xsmall.height}}" ng-href="/photography/cameraroll/image/{{photo.id}}">
-                                <img ng-src="{{photo.derivatives.xsmall.url}}"/>
-                                <h4 class="image-tile-title">{{photo.name}}</h4>
+                        <div class="photostream-wrapper image-tile-wrapper compact">
+                            <a ng-repeat="photo in piwigoStream" class="image-tile" style="--w: {{photo.result.derivatives.xsmall.width}}; --h: {{photo.result.derivatives.xsmall.height}}" ng-href="/photography/showcase/detail/image/{{photo.result.id}}">
+                                <img ng-src="{{photo.result.derivatives.xsmall.url}}"/>
+                                <h4 class="image-tile-title">{{photo.result.name}}</h4>
                             </a>
                         </div>
-                        <ul class="piwigo-pagination">
-                            <li ng-repeat="page in pagination track by $index" class="piwigo-page" ng-class="{'current-page': page === (pageNumber + 1)}">
-                                <a class="piwigo-page-anchor" ng-class="page === '…' ? 'piwigo-not-link' : 'piwigo-page-link'" ng-href="{{page === '…' ? '#' : '/photography/page/' + page}}">{{page}}</a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <footer id="footer" ng-app="footer" ng-controller="footwork" ng-include="'/components/html/footer.html'"></footer>
-        <script type="text/javascript" src="./js/piwigo-stream.min.js"></script>
+        <script type="text/javascript" src="./js/piwigo-showcase.min.js"></script>
     </body>
 </html>

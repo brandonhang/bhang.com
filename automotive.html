@@ -48,7 +48,7 @@
                         Nowadays, my hobbies in photography and cars go nearly hand in hand; most
                         of the subjects in front of my lens end up being some sort of automobile.
                         While you can check out most of my automotive photography on my
-                        <a href="https://www.flickr.com/photos/dangitshang" target="_blank">Flickr page</a>,
+                        <a href="/photography" target="_blank">Photography page</a>,
                         below is a car companion viewer for a select number of my photos.
                     </p>
                     <div id="car-companion" next-car="nextCar()" prev-car="prevCar()" escape-key-press="exitFullscreen()">
@@ -67,7 +67,7 @@
                                 --><div class="car-wrapper-next car-nav-button" ng-click="nextCar()"><img src="/img/icons/arrow_forward.svg"/></div>
                                 <div class="image-options">
                                     <div ng-if="getPhotoLink() === ''" class="image-button external-button disabled"></div>
-                                    <a ng-if="getPhotoLink() !== ''" title="Flickr Link" href="{{getPhotoLink()}}" target="_blank" class="image-button external-button"></a>
+                                    <a ng-if="getPhotoLink() !== ''" title="Photo Page" href="{{getPhotoLink()}}" target="_blank" class="image-button external-button"></a>
                                     <div class="image-button gallery-button" title="Show Gallery" ng-click="enterGallery()"></div>
                                     <div ng-if="!fullscreen" class="image-button fullscreen-button" title="Fullscreen" ng-click="goFullscreen()"></div>
                                     <div ng-if="fullscreen" class="image-button fullscreen-button fullscreen-exit" title="Exit Fullscreen" ng-click="exitFullscreen()"></div>
@@ -123,7 +123,7 @@
                             <div id="prev-image" class="img-nav" ng-click="prevCar()"><img src="/img/icons/arrow_back.svg"/></div>
                             <div id="next-image" class="img-nav" ng-click="nextCar()"><img src="/img/icons/arrow_forward.svg"/></div>
                             <div id="lightbox-image" ng-swipe-left="nextCar()" ng-swipe-right="prevCar()" ng-style="getCar()"></div>
-                            <a ng-if="getPhotoLink() !== ''" class="lightbox-title" href="{{getPhotoLink()}}" title="View on Flickr" target="_blank">{{getCarName()}}</a>
+                            <a ng-if="getPhotoLink() !== ''" class="lightbox-title" href="{{getPhotoLink()}}" title="View Photo Page" target="_blank">{{getCarName()}}</a>
                             <h3 ng-if="getPhotoLink() === ''" class="lightbox-title no-link">{{getCarName()}}</h3>
                         </div>
                     </div>

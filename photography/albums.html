@@ -12,10 +12,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
         <link type="text/css" rel="stylesheet" href="/css/common.min.css"/>
         <link type="text/css" rel="stylesheet" href="/css/nav.min.css"/>
-        <link type="text/css" rel="stylesheet" href="/css/piwigo.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/piwigo-albums.min.css"/>
         <link type="text/css" rel="stylesheet" href="/css/piwigo-nav.min.css"/>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.min.js"></script>
         <script type="text/javascript" src="/js/bhangular.min.js"></script>
         <script type="text/javascript" src="/js/piwigo-nav.min.js"></script>
     </head>
@@ -30,30 +29,21 @@
                         <div ng-if="loadingAlbum || loadAlbumError" class="album-loader">
                             <div ng-class="loadAlbumError ? 'album-err-msg' : 'album-load-msg'">
                                 <h3 ng-if="!loadAlbumError">Loading photos...</h3>
-                                <h3 ng-if="loadAlbumError">An error occurred loading photos from Piwigo.</h3>
+                                <h3 ng-if="loadAlbumError">An error occurred loading albums from Piwigo.</h3>
                                 <h3 ng-if="loadAlbumError">Try again later.</h3>
                             </div>
                         </div>
-                        <div><p>
-                            Due to the fragile nature of the <em>Piwigo API</em>, you can also visit
-                            <a href="/bokeh_manager/">the built-in Piwigo gallery</a> if this section
-                            ever breaks.
-                        <div class="photostream-wrapper image-tile-wrapper">
-                            <a ng-repeat="photo in piwigoStream.result.images" class="image-tile" style="--w: {{photo.derivatives.xsmall.width}}; --h: {{photo.derivatives.xsmall.height}}" ng-href="/photography/cameraroll/image/{{photo.id}}">
-                                <img ng-src="{{photo.derivatives.xsmall.url}}"/>
-                                <h4 class="image-tile-title">{{photo.name}}</h4>
-                            </a>
-                        </div>
-                        <ul class="piwigo-pagination">
-                            <li ng-repeat="page in pagination track by $index" class="piwigo-page" ng-class="{'current-page': page === (pageNumber + 1)}">
-                                <a class="piwigo-page-anchor" ng-class="page === '…' ? 'piwigo-not-link' : 'piwigo-page-link'" ng-href="{{page === '…' ? '#' : '/photography/page/' + page}}">{{page}}</a>
-                            </li>
-                        </ul>
+                        <a ng-repeat="album in albumData.result" href="/photography/albums/album/photoset/{{album.id}}" class="album-wrapper card" style="background-image: url('{{album.tn_url}}')">
+                            <div class="album-inner">
+                                <h3 class="album-title">{{album.name}}</h3>
+                                <h4 class="album-contents">{{album.nb_images}} {{album.nb_images === 1 ? 'photo' : 'photos'}}</h4>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
         <footer id="footer" ng-app="footer" ng-controller="footwork" ng-include="'/components/html/footer.html'"></footer>
-        <script type="text/javascript" src="./js/piwigo-stream.min.js"></script>
+        <script type="text/javascript" src="/js/piwigo-albums.min.js"></script>
     </body>
 </html>

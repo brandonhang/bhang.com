@@ -1,0 +1,357 @@
+@import 'partials/_variables';
+@import 'partials/_mixins';
+
+.content {
+    #piwigo-nav {
+        margin-bottom: 0 !important;
+    }
+
+    .content-background {
+        background-image: url('/img/bkgrds/temple-o.jpg');
+        background-position: center 32%;
+
+        @media only screen and (max-width: 3000px) {
+            background-image: url('/img/bkgrds/temple-3000.jpg');
+        }
+
+        @media only screen and (max-width: 2000px) {
+            background-image: url('/img/bkgrds/temple-2000.jpg');
+        }
+
+        @media only screen and (max-width: 1000px) {
+            background-image: url('/img/bkgrds/temple-1000.jpg');
+        }
+    }
+
+    .content-wrapper {
+        width: 100%;
+
+        .content-picture {
+            @media #{$small-screen} {
+                background-image: url('/img/content/the_enemy-1280.jpg');
+                background-size: 230% auto;
+                background-position: 70% 45%;
+            }
+        }
+
+        .content-section {
+            margin-bottom: 1.25em;
+
+            #piwigo-photos {
+                position: relative;
+
+                .photo-details {
+                    font-size: 12px;
+                    z-index: 100;
+                    padding: 0;
+                    width: 100%;
+                    min-height: 56.5em;
+                    position: relative;
+                    background-color: $off-black;
+
+                    .photo-back {
+                        display: inline-block;
+                        color: white;
+                        text-decoration: none;
+                        margin: 1.5em 0 0 1.5em;
+                        font-size: 1.167em;
+                        padding-left: 2em;
+                        background-image: url('/img/icons/back.svg');
+                        background-size: auto 100%;
+                        background-position: left center;
+                        background-repeat: no-repeat;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .photo-single-wrapper {
+                        height: 50em;
+                        width: 100%;
+                        position: relative;
+                        margin-bottom: 4.167em;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            height: 4.167em;
+                            position: absolute;
+                            bottom: -4.167em;
+                            background-color: $off-black;
+                        }
+
+                        .photo-nav {
+                            position: absolute;
+                            height: 100%;
+                            width: 50%;
+                            cursor: pointer;
+                            opacity: 0.7;
+                            background-size: auto 3.5em;
+                            background-repeat: no-repeat;
+                            @include transition(opacity, 0.2s, ease-in-out);
+
+                            &:hover {
+                                opacity: 1;
+                            }
+
+                            &.endpoint {
+                                display: none;
+                            }
+                        }
+
+                        .photo-single-prev {
+                            left: 0;
+                            background-image: url('/img/icons/pointer_left.png');
+                            background-position: 0.833em center;
+                        }
+
+                        .photo-single-next {
+                            right: 0;
+                            background-image: url('/img/icons/pointer_right.png');
+                            background-position: right 0.833em center;
+                        }
+
+                        img {
+                            max-height: calc(100% - 2.167em);
+                            max-width: calc(100% - 8.667em);
+                            position: relative;
+                            display: block;
+                            margin: 0 auto;
+                            padding-top: 2.167em;
+                        }
+
+                        .photo-button {
+                            position: absolute;
+                            bottom: -4.167em;
+                            height: 4.167em;
+                            width: 4.167em;
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                            cursor: pointer;
+                        }
+
+                        .download-button {
+                            right: 4.167em;
+                            background-image: url('/img/icons/download.svg');
+                            background-size: 2.667em auto;
+                        }
+
+                        .fullscreen-button {
+                            right: 0;
+                            background-image: url('/img/icons/fullscreen.svg');
+                            background-size: 3.167em auto;
+                        }
+
+                        .download-overlay {
+                            display: none;
+                            position: fixed;
+                            height: 100%;
+                            width: 100%;
+                            margin: 0;
+                            padding: 0;
+                            top: 0;
+                            left: 0;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            z-index: 10000;
+
+                            &.open-download-list {
+                                display: block;
+                            }
+                        }
+
+                        .download-list {
+                            display: none;
+                            position: absolute;
+                            z-index: 10001;
+                            list-style-type: none;
+                            padding-left: 0;
+                            right: 4em;
+                            bottom: 0;
+                            background-color: white;
+                            border-radius: 0.25em;
+                            @include box-shadow(3px, 3px, 5px, rgba(0, 0, 0, 0.25));
+                            padding: 0.5em;
+
+                            &.open-download-list {
+                                display: block;
+                            }
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                top: 100%;
+                                right: 2em;
+                                margin-left: -0.4em;
+                                border-width: 0.4em;
+                                border-style: solid;
+                                border-color: white transparent transparent transparent;
+                            }
+
+                            .download-link {
+                                display: block;
+                                margin: 0.5em;
+                                text-decoration: none;
+                                font-size: 1.25em;
+                            }
+                        }
+                    }
+                }
+
+                .photo-single-details {
+                    font-size: 14px;
+
+                    .photo-details-wrapper {
+                        width: 55%;
+                        margin: 0 auto;
+                        border-bottom: 0.083em solid #cfd6d9;
+                        padding-bottom: 1.25em;
+                        margin-bottom: 3.167em;
+
+                        @media only screen and (max-width: 750px) {
+                            width: 90%;
+                        }
+                    }
+
+                    .photo-single-data {
+                        color: $off-black;
+
+                        .photo-single-title {
+                            font-size: 1.667em;
+                            font-weight: 600;
+                            margin: 0;
+                        }
+
+                        .photo-single-date {
+                            margin: 0;
+                            padding: 0.417em 0 0.833em 0;
+                            font-size: 1.333em;
+                            font-weight: 600;
+                        }
+
+                        .photo-single-description {
+                            font-size: 1.167em;
+                            font-weight: 400;
+                            margin: 0;
+                        }
+
+                        .edit-photo-title {
+                            display: block;
+                            width: 100%;
+                            font-family: $montserrat;
+                            font-weight: 600;
+                            font-size: 1.667em;
+                            border-radius: 0.25em;
+                            border: none;
+                            padding: 0.25em 0 0.25em 0.25em;
+                            margin: 0 auto 0.5em auto;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            background-color: rgba(255, 255, 255, 0.5);
+                            @include transition(all, 0.2s, ease-in-out);
+
+                            &:focus {
+                                outline: none;
+                                white-space: pre-wrap;
+                                overflow: visible;
+                                border-color: rgba(0, 0, 0, 0.1);
+                                box-shadow: 0.083em 0.083em 0.25em 0 rgba(0, 0, 0, 0.5) inset;
+                                background-color: white;
+                            }
+                        }
+
+                        .edit-photo-description {
+                            display: block;
+                            width: 100%;
+                            font-family: $montserrat;
+                            border-radius: 0.25em;
+                            border: none;
+                            resize: none;
+                            padding: 0.25em 0 0.25em 0.25em;
+                            margin: 0 auto;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: normal;
+                            font-size: 1.167em;
+                            font-weight: 400;
+                            background-color: rgba(255, 255, 255, 0.5);
+                            @include transition(all, 0.2s, ease-in-out);
+
+                            &:focus {
+                                outline: none;
+                                background-color: white;
+                                border-color: rgba(0, 0, 0, 0.1);
+                                box-shadow: 0.083em 0.083em 0.25em 0 rgba(0, 0, 0, 0.5) inset;
+                                overflow: auto;
+                            }
+                        }
+                    }
+
+                    .photo-single-exif {
+                        .exif-camera {
+                            .exif-camera-name {
+                                margin: 0.667em 0 0.333em 0;
+                                font-size: 1.333em;
+                                font-weight: 400;
+                            }
+
+                            .exif-camera-lens {
+                                margin: 0.333em 0 0.667em 0;
+                                font-size: 1em;
+                                font-weight: 400;
+                            }
+                        }
+
+                        .exif-data {
+                            td {
+                                background-size: auto 1.667em;
+                                background-position: left center;
+                                background-repeat: no-repeat;
+                                height: 1.5em;
+                                padding: 0.25em 2em;
+                            }
+
+                            .exif-aperture {
+                                background-image: url('/img/icons/aperture.svg');
+                            }
+
+                            .exif-focal-length {
+                                background-image: url('/img/icons/focal_length.svg');
+                            }
+
+                            .exif-shutter-speed {
+                                background-image: url('/img/icons/shutter_speed.svg');
+                            }
+
+                            .exif-iso {
+                                background-image: url('/img/icons/iso.svg');
+                            }
+
+                            .exif-flash {
+                                background-image: url('/img/icons/flash_off.svg');
+
+                                &.flash {
+                                    background-image: url('/img/icons/flash_on.svg');
+                                }
+                            }
+
+                            .exif-exposure {
+                                background-image: url('/img/icons/exposure.svg');
+                            }
+                        }
+                    }
+
+                    .copyright {
+                        h5 {
+                            font-weight: normal;
+                            font-size: 1em;
+                            margin: .667em 0 .333em 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
