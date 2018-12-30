@@ -71,6 +71,10 @@
                         width: 100%;
                         position: relative;
                         margin-bottom: 4.167em;
+                        background-image: url('/img/icons/img_load.svg');
+                        background-repeat: no-repeat;
+                        background-size: 15%;
+                        background-position: center center;
 
                         &::before {
                             content: '';

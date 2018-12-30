@@ -30,15 +30,17 @@ angular.element(document).ready(function() {
             function(albumInfo) {
                 $scope.albumInfo = albumInfo.data.result[0];
 
-                $http.get(COVER_IMAGE + $scope.albumInfo.representative_picture_id).then(
-                    function(coverImage) {
-                        $scope.coverImage = coverImage.data;
-                        $scope.loadingAlbum = false;
-                    },
-                    function(coverError) {
-                        $scope.loadingAlbum = false;
-                    }
-                );
+                if (!$scope.pageNumber) {
+                    $http.get(COVER_IMAGE + $scope.albumInfo.representative_picture_id).then(
+                        function(coverImage) {
+                            $scope.coverImage = coverImage.data;
+                            $scope.loadingAlbum = false;
+                        },
+                        function(coverError) {
+                            $scope.loadingAlbum = false;
+                        }
+                    );
+                }
             },
             function(albumError) {
                 $scope.loadingAlbum = false;

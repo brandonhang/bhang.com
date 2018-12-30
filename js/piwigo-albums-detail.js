@@ -28,7 +28,7 @@ angular.element(document).ready(function() {
             function(currentImage) {
                 $scope.currentImage = currentImage.data;
 
-                if ('comment' in currentImage.data.result) {
+                if ('comment' in currentImage.data.result && currentImage.data.result.comment != null) {
                     $scope.imageDescription = currentImage.data.result.comment.replace(/\n/, '<br/>');
                 }
 

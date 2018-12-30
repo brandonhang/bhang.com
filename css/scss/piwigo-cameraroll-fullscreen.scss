@@ -12,6 +12,10 @@
         height: 100%;
         position: relative;
         background-color: black;
+        background-image: url('/img/icons/img_load.svg');
+        background-size: 25%;
+        background-repeat: no-repeat;
+        background-position: center center;
 
         .photo-back {
             display: inline-block;
