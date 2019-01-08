@@ -34,6 +34,7 @@
                                 <h3 ng-if="loadAlbumError">Try again later.</h3>
                             </div>
                         </div>
+                        <a id="back-to-albums" href="/photography/albums">Back to Albums</a>
                         <div class="photostream-wrapper image-tile-wrapper">
                             <div ng-if="coverImage" class="album-detail-cover" style="background-image: url('{{coverImage.result.derivatives.large.url}}');">
                                 <h2 class="album-detail-title" title="{{albumInfo.name}}">{{albumInfo.name}}</h2>

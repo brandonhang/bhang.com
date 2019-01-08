@@ -28,7 +28,7 @@
                     <div ng-app="piwigo-app" ng-controller="piwigo-ctrl" id="piwigo-photos">
                         <div ng-if="loadingAlbum || loadAlbumError" class="album-loader">
                             <div ng-class="loadAlbumError ? 'album-err-msg' : 'album-load-msg'">
-                                <h3 ng-if="!loadAlbumError">Loading photos...</h3>
+                                <h3 ng-if="!loadAlbumError">Loading albums...</h3>
                                 <h3 ng-if="loadAlbumError">An error occurred loading albums from Piwigo.</h3>
                                 <h3 ng-if="loadAlbumError">Try again later.</h3>
                             </div>

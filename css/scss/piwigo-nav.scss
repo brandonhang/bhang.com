@@ -1,6 +1,10 @@
 @import 'partials/_variables';
 @import 'partials/_mixins';
 
+body {
+    overflow-x: hidden;
+}
+
 .content {
     #piwigo-nav {
         display: inline-block;

@@ -181,6 +181,24 @@
                     }
                 }
 
+                #back-to-albums {
+                    padding-left: 2em;
+                    background-image: url('/img/icons/back_bl.svg');
+                    background-size: auto 100%;
+                    background-position: left center;
+                    background-repeat: no-repeat;
+                    font-size: 1.25em;
+                    font-weight: 400;
+                    display: inline-block;
+                    margin: 0.5em 0 1em 0;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #5979fc;
+                        text-decoration: underline;
+                    }
+                }
+
                 .album-detail-cover {
                     background-size: cover;
                     background-position: center center;
@@ -239,6 +257,32 @@
                         text-shadow: 0 0.083em 0.083em black;
                         position: relative;
                         font-weight: normal;
+                    }
+
+                    @media only screen and (max-width: 900px) {
+                        .album-detail-title {
+                            font-size: 5em;
+                        }
+                    }
+
+                    @media only screen and (max-width: 700px) {
+                        .album-detail-title {
+                            font-size: 3.5em;
+                        }
+
+                        .album-detail-description {
+                            font-size: 1.75em;
+                        }
+                    }
+
+                    @media only screen and (max-width: 500px) {
+                        .album-detail-title {
+                            font-size: 2em;
+                        }
+
+                        .album-detail-description {
+                            font-size: 1.5em;
+                        }
                     }
                 }
 

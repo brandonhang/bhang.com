@@ -120,10 +120,17 @@
                         img {
                             max-height: calc(100% - 2.167em);
                             max-width: calc(100% - 8.667em);
-                            position: relative;
                             display: block;
                             margin: 0 auto;
-                            padding-top: 2.167em;
+                            padding-top: 0;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            @include translate(-50%, -50%);
+
+                            @media only screen and (max-width: 1000px) {
+                                max-width: calc(100% - 7em);
+                            }
                         }
 
                         .photo-button {
@@ -199,6 +206,36 @@
                                 text-decoration: none;
                                 font-size: 1.25em;
                             }
+                        }
+                    }
+                }
+
+                @media only screen and (max-width: 700px) {
+                    .photo-details {
+                        min-height: 46.5em;
+
+                        .photo-single-wrapper {
+                            height: 40em;
+                        }
+                    }
+                }
+
+                @media only screen and (max-width: 600px) {
+                    .photo-details {
+                        min-height: 41.5em;
+
+                        .photo-single-wrapper {
+                            height: 35em;
+                        }
+                    }
+                }
+
+                @media only screen and (max-width: 500px) {
+                    .photo-details {
+                        min-height: 36.5em;
+
+                        .photo-single-wrapper {
+                            height: 30em;
                         }
                     }
                 }
