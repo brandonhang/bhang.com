@@ -1,7 +1,5 @@
 angular.element(document).ready(function() {
     var CURRENT_IMAGE = 'https://www.brandonhang.com/api/piwigo/ws?format=json&method=pwg.images.getInfo&image_id=';
-    var FLANK_IMG_1 = 'https://www.brandonhang.com/api/piwigo/picture.php?/';
-    var FLANK_IMG_2 = '/categories';
 
     var piwigoApp = angular.module('piwigo-app', ['ngSanitize', 'ngTouch']);
 
@@ -71,32 +69,19 @@ angular.element(document).ready(function() {
             }
         );
 
-        $http.get(FLANK_IMG_1 + $scope.photoId + FLANK_IMG_2).then(
-            function(rawDocument) {
-                var prevMatch = rawDocument.data.match(/<a.*linkPrev.*>/);
-                var nextMatch = rawDocument.data.match(/<a.*linkNext.*>/);
-
-                if (prevMatch) {
-                    var prevHrefMatch = prevMatch[0].match(/href.*[/](\d+)/);
-                    var prevTitleMatch = prevMatch[0].match(/title=".*: (.*)" rel/);
-
-                    if (prevHrefMatch) {
-                        $scope.prevImage = prevHrefMatch[1];
-                    }
-                    if (prevTitleMatch) {
-                        $scope.prevTitle = prevTitleMatch[1];
-                    }
+        $http.get('https://www.brandonhang.com/api/bhang/piwigo_bookends?photo=' + $scope.photoId).then(
+            function(bookends) {
+                if (bookends.data[0].id != null) {
+                    $scope.prevImage = bookends.data[0].id;
                 }
-                if (nextMatch) {
-                    var nextHrefMatch = nextMatch[0].match(/href.*[/](\d+)/);
-                    var nextTitleMatch = nextMatch[0].match(/title=".*: (.*)" rel/);
-
-                    if (nextHrefMatch) {
-                        $scope.nextImage = nextHrefMatch[1];
-                    }
-                    if (nextTitleMatch) {
-                        $scope.nextTitle = nextTitleMatch[1];
-                    }
+                if (bookends.data[0].title != null) {
+                    $scope.prevTitle = bookends.data[0].title;
+                }
+                if (bookends.data[1].id != null) {
+                    $scope.nextImage = bookends.data[1].id;
+                }
+                if (bookends.data[1].title != null) {
+                    $scope.nextTitle = bookends.data[1].title;
                 }
             }
         );
