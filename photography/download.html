@@ -36,7 +36,7 @@
                                 </tr>
                                 <tr>
                                     <td class="header">License</td>
-                                    <td>&copy; All rights reserved</td>
+                                    <td colspan="4">&copy; All rights reserved</td>
                                 </tr>
                                 <tr ng-if="currentDownload">
                                     <td class="header">Download</td>
@@ -46,16 +46,16 @@
                                 </tr>
                                 <tr ng-if="sizeData">
                                     <td class="header">Sizes</td>
-                                    <td>
+                                    <td class="download-link">
                                         <span ng-repeat="size in group1" class="download-size" ng-if="sizeData[size]" ng-class="{'active': activeSize === size}"><a href="#" ng-click="changeDownload($event, size)">{{sizeData[size].display}}</a>&nbsp;({{sizeData[size].width}} x {{sizeData[size].height}})</span>
                                     </td>
-                                    <td>
+                                    <td class="download-link">
                                         <span ng-repeat="size in group2" class="download-size" ng-if="sizeData[size]" ng-class="{'active': activeSize === size}"><a href="#" ng-click="changeDownload($event, size)">{{sizeData[size].display}}</a>&nbsp;({{sizeData[size].width}} x {{sizeData[size].height}})</span>
                                     </td>
-                                    <td>
+                                    <td class="download-link">
                                         <span ng-repeat="size in group3" class="download-size" ng-if="sizeData[size]" ng-class="{'active': activeSize === size}"><a href="#" ng-click="changeDownload($event, size)">{{sizeData[size].display}}</a>&nbsp;({{sizeData[size].width}} x {{sizeData[size].height}})</span>
                                     </td>
-                                    <td>
+                                    <td class="download-link">
                                         <span ng-if="sizeData.original" ng-class="{'active': activeSize === 'original'}" class="download-size"><a href="#" ng-click="changeDownload($event, 'original')">{{sizeData.original.display}}</a>&nbsp;({{sizeData.original.width}} x {{sizeData.original.height}})</span>
                                     </td>
                                 </tr>
