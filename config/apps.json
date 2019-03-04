@@ -34,5 +34,11 @@
         "link": "bsod",
         "icon": "bsod.svg",
         "color": "#0000aa"
+    },
+    {
+        "title": "Achievement Maker",
+        "link": "achievement_maker",
+        "icon": "trophy.svg",
+        "color": "#008d00"
     }
 ]
