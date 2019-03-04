@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Brandon S. Hang"/>
+        <base href="/">
+        <title>Achievement Maker</title>
+        <link type="image/x-icon" rel="shortcut icon" href="/img/icons/icon.ico"/>
+        <link rel="apple-touch-icon" href="/img/icons/apple-logo.png"/>
+        <link rel="icon" href="/img/icons/android-logo.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+        <link type="text/css" rel="stylesheet" href="/css/common.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/nav.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/achievement.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/css/achievement-maker.min.css"/>
+    </head>
+    <body>
+        <audio id="achievement-sound" src="/media/xbox_achievement.wav" type="audio/x-wav"></audio>
+        <h2 class="main-title">Create Your Own Achievement!</h2>
+        <form id="maker">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="t-head">Title (max 30 characters)</td>
+                        <td>
+                            <input id="input-title" class="achievement-input" type="text" name="title" maxlength="30" value="Low Tide Sucks">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="t-head">Description (max 50 characters)</td>
+                        <td>
+                            <input id="input-description" class="achievement-input" type="text" name="description" maxlength="50" value="Well, at least it's fresh">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="t-head">Points (max 1,000,000)</td>
+                        <td>
+                            <input id="input-points" class="achievement-input" type="number" name="gamerscore" min="1" max="1000000" value="15">
+                        </td>
+                    </tr>
+                    <tr class="button-row">
+                        <td><button id="you-will-submit" type="submit">Demo the Achievement</button></td>
+                        <td><button id="gimme-gimme" type="submit">Generate Bookmarklet</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <textarea class="hidden" id="bookmarklet-text" rows="20"></textarea>
+        <div class="bookmarklet-wrapper">
+            <a class="hidden" id="bookmarklet-button" href="#">Test the Bookmarklet</a>
+        </div>
+        <script type="text/javascript" src="/js/achievement-maker.min.js"></script>
+    </body>
+</html>

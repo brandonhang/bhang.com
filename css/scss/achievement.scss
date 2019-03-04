@@ -1,0 +1,62 @@
+.main-title {
+    size: 2em;
+    text-align: center;
+}
+
+#maker {
+    margin-top: 2em;
+
+    table {
+        margin: 0 auto;
+        width: 80%;
+        table-layout: fixed;
+
+        .t-head {
+            font-weight: bold;
+            font-size: 1.25em;
+        }
+
+        tr {
+            td {
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .button-row {
+            td {
+                padding-top: 1em;
+
+                &:first-of-type {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+#bookmarklet-text {
+    width: 80%;
+    resize: none;
+    margin: 2em auto;
+    display: block;
+}
+
+.bookmarklet-wrapper {
+    display: block;
+    text-align: center;
+}
+
+#bookmarklet-button {
+    font-size: 1.5em;
+    color: #5979fc;
+    transition: color .25s ease-in-out;
+    -webkit-transition: color .25s ease-in-out;
+    -moz-transition: color .25s ease-in-out;
+    -o-transition: color .25s ease-in-out;
+
+    &:hover {
+        color: #d4b92b;
+    }
+}
