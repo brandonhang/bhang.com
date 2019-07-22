@@ -88,7 +88,7 @@
             var modKey = event.shiftKey || event.altKey || event.ctrlKey || event.metaKey;
 
             if (event.keyCode === 37 && !modKey && $scope.prevImage) {
-                window.location.href = '/photography/albums/fullscreen/image/' + $scope.prevImage;
+                window.location.href = '/photography/albums/fullscreen/photoset/' + $scope.albumId + '/image/' + $scope.prevImage;
             }
         }, false);
 
@@ -96,7 +96,7 @@
             var modKey = event.shiftKey || event.altKey || event.ctrlKey || event.metaKey;
 
             if (event.keyCode === 39 && !modKey && $scope.nextImage) {
-                window.location.href = '/photography/albums/fullscreen/image/' + $scope.nextImage;
+                window.location.href = '/photography/albums/fullscreen/photoset/' + $scope.albumId + '/image/' + $scope.nextImage;
             }
         }, false);
     }]);
