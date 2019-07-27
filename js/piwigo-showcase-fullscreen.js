@@ -18,6 +18,7 @@
         $http.get(CURRENT_IMAGE + $scope.photoId).then(
             function(currentImage) {
                 $scope.currentImage = currentImage.data;
+                document.title += ' | ' + $scope.currentImage.result.name;
             },
             function(currentImageError) {
                 var photoActual = document.getElementsByClassName('photo-single-wrapper')[0];

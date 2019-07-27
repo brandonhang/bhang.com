@@ -29,6 +29,7 @@ angular.element(document).ready(function() {
         $http.get(ALBUM_INFO + $scope.albumId).then(
             function(albumInfo) {
                 $scope.albumInfo = albumInfo.data.result[0];
+                document.title += ' | ' + $scope.albumInfo.name;
 
                 if (!$scope.pageNumber) {
                     $http.get(COVER_IMAGE + $scope.albumInfo.representative_picture_id).then(

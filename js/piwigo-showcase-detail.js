@@ -53,6 +53,7 @@ angular.element(document).ready(function() {
         $http.get(CURRENT_IMAGE + $scope.photoId).then(
             function(currentImage) {
                 $scope.currentImage = currentImage.data;
+                document.title += ' | ' + $scope.currentImage.result.name;
 
                 if ('comment' in currentImage.data.result && currentImage.data.result.comment != null) {
                     $scope.imageDescription = currentImage.data.result.comment.replace(/\n/, '<br/>');

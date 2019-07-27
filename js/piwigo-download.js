@@ -15,6 +15,7 @@ angular.element(document).ready(function() {
 
         $http.get(CURRENT_IMAGE + $scope.photoId).then(
             function(currentImage) {
+                document.title += ' | ' + currentImage.data.result.name + ' | Download';
                 $scope.sizeKeys = [ 'square', 'thumb', '2small', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'original' ];
                 $scope.group1 = ['square', 'thumb', '2small'];
                 $scope.group2 = ['xsmall', 'small', 'medium'];
