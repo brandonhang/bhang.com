@@ -29,7 +29,7 @@ angular.element(document).ready(function() {
         );
 
         $scope.generatePaging = function() {
-            var photoCount = $scope.piwigoStream.result.paging.count;
+            var photoCount = $scope.piwigoStream.result.paging.total_count;
             var numPages = Math.ceil(photoCount / $scope.perPage);
             var pagingArray = [];
             var localPageNumber = $scope.pageNumber + 1;
