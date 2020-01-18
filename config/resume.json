@@ -6,11 +6,12 @@
             "date": "Mar. 2018 - Present",
             "location": "Pittsburgh, PA",
             "duties": [
-                "Perl developer on the PaymentExpress™ team",
-                "More on the way!"
+                "Newly minted Golang developer for PayHub® services",
+                "Perl developer on the PaymentExpress® team",
+                "Integrated new state and county clients with PaymentExpress"
             ],
             "icon": "gsg.svg",
-            "old": "tellurium.svg"
+            "old": "gsg_old.svg"
         },
         {
             "title": "Software Developer II",
@@ -58,7 +59,7 @@
         "backend": {
             "name": "Backend",
             "list": [
-                "Java", "Scala", "Python", "Node.js", "C"
+                "Perl", "Golang", "Node.js", "Scala", "Python", "Java", "C"
             ]
         },
         "testing": {
@@ -70,7 +71,7 @@
         "misc": {
             "name": "Misc. Technical Skills",
             "list": [
-                "Linux", "Bash", "Git", "SQL", "HBase"
+                "Linux", "Bash", "Git", "MySQL", "HBase"
             ]
         },
         "other": {
