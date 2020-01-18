@@ -1,6 +1,6 @@
 {
   "name": "bhang.com",
-  "version": "3.4.1",
+  "version": "3.4.2",
   "description": "brandonhang.com v3",
   "main": "gulpfile.js",
   "dependencies": {},
